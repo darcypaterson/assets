@@ -621,6 +621,7 @@
 			controls.maxDistance = 300;
 			controls.enablePan = true;
 			controls.enableRotate = true;
+			controls.update();
 
 
 
@@ -633,7 +634,9 @@
 
 				// ncube.translate.x += 0.09;
 
-				camera.lookAt(new THREE.Vector3(0, 20, 0));
+				camera.lookAt(new THREE.Vector3( 0, 20, 0 ));
+
+				controls.update();
 
 				renderer.render(scene, camera);
 
