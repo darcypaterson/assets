@@ -6,19 +6,19 @@ var canvas = document.getElementsByTagName('canvas')[0];
 
 
 
-navButton[0].addEventListener('click', function() {
+// navButton[0].addEventListener('click', function() {
 
-	document.getElementById('introTextSm')classList.add('dBlock');
-	document.getElementById('introTextLg')classList.add('dBlock');
-	document.getElementById('introTextSm')classList.remove('dNone');
-	document.getElementById('introTextLg')classList.remove('dNone');
+// 	document.getElementById('introTextSm')classList.add('dBlock');
+// 	document.getElementById('introTextLg')classList.add('dBlock');
+// 	document.getElementById('introTextSm')classList.remove('dNone');
+// 	document.getElementById('introTextLg')classList.remove('dNone');
 
-	document.getElementById('scene2Text')classList.add('dNone');
-	document.getElementById('scene2Button')classList.add('dNone');
-	document.getElementById('scene2Text')classList.remove('dBlock');
-	document.getElementById('scene2Button')classList.remove('dBlock');
+// 	document.getElementById('scene2Text')classList.add('dNone');
+// 	document.getElementById('scene2Button')classList.add('dNone');
+// 	document.getElementById('scene2Text')classList.remove('dBlock');
+// 	document.getElementById('scene2Button')classList.remove('dBlock');
 
-});
+// });
 
 
 navButton[1].addEventListener('click', function() {
