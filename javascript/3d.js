@@ -643,7 +643,8 @@
 				grid.addEventListener('mousedown', function(e) {
 
 					e.preventDefault();
-					document.getElementById("nav").style.backgroundColor = 'pink';
+					document.getElementById("nav").style.backgroundColor = 'yellow';
+					camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
 
 				});
 
