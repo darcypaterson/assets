@@ -9,6 +9,7 @@ grid.addEventListener('mousedown', function(e) {
 	e.preventDefault();
 
 	document.getElementById('mouse').classList.add('dNone');
+	document.getElementById('mouse').classList.remove('dFlex');
 
 	navButton[0].classList.remove('dNone');
 	navButton[1].classList.remove('dNone');
