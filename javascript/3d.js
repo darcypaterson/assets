@@ -622,7 +622,7 @@
 			controls.enablePan = true;
 			controls.enableRotate = true;
 			
-
+			controls.update();
 
 
 			function animate() {
@@ -643,11 +643,11 @@
 				grid.addEventListener('mousedown', function(e) {
 
 					e.preventDefault();
-					camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
+					document.getElementById("nav").style.backgroundColor = 'pink';
 
 				});
 
-				controls.update();
+				
 
 			}
 

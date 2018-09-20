@@ -30,7 +30,7 @@ grid.addEventListener('mousedown', function(e) {
 	navButton[2].classList.add('fadeInThree');
 	navButton[3].classList.add('fadeInFour');
 	navButton[4].classList.add('fadeInFive');
-
+	navButton[5].classList.add('fadeInSix');
 
 });
 
