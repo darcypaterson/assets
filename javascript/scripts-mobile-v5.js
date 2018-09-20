@@ -23,15 +23,15 @@ var canvas = document.getElementsByTagName('canvas')[0];
 
 navButton[1].addEventListener('click', function() {
 
-	document.getElementById('introTextSm')classList.remove('dBlock');
-	document.getElementById('introTextLg')classList.remove('dBlock');
-	document.getElementById('introTextSm')classList.add('dNone');
-	document.getElementById('introTextLg')classList.add('dNone');
+	document.getElementById('introTextSm').classList.remove('dBlock');
+	document.getElementById('introTextLg').classList.remove('dBlock');
+	document.getElementById('introTextSm').classList.add('dNone');
+	document.getElementById('introTextLg').classList.add('dNone');
 
-	document.getElementById('scene2Text')classList.remove('dNone');
-	document.getElementById('scene2Button')classList.remove('dNone');
-	document.getElementById('scene2Text')classList.add('dBlock');
-	document.getElementById('scene2Button')classList.add('dBlock');
+	document.getElementById('scene2Text').classList.remove('dNone');
+	document.getElementById('scene2Button').classList.remove('dNone');
+	document.getElementById('scene2Text').classList.add('dBlock');
+	document.getElementById('scene2Button').classList.add('dBlock');
 
 });
 
