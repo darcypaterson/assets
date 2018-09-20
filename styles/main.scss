@@ -1,0 +1,2054 @@
+
+@import "reset.css"; 
+
+/*   //////////////////   SASS   /////////////////   */
+
+
+
+/*   Variables   */
+$bgColor: #e7f0f3;
+/*$brandBlue: #1659a7;*/
+$brandBlue: #226d8d;
+$shadow: 2px 2px 10px rgba(0,0,0,0.5);
+$shadowClose: 0px 0px 0px rgba(0,0,0,0);
+$backGrad: to bottom right, $brandBlue, hsla(46, 100%, 93%, 1);
+
+
+
+@mixin text-shadow($shadow) {
+
+    -webkit-text-shadow: $shadow;
+    -moz-text-shadow: $shadow;
+    text-shadow: $shadow;
+
+}
+
+@mixin box-shadow($shadow) {
+
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+
+}
+
+@mixin box-shadow($shadowClose) {
+
+    -webkit-box-shadow: $shadowClose;
+    -moz-box-shadow: $shadowClose;
+    box-shadow: $shadowClose;
+
+}
+
+@mixin backgroundGrad($backGrad) {
+
+    background: linear-gradient($backGrad);
+}
+
+
+
+/*   /////////////   Elements   ////////////   */
+
+
+
+
+
+  body {
+      font-family: 'acumin-pro', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      font-size: 16px;
+  }
+
+
+  button {
+
+      color: white;
+      font-weight: 600;
+      background-color: $brandBlue;
+      border: 2px solid $brandBlue;
+      padding: 0.5rem 2.5rem;
+      font-family: Arial, sans-serif;
+      transition: all 0.3s ease-out;
+
+  }
+
+  button:hover {
+
+      color: $brandBlue;
+      background-color: white;
+      border: 2px solid white;
+
+  }
+
+  .noButton {
+
+      background-color: #c6cdcd;
+      color: $brandBlue;
+      border-color: #c6cdcd; 
+      transition: all 0.3s ease-out;
+
+  }
+
+  button:hover.noButton {
+
+      background-color: #efefef;
+      color: #545454;
+      border-color: #efefef; 
+
+  }
+
+
+  h1 {
+
+      color: white;
+      position: relative;
+      font-weight: 700;
+
+  }
+
+  h2 {
+      font-weight: 700;
+      color: $brandBlue;
+  }
+
+  h3 {
+      text-transform: uppercase;
+  }
+
+  h4 {
+      font-weight: 300;
+      color: #ffe8d7;
+  }
+
+  a {
+      color: $brandBlue;
+      transition: color 0.3s ease-out;
+  }
+
+  a:hover {
+      color: white;
+      text-decoration: none;
+  }
+
+
+
+  /*   ///////////////////   Global Classes   //////////////////   */
+
+  .iconWhite {
+      color: white;
+  }
+
+  .instructionCopy {
+      margin: 0;
+      text-align: center;
+  }
+
+  .checkClose {
+
+      display: -webkit-box; 
+      display: -ms-flexbox; 
+      display: flex; 
+      -webkit-box-pack: center; 
+      -ms-flex-pack: center; 
+              justify-content: center; 
+      -webkit-box-align: center; 
+      -ms-flex-align: center; 
+              align-items: center; 
+
+
+      color: $brandBlue; 
+      position: absolute; 
+      top: 1rem; 
+      right: 1rem;
+      z-index: 40;
+      transition: color 0.3s ease-out;
+
+      :hover {
+
+          color: black;
+
+      }
+
+   }
+
+    .dNone {
+        display: none;
+    }
+
+    .dInitial {
+        display: initial;
+    }
+
+    .dFlex {
+        display: -webkit-box;      
+        display: -ms-flexbox;      
+        display: flex;
+    }
+
+    .dBlock {
+        display: block;
+    }
+
+    .dInBlock {
+        display: inline-block;
+    }
+
+  /*   //////////////////   GRID   ////////////////   */
+
+
+
+.gridContainer {
+
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    -ms-grid-rows: 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh;
+      
+
+}
+
+
+  /*      ///////////////   Go Landscape   ////////////     */
+
+
+  #goLandscape {
+
+      display: none;
+  }
+
+  /*      ///////////////   Go Full Screen   ////////////     */
+
+
+#fullScreen { 
+
+      -ms-grid-column: 9;
+      -ms-grid-column-span: 4;
+      grid-column: 9 / 13;
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 2;
+      grid-row: 1 / 3;
+
+      z-index: 30;
+
+    a {
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+              align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+              justify-content: center;
+
+        padding: 0 0 0 0;
+        /*margin: 1rem 1rem 0 0;*/
+        width: 100%;
+        height: 100%;
+
+        background-color: pink;
+          
+
+    }
+
+    h5 {
+        color: $brandBlue;
+        font-weight: 700;
+    }
+
+      
+}
+
+
+  /* ////////////////   Navigation   ////////////// */
+
+  #nav {
+
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 4;
+    grid-column: 5 / 9;
+
+    -ms-grid-row: 9;
+    -ms-grid-row-span: 1;
+    grid-row: 8 / 9;
+
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    z-index: 30;
+    display: none;
+
+  }
+
+
+  .navButton {
+
+    color: white;
+
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50px;
+    border: 1px solid white;
+
+
+    font-weight: 600;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    margin: 0 .25rem;
+
+
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    transition: all 0.3s ease-out;
+
+
+  }
+
+  .navButton:hover {
+
+    color: $brandBlue;
+    background-color: white;
+    border: 1px solid white;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+  }
+
+  .navButtonHere {
+
+    color: $brandBlue;
+    background-color: white;
+    border: 1px solid white;
+    margin: 0 .1rem;
+
+  }
+
+
+
+  @keyframes navAni {
+
+      from {opacity: 1;}
+      to {opacity: 0;}
+
+  }
+
+
+  .hideAni {
+      animation-name: navAni;
+      animation-duration: 1.5s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+  }
+
+  @keyframes navAniRev {
+
+      from {opacity: 1;}
+      to {opacity: 0;}
+
+  }
+
+
+  .hideAniRev {
+      animation-name: navAniRev;
+      animation-duration: 1.5s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-direction: reverse;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  /* /////////////   Main Content   ///////////// */
+
+  /*   Main  */
+  /*(This is the grid item that holds the main content on every page except the last one)*/
+
+
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:35% 0%}
+      50%{background-position:66% 100%}
+      100%{background-position:35% 0%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:35% 0%}
+      50%{background-position:66% 100%}
+      100%{background-position:35% 0%}
+  }
+  @-o-keyframes AnimationName {
+      0%{background-position:35% 0%}
+      50%{background-position:66% 100%}
+      100%{background-position:35% 0%}
+  }
+  @keyframes AnimationName { 
+      0%{background-position:35% 0%}
+      50%{background-position:66% 100%}
+      100%{background-position:35% 0%}
+  }
+
+
+
+
+canvas {
+
+    grid-column: 1 / 13;
+    grid-row: 1 / 13;
+    z-index: 0;
+
+}
+
+#mainOne {
+
+    grid-column: 1 / 13;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 30;
+
+}
+
+#introTextSm {
+
+    color: white;
+   
+    text-align: center;
+    margin-bottom: 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 3rem;
+
+
+
+}
+
+
+#introTextLg {
+
+    color: white;
+
+    text-align: center;
+    margin: -3rem 0;
+    width: 100%;
+    font-family:'quatro', sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 12rem;
+    font-weight: 900;
+    
+
+}
+
+
+footer {
+/*    grid-column: 12 / 13;
+    grid-row: 9 / 10;
+    z-index: 30;*/
+
+    position: absolute;
+    display: block;
+    width: 5vw;
+
+    right: 0;
+    bottom: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    z-index: 30;
+}
+
+  /*   Index Page   */
+
+#spot {
+
+    width: 22px;
+    height: 20px;
+    color: white;
+    margin-left: 1px;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+
+}
+
+
+  #spot:hover {
+
+      opacity: 1;
+
+  }
+
+
+
+
+
+
+  /*   Page 2   */
+
+  /* Content for Page 2 */
+  #wantToTry, #wantToTry4, #wantToTry5 {
+
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+              align-items: center;
+
+
+      text-align: center;
+
+
+      h1 {
+          line-height: 2.25rem; 
+      }
+
+      h4 {
+
+          margin-bottom: 1.5rem;
+
+      }
+
+  }
+
+
+
+
+  /*   Page 3   */
+
+  /* Photo of intersection */
+
+  #intersection {
+
+      width: 100%;
+      object-fit: cover;
+      height: 165vh;
+
+  }
+
+  @keyframes intersect {
+
+      0%{opacity: 1; filter: blur(0);}
+      100%{opacity: 0.1; filter: blur(2px);}
+      
+  }
+
+  .instructIntersect {
+
+      animation-name: intersect;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+      animation-duration: .5s;
+
+  }
+
+
+  @keyframes intersectRev {
+
+      0%{opacity: 1; filter: blur(0);}
+      100%{opacity: 0.1; filter: blur(2px);}
+      
+  }
+
+  .instructIntersectRev {
+
+      animation-name: intersectRev;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+      animation-duration: .5s;
+      animation-direction: reverse;
+
+  }
+
+
+
+  /* Instructions Button */
+
+  #bigI {
+
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 4;
+      grid-column: 5 / 9;
+
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 9;
+      grid-row: 1 / 9;
+
+      color: $brandBlue;
+      transition: all 0.3s ease-out;
+      z-index: 30;
+
+      div {
+
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+                  justify-content: center;
+
+        border: 1px solid white;
+        background: white;
+        border-radius: 0px 0px 10px 10px;
+
+
+
+      }
+
+
+      :hover {
+
+          color: $brandBlue;  
+
+      }
+
+
+
+      h1 {
+
+          font-size: 1.5rem;
+          margin: 0.5vh 1.5vh 0 0;
+          color: inherit;
+          transition: all 0.3s ease-out;
+
+      }
+
+
+
+      i {
+
+          border-radius: 50%;
+          color: inherit;
+          transition: all 0.3s ease-out;
+      }
+
+
+
+
+  }
+
+@keyframes addClose {
+
+    0%{margin-top: 0;}
+    100%{margin-top: 76vh;}
+
+}
+
+.addBigI {
+
+    animation: addClose 250ms cubic-bezier(0.27, 0.96, 0.59, 1) 0ms 1 normal forwards running;
+
+}
+
+
+@keyframes removeClose {
+
+    0%{margin-top: 76vh;}
+    100%{margin-top: 0;}
+
+}
+
+.removeBigI {
+
+    animation: removeClose 250ms cubic-bezier(0.27, 0.96, 0.59, 1) 0ms 1 normal forwards running;
+
+}
+
+
+
+/* Instructions */
+#instructions {
+
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-column: 2 / 10;
+
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 7;
+    grid-row: 1 / 8;
+
+    z-index: 20;
+    margin: -1vh;
+
+}
+
+
+@keyframes moveInstructBG {
+
+    0%{height: 1vh;}
+    100%{height: 77vh;}
+
+}
+
+.moveInstructBG {
+
+    animation: moveInstructBG 250ms cubic-bezier(0.27, 0.96, 0.59, 1) 0ms 1 normal forwards running;
+}
+
+
+@keyframes closeInstructBG {
+
+    0%{height: 77vh;}
+    100%{height: 1vh;}
+
+}
+
+.closeInstructBG {
+
+    animation: closeInstructBG 250ms cubic-bezier(0.27, 0.96, 0.59, 1) 0ms 1 normal forwards running;
+
+}
+
+.insClose {
+    height: 0;
+}
+
+#instructionsBG {
+
+    display: flex;
+    background-color: white;
+    width: 100%;
+    -webkit-box-align: center; 
+    -ms-flex-align: center; 
+    align-items: center; 
+    justify-content: space-around;
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+
+
+@keyframes instructFrame {
+
+      0%{opacity: 1;}
+      100%{opacity: 0;}
+}
+
+
+
+.instructAnimation {
+
+
+      animation-name: instructFrame;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+      animation-duration: .5s;
+
+}
+
+
+#instructContain {
+
+      display: none;
+      justify-content: space-around;
+      flex-direction: column;
+      background-color: white;
+
+
+}
+
+
+
+@keyframes instructContain {
+
+      0%{opacity: 0;  transform: scaleY(0);}
+      100%{opacity: 1; transform: scaleY(1);}
+
+}
+
+
+.instructCont {
+
+      display: -webkit-box;      
+      display: -ms-flexbox;      
+      display: flex;
+
+      animation-name: instructContain;
+      animation-duration: .5s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+
+}
+
+@keyframes instructContainRev {
+
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+
+.instructContRev {
+
+    animation-name: instructContainRev;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
+}
+
+
+.steps {
+
+    width: 100%;
+    padding: 0 1.125rem;
+    border: 1px solid white;
+    margin: 0 0.125rem;
+    background-color: rgba(214, 234, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+        margin: 0.5rem 1rem;
+    }
+      
+}
+
+
+.sideButtonHere {
+    
+    color: white;
+    background-color: $brandBlue;
+    transition: all 0.3s ease-out;
+}
+
+
+#stepsContent {
+
+    display: block;
+
+}
+
+.stepsStyle {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.stepsStyleNone {
+
+    display: none;
+
+}
+
+@keyframes circleAni {
+
+    0%{opacity: 0; transform: translateY(2px);}
+    100%{opacity: 1; transform: translateY(0px);}
+
+  }
+
+
+  .fa-info-circle {
+
+    opacity: 1;
+    animation-name: circleAni;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    
+  }
+
+  @keyframes timesAni {
+      0%{opacity: 0; transform: translateY(5px);}
+      100%{opacity: 1; transform: translateY(0px);}
+  }
+
+  .fa-times-circle {
+
+      opacity: 0;
+      animation-name: timesAni;
+      animation-duration: .5s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: .5s;
+
+      transition: color 0.3s ease-out;
+
+
+  }
+
+
+
+  /*   Page 4   */
+
+  #wantToTry4 {
+
+      padding: 0 4rem;
+
+  }
+
+  #arrow {
+      color: $brandBlue;
+
+      transition: all 0.3s ease-out;
+  }
+
+  #arrow:hover {
+
+      color: white;
+
+  }
+
+
+  /*   Page 5   */
+
+  #wantToTry5 {
+
+
+
+  }
+
+
+
+
+  /*   Last Page   */
+
+
+
+  #share, #learn, #subscribe {
+
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+              justify-content: center;
+
+
+
+
+      border: 1px solid white;
+      position: relative;
+      padding: 0.5rem;
+      z-index: 20;
+      background-color: rgba(214, 234, 255, 0.5);
+      text-align: center;
+
+      hr {
+
+          border-style: solid;
+          border-color: black;
+          width: 5vw;
+          margin: 0;
+
+      }
+
+      p {
+          line-height: 0.9rem;
+          margin-top: 0;
+          padding-top: .5rem;
+          margin-bottom: .25rem;
+      }
+
+  }
+
+
+
+  #logo {
+
+      -ms-grid-column: 6;
+      -ms-grid-column-span: 2;
+      grid-column: 6 / 8;
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      grid-row: 1 / 2;
+
+      width: 100%;
+      z-index: 20;
+
+      align-items: center;
+      justify-content: center;
+
+      a {
+          text-align: center;
+      }
+      
+
+      img {
+          width: 50%;
+      }
+
+
+  }
+
+  #share {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 4;
+      grid-column: 1 / 5;
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 6;
+      grid-row: 2 / 8;
+  }
+
+  #subscribe {
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 4;
+      grid-column: 5 / 9;
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 6;
+      grid-row: 2 / 8;
+  }
+
+  #learn {
+      -ms-grid-column: 9;
+      -ms-grid-column-span: 4;
+      grid-column: 9 / 13;
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 6;
+      grid-row: 2 / 8;
+  }
+
+
+
+
+
+
+  #subscribe, #learn {
+
+      form {
+
+          width: 100%;
+          text-align: left;
+
+      }
+
+
+      a {
+
+          display: block;
+
+      }
+
+      input {
+
+          height: 7vh;
+          font-size: 0.75rem;
+          border: 1px solid #b8bab3;
+          display: block;
+          padding-left: 10px;
+          width: 100%;
+          transition: background-color 0.2s ease-out;
+
+      }
+
+      input::placeholder {
+          color: #b8bab3;
+      }
+
+      button {
+          padding: 0.5rem 1rem;
+          margin: .25rem 0 .125rem 0;
+      }
+
+
+
+      label {
+          font-weight: 700;
+      }
+
+
+      ul {
+          list-style: none;
+          text-align: left;
+          margin: 0;
+          padding: 1rem 0 0 0;
+
+          li {
+              margin: 0;
+              padding: 0;
+          }
+      }
+
+      input[type="submit"] {
+
+          color: white;
+          font-weight: 600;
+          background-color: $brandBlue;
+          border: 2px solid $brandBlue;
+          padding: 0.5rem 2.5rem;
+          font-family: Arial, sans-serif;
+          transition: all 0.3s ease-out;
+          
+      }
+
+
+  }
+
+  .inputGroup {
+
+      margin: 0;
+
+  }
+
+
+  #shareIcons {
+
+      margin-top: 0.75rem;
+
+      a {
+          color: $brandBlue;
+          transition: color 0.3s ease-out;
+          margin: 0 .5rem;
+
+      }
+
+      :hover {
+          color: white;
+      }
+
+  }
+
+  .st-custom-button[data-network] {
+     background-color: none;
+     display: inline-block;
+     padding: 5px 10px;
+     cursor: pointer;
+     font-weight: bold;
+     color: $brandBlue;
+     transition: all 0.3s ease-out;
+     
+     &:hover, &:focus {
+        text-decoration: none;
+        color: white;
+        background-color: none;
+     }
+  }
+
+
+  #sorry {
+
+      display: none;
+      grid-column: 3 / 11;
+      grid-row: 1 / 10;
+      z-index: 30;
+      background-color: white;
+
+
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+              flex-direction: column;
+
+
+      position: relative;
+
+      form {
+
+          width: 100%;
+
+      }
+
+
+      input {
+
+          height: 7vh;
+          font-size: 0.75rem;
+          border: 1px solid #b8bab3;
+          display: block;
+          padding-left: 10px;
+          width: 100%;
+          transition: background-color 0.2s ease-out;
+
+      }
+
+      input::placeholder {
+          color: #b8bab3;
+      }
+
+      textarea {
+          width: 100%;
+          height: 20vh;
+          font-size: 0.75rem;
+          border: 1px solid #b8bab3;
+          padding-left: 10px;
+          color: #b8bab3;
+      }
+
+      label {
+          font-weight: 700;
+      }
+
+
+  }
+
+
+
+
+
+
+
+
+  /*   ////////////////////  Animation   /////////////////   */
+
+
+  /*   Fade In and Out Classes   */
+  @keyframes fadeIn {
+
+      0%{opacity: 0; transform: translateY(10px);}
+      25%{opacity: 0; transform: translateY(10px);}
+      100%{opacity: 1; transform: translateY(0);}
+
+  }
+  @keyframes fadeInTwo {
+
+      0%{opacity: 0; transform: translateY(10px);}
+      35%{opacity: 0; transform: translateY(10px);}
+      100%{opacity: 1; transform: translateY(0);}
+
+  }
+
+
+  @keyframes fadeInT {
+
+      0%{opacity: 0; transform: translateY(10px);}
+      65%{opacity: 0; transform: translateY(-2px);}
+      68%{opacity: 1; transform: translateY(-5px);}
+      90%{opacity: 1; transform: translateY(-5px);}
+      100%{opacity: 1; transform: translateY(0);}
+
+  }
+
+
+
+
+  .fadeInDelay {
+      
+      opacity:0;
+      animation-delay: 1.5s;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      
+  }
+
+
+
+  .fadeIn {
+      
+      opacity:0;
+      animation-name: fadeInTwo;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+  }
+
+
+
+  .fadeInTwo {
+
+      opacity:0;
+      animation-name: fadeInTwo;
+      animation-duration: 1.125s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+  }
+
+
+  .fadeInThree {
+      
+      opacity:0;
+      animation-name: fadeInTwo;
+      animation-duration: 1.25s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+  }
+
+
+  .fadeInFour {
+      
+      opacity:0;
+      animation-name: fadeInTwo;
+      animation-duration: 1.375s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+  }
+
+
+
+  .fadeInFive {
+      
+      opacity:0;
+      animation-name: fadeInTwo;
+      animation-duration: 1.5s;
+      animation-timing-function: ease-out;
+      animation-delay: 0.1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+
+  }
+
+  .fadeInSix {
+      
+      opacity:0;
+      animation-name: fadeInTwo;
+      animation-duration: 1.625s;
+      animation-timing-function: ease-out;
+      animation-delay: 0.1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+
+  }
+
+  .fadeInT {
+      
+      margin-left: 1px;
+      opacity:0;
+      animation-name: fadeInT;
+      animation-duration: 2s;
+      animation-timing-function: cubic-bezier(0.57, 1, 0.9, 1.07);
+      animation-delay: 0.1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+
+  }
+
+
+
+
+
+  @keyframes fadeOut {
+
+      0%{opacity: 1;}
+      25%{opacity: 1;}
+      100%{opacity: 0;}
+
+  }
+
+  @keyframes fadeOutTwo {
+
+      0%{opacity: 1; }
+      100%{opacity: 0; }
+
+  }
+
+  .fadeOut {
+      
+      opacity:1;
+      animation-name: fadeOut;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+  }
+
+  .fadeOutTwo {
+      opacity:1;    
+      animation-name: fadeOutTwo;
+      animation-duration: 0.625s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+  }
+
+  .fadeOutThree {
+      opacity:1;
+      animation-name: fadeOutTwo;
+      animation-duration: 0.75s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+  }
+
+  .fadeOutFour {
+      opacity:1;
+      animation-name: fadeOutTwo;
+      animation-duration: 0.875s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+  }
+
+  .fadeOutFive {
+      opacity:1;
+      animation-name: fadeOutTwo;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+  }
+
+
+
+
+  /*   Full Page Transition   */
+
+  @keyframes pageTrans {
+
+      from {opacity: 0;}
+      to {opacity: 1;}
+
+  }
+
+
+  .pageTran {
+
+      opacity: 0;
+      background-color: azure;
+      animation-name: pageTrans;
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  }
+
+
+  /*   /////////////////////    MEDIA QUERIES    /////////////////////   */
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+
+
+
+      #goLandscape {
+
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 12;
+          grid-column: 1 / 13;
+          -ms-grid-row: 1;
+          -ms-grid-row-span: 9;
+          grid-row: 1 / 10;
+
+
+          margin: -1vh;
+          background-color: white;
+
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+                  flex-direction: column;
+
+          
+          z-index: 60;
+
+          h1 {
+              color: black;
+              text-align: center;
+              padding: 0 2rem;
+          }
+
+          img {
+              margin: 2rem;
+          }
+
+
+      }
+
+
+
+  }
+
+  @media only screen and (min-width: 500px) and (orientation: landscape) {
+
+
+      body {
+          font-size: 14px;
+      }
+
+      #nav {
+        display: none;
+      }
+
+
+  }
+
+
+
+  @media only screen and (min-width: 600px) and (orientation: landscape) {
+
+
+      body {
+          font-size: 16px;
+      }
+
+      #share, #subscribe, #learn {
+
+          p {
+              line-height: 1.15rem;
+          }
+
+      }
+
+      #nav {
+        display: none;
+      }
+
+
+
+  }
+
+  @media only screen and (min-width: 800px) and (orientation: landscape) {
+
+
+      #wantToTry4 {
+
+
+          padding: 0 11rem;
+     
+      }
+
+      #nav {
+        display: none;
+      }
+
+
+
+
+  }
+
+
+
+
+  @media only screen and (min-width: 1000px) and (orientation: landscape) {
+
+
+
+      button {
+
+          padding: 0.5rem 5rem;
+
+      }
+
+      #fullScreen { 
+
+          grid-column: 11 / span 2;
+          grid-row: 1 / 2;
+
+      }
+
+
+      .navButton {
+          width: 2.25rem;
+          height: 2.25rem;
+      }
+
+
+
+      /* Photo of intersection */
+
+      #intersection {
+
+          width: 100%;
+          object-fit: cover;
+          height: 100vh;
+
+      }
+
+
+      #logo {
+          -ms-grid-column: 5;          
+          -ms-grid-column-span: 4;          
+          grid-column: 5 / 9;
+
+          margin-top: 2rem;
+      }
+
+
+      #wantToTry4 {
+
+          padding: 0 7rem;
+     
+      }
+
+      #subscribe, #share, #learn {
+
+          -ms-grid-row: 3;          
+          -ms-grid-row-span: 5;          
+          grid-row: 3 / 8;
+
+          padding: 2rem;
+      }
+
+      #subscribe {
+
+          input {
+              height: 5vh;
+              font-size: 1rem;
+          }
+
+          input[type="submit"] {
+
+              color: white;
+              font-weight: 600;
+              background-color: $brandBlue;
+              border: 2px solid $brandBlue;
+              padding: 0.5rem 2.5rem;
+              font-family: Arial, sans-serif;
+              transition: all 0.3s ease-out;
+              
+          }
+
+
+      }
+
+
+      .inputGroup {
+
+          margin: 1rem 0;
+
+      }
+
+      #sorry {
+          input {
+              font-size: 1rem;
+              height: 5vh;
+          }
+          textarea {
+              font-size: 1rem;
+          }
+      }
+
+
+
+  }
+
+
+
+
+
+  @media only screen and (min-width: 1025px) and (orientation: landscape) {
+
+
+      body {
+          font-size: 21px;
+      }
+
+
+      label {
+        margin-bottom: .5rem;
+      }
+
+      textarea {
+          font-size: 1rem;
+      }
+
+
+
+      .fadeInT {
+          
+          margin-left: 7px;
+
+      }
+
+      #sorry {
+
+
+          -ms-grid-column: 4;
+          -ms-grid-column-span: 6;
+          grid-column: 4 / 10;
+          -ms-grid-row: 2;
+          -ms-grid-row-span: 7;
+          grid-row: 2 / 9;
+
+
+          input, textarea {
+              font-size: 1rem;
+              padding-left: 10px;
+          }
+
+          button {
+              border: 2px solid $brandBlue;
+          }
+
+      }
+
+
+
+
+
+
+
+      /* ////////////////   Navigation   ////////////// */
+
+
+
+      #nav::before {
+
+          width: 30%;
+
+      }
+
+      #nav {
+        display: flex;
+      }
+
+
+
+  /*   ////////////////    Page 3    //////////////    */
+
+      #instructions {
+
+          -ms-grid-column: 2;          
+          -ms-grid-column-span: 10;          
+          grid-column: 2 / 10;
+
+      }
+
+      .instructionCopy {
+          margin: 0 .5rem;
+      }
+
+
+      .steps {
+          padding: 1rem;
+      }
+
+
+  /*   ////////////////    Page 4    //////////////    */
+      #wantToTry4 {
+
+          h1 {
+              line-height: initial;            
+          }
+
+     
+      }
+
+
+      /*   ///////////////   Page 6   //////////////   */
+
+      #share, #learn, #subscribe {
+
+          -ms-grid-row: 3;          
+          -ms-grid-row-span: 5;          
+          grid-row: 3 / 8;
+
+          padding: 2rem;
+
+              form {
+
+                  width: 20vw;
+
+              }
+
+              p {
+                  margin-top: 1rem;
+                  line-height: initial;
+                  padding-top: initial;
+                  margin-bottom: initial;
+              }
+
+              input, textarea {
+
+                  font-size: 1rem;
+
+              }
+
+              input[type="submit"] {
+
+                  color: white;
+                  font-weight: 600;
+                  background-color: $brandBlue;
+                  border: 2px solid $brandBlue;
+                  padding: 0.5rem 1rem;
+                  margin: .25rem 0 .125rem 0;
+                  font-family: Arial, sans-serif;
+                  transition: all 0.3s ease-out;
+                  font-size: initial;
+                  
+              }
+
+
+
+
+      }
+
+
+      #share {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 4;
+          grid-column: 1 / 5;
+        
+      }
+
+      #subscribe {
+          -ms-grid-column: 5;
+          -ms-grid-column-span: 4;
+          grid-column: 5 / 9;
+         
+      }
+
+      #learn {
+          -ms-grid-column: 9;
+          -ms-grid-column-span: 4;
+          grid-column: 9 / 13;
+         
+      }
+
+
+
+  }
+
+
+/*   ////////////   Start Feature Query  ////////////   */
+
+@supports (grid-gap:0) {
+
+
+
+  .gridContainer {
+
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 10vh;
+      grid-gap: 1vh;
+      grid-auto-flow: row;
+      
+
+  }
+
+/*  .gridContainer > * {
+
+      grid-column: 1 / span 12;
+
+  }*/
+
+
+
+
+  /*  ///  Go Full Screen  ///  */
+
+
+
+
+  #nav {
+
+      grid-column: 5 / span 4;
+      grid-row: 8 / 9;
+
+  }
+
+
+
+
+
+
+  #bigI {
+
+      grid-column: 5 / span 4;
+      grid-row: 1 / 2;
+
+  }
+
+
+  /* Instructions */
+  #instructions {
+
+      grid-column: 2 / span 10;
+      grid-row: 1 / 8;
+
+  }
+
+
+  #logo {
+
+      grid-column: 6 / span 2;
+      grid-row: 1 / 2;
+
+  }
+
+  #share {
+      grid-column: 1 / span 4;
+      grid-row: 2 / 8;
+  }
+
+  #subscribe {
+      grid-column: 5 / span 4;
+      grid-row: 2 / 8;
+  }
+
+  #learn {
+      grid-column: 9 / span 4;
+      grid-row: 2 / 8;
+  }
+
+
+  #sorry {
+
+      grid-column: 3 / span 8;
+      grid-row: 1 / 10;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+/*   /////////////////////    MEDIA QUERIES    /////////////////////   */
+
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+
+
+
+  #goLandscape {
+
+      grid-column: 1 / span 12;
+      grid-row: 1 / 10;
+
+  }
+
+
+
+}
+
+
+
+  @media only screen and (min-width: 1000px) and (orientation: landscape) {
+
+
+      #logo {
+
+          grid-column: 5 / span 4;
+
+      }
+
+
+
+
+
+  }
+
+
+  @media only screen and (min-width: 1025px) and (orientation: landscape) {
+
+      #sorry {
+
+          grid-column: 4 / span 6;
+          grid-row: 2 / 9;
+
+
+      }
+
+
+  /*   ////////////////    Page 3    //////////////    */
+
+      #instructions {
+
+          grid-column: 2 / span 10;
+
+      }
+
+      /*   ///////////////   Page 6   //////////////   */
+
+
+      #share {
+          grid-column: 1 / span 4;
+        
+      }
+
+      #subscribe {
+          grid-column: 5 / span 4;
+         
+      }
+
+      #learn {
+          grid-column: 9 / span 4;
+         
+      }
+
+
+  }
+
+
+} 
+/*   //// End Feature Query ////  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
