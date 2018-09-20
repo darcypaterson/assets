@@ -8,30 +8,30 @@ var canvas = document.getElementsByTagName('canvas')[0];
 
 navButton[0].addEventListener('click', function() {
 
-	document.getElementById('introTextSm').add('dBlock');
-	document.getElementById('introTextLg').add('dBlock');
-	document.getElementById('introTextSm').remove('dNone');
-	document.getElementById('introTextLg').remove('dNone');
+	document.getElementById('introTextSm')classList.add('dBlock');
+	document.getElementById('introTextLg')classList.add('dBlock');
+	document.getElementById('introTextSm')classList.remove('dNone');
+	document.getElementById('introTextLg')classList.remove('dNone');
 
-	document.getElementById('scene2Text').add('dNone');
-	document.getElementById('scene2Button').add('dNone');
-	document.getElementById('scene2Text').remove('dBlock');
-	document.getElementById('scene2Button').remove('dBlock');
+	document.getElementById('scene2Text')classList.add('dNone');
+	document.getElementById('scene2Button')classList.add('dNone');
+	document.getElementById('scene2Text')classList.remove('dBlock');
+	document.getElementById('scene2Button')classList.remove('dBlock');
 
 });
 
 
 navButton[1].addEventListener('click', function() {
 
-	document.getElementById('introTextSm').remove('dBlock');
-	document.getElementById('introTextLg').remove('dBlock');
-	document.getElementById('introTextSm').add('dNone');
-	document.getElementById('introTextLg').add('dNone');
+	document.getElementById('introTextSm')classList.remove('dBlock');
+	document.getElementById('introTextLg')classList.remove('dBlock');
+	document.getElementById('introTextSm')classList.add('dNone');
+	document.getElementById('introTextLg')classList.add('dNone');
 
-	document.getElementById('scene2Text').remove('dNone');
-	document.getElementById('scene2Button').remove('dNone');
-	document.getElementById('scene2Text').add('dBlock');
-	document.getElementById('scene2Button').add('dBlock');
+	document.getElementById('scene2Text')classList.remove('dNone');
+	document.getElementById('scene2Button')classList.remove('dNone');
+	document.getElementById('scene2Text')classList.add('dBlock');
+	document.getElementById('scene2Button')classList.add('dBlock');
 
 });
 
