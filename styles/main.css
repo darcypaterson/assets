@@ -288,6 +288,9 @@ canvas {
   font-size: 12rem;
   font-weight: 900; }
 
+#mouse {
+  background-color: pink; }
+
 footer {
   /*    grid-column: 12 / 13;
     grid-row: 9 / 10;
