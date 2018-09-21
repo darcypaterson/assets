@@ -621,22 +621,26 @@
 			controls.update();
 
 
+			function animate() {
 
+				requestAnimationFrame(animate);
+
+
+				renderer.render(scene, camera);
+				
+				
+
+			}
+
+
+			animate();
 
 
 		}
 
-		function animate() {
-
-			requestAnimationFrame(animate);
 
 
-			renderer.render(scene, camera);
-			
-			
-
-		}
 
 
-		animate();
-		init();
+	
+		window.onload = init;
