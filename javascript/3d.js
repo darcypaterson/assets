@@ -618,9 +618,7 @@
 
 
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
-			controls.maxDistance = 300;
-			controls.enablePan = true;
-			controls.enableRotate = true;
+			
 			
 			controls.update();
 
@@ -636,18 +634,8 @@
 
 				camera.lookAt(new THREE.Vector3( 0, 20, 0 ));
 
-
-
 				renderer.render(scene, camera);
-
-				grid.addEventListener('mousedown', function(e) {
-
-					e.preventDefault();
-					document.getElementById("nav").style.backgroundColor = 'yellow';
-					camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
-
-				});
-
+				
 				
 
 			}
