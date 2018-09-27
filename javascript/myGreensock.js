@@ -49,7 +49,7 @@ nav2.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:1});
 	TweenMax.to("#sorry", 1, {autoAlpha:1});
 
@@ -87,7 +87,7 @@ nav3.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 
@@ -124,7 +124,7 @@ nav4.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 
@@ -161,7 +161,7 @@ nav5.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 
@@ -196,7 +196,7 @@ nav6.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 
