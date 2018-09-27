@@ -628,7 +628,7 @@
 			// camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 
-console.log(camera.position.x, camera.position.y, camera.position.z);
+
 
 
 
@@ -636,14 +636,47 @@ console.log(camera.position.x, camera.position.y, camera.position.z);
 
 				requestAnimationFrame(animate);
 
-				// ncube.rotation.x += 0.01;
-				// ncube.rotation.y += 0.02;
+				renderer.render(scene, camera);
 
-				// ncube.translate.x += 0.09;
 
+				if (keyboard[87]) { // W key
+
+					camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
+					camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+				}
+
+				if (keyboard[83]) { // S key
+
+					camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+					camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+				}
+
+				if (keyboard[65]) { // A key
 				
 
-				renderer.render(scene, camera);
+					camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
+					camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
+				}
+
+				if (keyboard[68]) { // D key
+				
+
+					camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
+					camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
+				}
+
+				if (keyboard[37]) { // left arrow key
+
+					camera.rotation.y -= player.turnSpeed;
+
+				}
+				if (keyboard[39]) { // right arrow key
+
+					camera.rotation.y += player.turnSpeed;
+
+				}
+
+				console.log(camera.position.x, camera.position.y, camera.position.z);
 
 
 			}
@@ -656,20 +689,20 @@ console.log(camera.position.x, camera.position.y, camera.position.z);
 
 
 
-		// function keyDown(e) {
+		function keyDown(e) {
 
-		// 	keyboard[e.keyCode] = true;
+			keyboard[e.keyCode] = true;
 
-		// }
+		}
 
-		// function keyUp(e) {
+		function keyUp(e) {
 
-		// 	keyboard[e.keyCode] = false;
+			keyboard[e.keyCode] = false;
 
-		// }
+		}
 
-		// window.addEventListener('keydown', keyDown);
-		// window.addEventListener('keyup', keyUp);
+		window.addEventListener('keydown', keyDown);
+		window.addEventListener('keyup', keyUp);
 
 	
 		window.onload = init;
