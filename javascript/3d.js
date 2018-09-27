@@ -4,7 +4,9 @@
 
 
 		var keyboard = {};
-		var player = { height: 0.9, speed: 0.1, turnSpeed: Math.PI * 0.02 };
+		var player = { height: 0.85, speed: 0.1, turnSpeed: Math.PI * 0.02 };
+
+		cameraInCar = {x: -6.4, y: 0.85, z: .5 };
 
 		function init() {
 
@@ -517,7 +519,7 @@
 
 			// Camera
 
-			camera.position.set( -20, player.height, -20 );
+			camera.position.set( -30, player.height, -30 );
 			camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 
