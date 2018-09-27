@@ -628,6 +628,7 @@
 			// camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 
+console.log(camera.position.x, camera.position.y, camera.position.z);
 
 
 
