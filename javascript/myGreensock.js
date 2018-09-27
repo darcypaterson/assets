@@ -1,4 +1,5 @@
 var camera;
+var cameraInCar;
 var nav1 = document.getElementsByClassName('navButton')[0];
 var nav2 = document.getElementsByClassName('navButton')[1];
 var nav3 = document.getElementsByClassName('navButton')[2];
@@ -111,7 +112,7 @@ nav3.addEventListener('click', function() {
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
-	camer.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
+	camera.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
 
 });
 
