@@ -4,7 +4,7 @@
 
 
 		var keyboard = {};
-		var player = { height: 1.8, speed: 0.1, turnSpeed: Math.PI * 0.02 };
+		var player = { height: 0.6, speed: 0.1, turnSpeed: Math.PI * 0.02 };
 
 		function init() {
 
@@ -560,9 +560,9 @@
 
 			
 
-			// controls = new THREE.OrbitControls( camera, renderer.domElement );
-			// controls.enablePan = true;
-			// controls.enableRotate = true;
+			controls = new THREE.OrbitControls( camera, renderer.domElement );
+			controls.enablePan = true;
+			controls.enableRotate = true;
 
 
 
