@@ -556,28 +556,11 @@
 			});
 
 
-			var yAxis = 20;
 						
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
-			camera.lookAt(new THREE.Vector3( 0, yAxis, 0 ));
+			camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
 
-			window.addEventListener('click', function() {
-
-				if ( yAxis <= 20 ) {
-
-					yAxis -= 1;
-					console.log(yAxis);
-
-				} else if ( yAxis = 0 ) {
-
-					yAxis = 0;
-					console.log(yAxis);
-				}
-
-
-			});
-
-
+			
 
 
 			function animate() {

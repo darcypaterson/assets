@@ -32,7 +32,7 @@ grid.addEventListener('mousedown', function(e) {
 	navButton[4].classList.add('fadeInFive');
 	navButton[5].classList.add('fadeInSix');
 
-	canvas.classList.add('fadeInSix');
+	canvas.style.backgroundColor = 'red';
 
 });
 
