@@ -4,7 +4,7 @@
 
 
 		var keyboard = {};
-		var player = { height: 0.6, speed: 0.1, turnSpeed: Math.PI * 0.02 };
+		var player = { height: 0.9, speed: 0.1, turnSpeed: Math.PI * 0.02 };
 
 		function init() {
 
@@ -517,7 +517,7 @@
 
 			// Camera
 
-			camera.position.set( -50, player.height, -50 );
+			camera.position.set( -20, player.height, -20 );
 			camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 
