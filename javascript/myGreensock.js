@@ -93,7 +93,7 @@ nav3.addEventListener('click', function() {
 
 // Page 3
 
-	newCam();
+
 
 	TweenMax.to("#bigI", 1, {autoAlpha:1});
 	TweenMax.to("#instructions", 1, {autoAlpha:1});
