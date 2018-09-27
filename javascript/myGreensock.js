@@ -20,7 +20,8 @@ nav1.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
+	newCam();
+
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -56,7 +57,8 @@ nav2.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
+	newCam();
+
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -95,7 +97,8 @@ nav3.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
+	newCam();
+
 	TweenMax.to("#bigI", 1, {autoAlpha:1});
 	TweenMax.to("#instructions", 1, {autoAlpha:1});
 
@@ -131,7 +134,8 @@ nav4.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
+	newCam();
+
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -169,7 +173,8 @@ nav5.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
+	newCam();
+
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -205,7 +210,8 @@ nav6.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
+	newCam();
+
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -228,24 +234,16 @@ nav6.addEventListener('click', function() {
 
 
 
-// nav6.addEventListener('click', function() {
 
-// 	if (document.getElementById('share').style.opacity = '1' ) {
+function newCam () {
 
-// 		document.getElementById('mainSix').style.zIndex = '30';
-// 		document.getElementById('mainSix').style.backgroundColor = 'red';
+	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
+
+	controls.enablePan = false;
+	controls.enableRotate = false;
 
 
-// 	} else if (document.getElementById('share').style.opacity = '0' ) {
-
-// 		document.getElementById('mainSix').style.zIndex = '-10';
-// 		document.getElementById('mainSix').style.backgroundColor = 'green';
-
-// 	}
-
-// 	document.getElementById('mainSix').style.backgroundColor = 'red';
-// });
-
+};
 
 
 
