@@ -6,7 +6,7 @@
 		var keyboard = {};
 		var player = { height: 0.85, speed: 0.1, turnSpeed: Math.PI * 0.02 };
 
-		cameraInCar = {x: -6.4, y: 0.85, z: .5 };
+		cameraInCar = {x: -6.4, y: 0.8125, z: .425 };
 
 		function init() {
 
