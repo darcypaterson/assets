@@ -49,7 +49,7 @@ nav2.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:1});
 	TweenMax.to("#sorry", 1, {autoAlpha:1});
 
@@ -87,13 +87,11 @@ nav3.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 
 // Page 3
-
-
 
 	TweenMax.to("#bigI", 1, {autoAlpha:1});
 	TweenMax.to("#instructions", 1, {autoAlpha:1});
@@ -113,6 +111,8 @@ nav3.addEventListener('click', function() {
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
+	camer.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
+
 });
 
 nav4.addEventListener('click', function() {
@@ -124,7 +124,7 @@ nav4.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 
@@ -161,7 +161,7 @@ nav5.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 
@@ -196,7 +196,7 @@ nav6.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {cameraInCar.x, cameraInCar.y, cameraInCar.z ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 
