@@ -540,7 +540,6 @@
 
 			renderer = new THREE.WebGLRenderer( { antialias: true } );
 			renderer.setSize( window.innerWidth, window.innerHeight );
-			// document.body.appendChild(renderer.domElement);
 			document.getElementById("grid").appendChild(renderer.domElement);
 			renderer.shadowMap.enabled = true;
 			renderer.shadowMap.type = THREE.BasicShadowMap;
@@ -565,64 +564,59 @@
 			controls.enablePan = true;
 			controls.enableRotate = true;
 
-			
-
-			
-
-
-
-
-			function animate() {
-
-				requestAnimationFrame(animate);
-
-				renderer.render(scene, camera);
-
-
-				if (keyboard[87]) { // W key
-
-					camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
-					camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
-				}
-
-				if (keyboard[83]) { // S key
-
-					camera.position.x += Math.sin(camera.rotation.y) * player.speed;
-					camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
-				}
-
-				if (keyboard[65]) { // A key
-				
-
-					camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
-					camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
-				}
-
-				if (keyboard[68]) { // D key
-				
-
-					camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
-					camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
-				}
-
-				if (keyboard[37]) { // left arrow key
-
-					camera.rotation.y -= player.turnSpeed;
-
-				}
-				if (keyboard[39]) { // right arrow key
-
-					camera.rotation.y += player.turnSpeed;
-
-				}
-
-				console.log(camera.position.x, camera.position.y, camera.position.z);
-
-
-			}
 
 
 			animate();
+
+
+		}
+
+
+		function animate() {
+
+			requestAnimationFrame(animate);
+
+			renderer.render(scene, camera);
+
+
+			if (keyboard[87]) { // W key
+
+				camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
+				camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+			}
+
+			if (keyboard[83]) { // S key
+
+				camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+				camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+			}
+
+			if (keyboard[65]) { // A key
+			
+
+				camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
+				camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
+			}
+
+			if (keyboard[68]) { // D key
+			
+
+				camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
+				camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
+			}
+
+			if (keyboard[37]) { // left arrow key
+
+				camera.rotation.y -= player.turnSpeed;
+
+			}
+			if (keyboard[39]) { // right arrow key
+
+				camera.rotation.y += player.turnSpeed;
+
+			}
+
+			console.log(camera.position.x, camera.position.y, camera.position.z);
 
 
 		}

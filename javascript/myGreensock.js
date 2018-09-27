@@ -20,8 +20,6 @@ nav1.addEventListener('click', function() {
 
 // Page 3
 
-	newCam();
-
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -56,8 +54,6 @@ nav2.addEventListener('click', function() {
 	TweenMax.to("#sorry", 1, {autoAlpha:1});
 
 // Page 3
-
-	newCam();
 
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
@@ -134,8 +130,6 @@ nav4.addEventListener('click', function() {
 
 // Page 3
 
-	newCam();
-
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -173,8 +167,6 @@ nav5.addEventListener('click', function() {
 
 // Page 3
 
-	newCam();
-
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -209,8 +201,6 @@ nav6.addEventListener('click', function() {
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 
 // Page 3
-
-	newCam();
 
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
