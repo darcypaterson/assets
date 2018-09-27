@@ -1,3 +1,4 @@
+var camera;
 var nav1 = document.getElementsByClassName('navButton')[0];
 var nav2 = document.getElementsByClassName('navButton')[1];
 var nav3 = document.getElementsByClassName('navButton')[2];
@@ -19,7 +20,7 @@ nav1.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:15, y: 0, z:15, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -55,7 +56,7 @@ nav2.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:15, y: 0, z:15, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -94,7 +95,7 @@ nav3.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:15, y: 0, z:15, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
 	TweenMax.to("#bigI", 1, {autoAlpha:1});
 	TweenMax.to("#instructions", 1, {autoAlpha:1});
 
@@ -130,7 +131,7 @@ nav4.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:15, y: 0, z:15, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -168,7 +169,7 @@ nav5.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:15, y: 0, z:15, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -204,7 +205,7 @@ nav6.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to(camera.position, 3, {x:15, y: 0, z:15, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
 	TweenMax.to("#bigI", 1, {autoAlpha:0});
 	TweenMax.to("#instructions", 1, {autoAlpha:0});
 
@@ -226,7 +227,6 @@ nav6.addEventListener('click', function() {
 });
 
 
-console.log(camera.position.x, camera.position.y, camera.position.z);
 
 // nav6.addEventListener('click', function() {
 
