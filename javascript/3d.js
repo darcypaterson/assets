@@ -517,7 +517,7 @@
 
 			// Camera
 
-			camera.position.set( -50, -30, -50 );
+			camera.position.set( -50, player.height, -50 );
 			camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 
@@ -631,7 +631,7 @@
 
 		function keyUp(e) {
 
-			keyboard[e.keyCode] = true;
+			keyboard[e.keyCode] = false;
 
 		}
 
