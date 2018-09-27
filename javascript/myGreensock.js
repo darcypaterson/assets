@@ -113,7 +113,7 @@ nav3.addEventListener('click', function() {
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
 	camera.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
-	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z);
+	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 
 });
 
