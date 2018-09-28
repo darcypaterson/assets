@@ -267,14 +267,14 @@ function newCam () {
 document.getElementById('closeInstruct').addEventListener('click', function() {
 
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
+
 
 // Nav
 
 TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:1});
 
 });
-
-
 
 
 
