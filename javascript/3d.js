@@ -522,12 +522,11 @@
 
 			// Camera
 
-			camera.position.set( -30, player.height, -30 );
+			camera.position.set( -50, player.height, -40 );
 			camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 
 			// Lighting
-
 
 			var directionalLight = new THREE.DirectionalLight( 0xffffff, 2 );
 			directionalLight.position.set( -12, 10, -8 );
