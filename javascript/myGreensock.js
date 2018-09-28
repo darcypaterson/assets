@@ -38,6 +38,13 @@ nav1.addEventListener('click', function() {
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
+
+
+
+camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
+	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
+
+
 });
 
 nav2.addEventListener('click', function() {
@@ -71,6 +78,13 @@ nav2.addEventListener('click', function() {
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
+
+
+
+
+camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
+	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
+
 
 	// Camera
 
@@ -112,6 +126,10 @@ nav3.addEventListener('click', function() {
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
+
+// Nav
+
+TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:0});
 
 // Change Camera
 
@@ -156,6 +174,10 @@ nav4.addEventListener('click', function() {
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
 
+camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
+	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
+
+
 });
 
 
@@ -191,7 +213,6 @@ nav5.addEventListener('click', function() {
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
-
 });
 
 nav6.addEventListener('click', function() {
@@ -225,6 +246,11 @@ nav6.addEventListener('click', function() {
 	TweenMax.to("#subscribe", 1, {autoAlpha:1});
 	TweenMax.to("#learn", 1, {autoAlpha:1});
 
+
+
+camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
+	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
+
 });
 
 
@@ -241,6 +267,10 @@ function newCam () {
 document.getElementById('closeInstruct').addEventListener('click', function() {
 
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+
+// Nav
+
+TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:1});
 
 });
 
