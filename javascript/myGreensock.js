@@ -75,8 +75,7 @@ nav2.addEventListener('click', function() {
 	// Camera
 
 	TweenMax.to(camera.position, 3, {x: 26, y: 27, z: -.125, ease: Power2.easeOut });
-	TweenMax.to(camera.lookAt(new THREE.Vector3( x: 0, y:0 , z:0 ));
-
+	TweenMax.to(camera.lookAt, 3, { x: 0, y:0 , z:0, ease: Power2.easeOut } );
 
 });
 
