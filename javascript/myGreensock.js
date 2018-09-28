@@ -119,6 +119,7 @@ nav3.addEventListener('click', function() {
 
 	camera.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
 	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
+	document.getElementsByTagName('canvas')[0].style.filter = 'blur(20px)';
 
 });
 
