@@ -72,6 +72,10 @@ nav2.addEventListener('click', function() {
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
+	// Camera
+
+	TweenMax.to(camera.position, 3, {x: 26, y: 27, z: -.125, ease: Power2.easeOut });
+
 
 });
 
