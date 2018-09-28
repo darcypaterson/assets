@@ -522,7 +522,7 @@
 
 			// Camera
 
-			camera.position.set( -50, player.height, -40 );
+			camera.position.set( -50, -30, -40 );
 			camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 
