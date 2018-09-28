@@ -109,6 +109,10 @@ nav3.addEventListener('click', function() {
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
+// Change Camera
+
+	newCam();
+
 	camera.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
 	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 
@@ -222,8 +226,6 @@ nav6.addEventListener('click', function() {
 
 
 function newCam () {
-
-	TweenMax.to(camera.position, 3, {x:.125, y: 1.5, z:.125, ease: Power2.easeOut});
 
 	controls.enablePan = false;
 	controls.enableRotate = false;
