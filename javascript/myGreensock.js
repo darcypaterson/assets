@@ -44,7 +44,6 @@ nav1.addEventListener('click', function() {
 
 
 
-	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 
 	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
@@ -91,7 +90,6 @@ nav2.addEventListener('click', function() {
 
 
 
-	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 
 	oldCam();
 	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
@@ -151,7 +149,6 @@ nav3.addEventListener('click', function() {
 	newCam();
 
 	camera.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
-	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 
 
 	document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
@@ -204,7 +201,6 @@ nav4.addEventListener('click', function() {
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
-	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 
 	oldCam();
 
@@ -299,7 +295,6 @@ nav6.addEventListener('click', function() {
 	TweenMax.to("#learn", 1, {autoAlpha:1});
 	TweenMax.to("#mainSix", 1, {autoAlpha:1});	
 
-	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 	
 	oldCam();
 
