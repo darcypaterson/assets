@@ -95,6 +95,9 @@ nav2.addEventListener('click', function() {
 	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
+
+	TweenMax.to(camera.position, 3, {x:-20, y: 10, ease: Power2.easeOut});
+
 	// Camera
 
 	// TweenMax.to(camera.position, 3, {x: 26, y: 27, z: -.125, ease: Power2.easeOut });
@@ -296,7 +299,6 @@ nav6.addEventListener('click', function() {
 	TweenMax.to("#learn", 1, {autoAlpha:1});
 	TweenMax.to("#mainSix", 1, {autoAlpha:1});	
 
-	
 	oldCam();
 
 	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
