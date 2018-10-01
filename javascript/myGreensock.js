@@ -86,7 +86,6 @@ nav2.addEventListener('click', function() {
 
 
 	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
-	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
 
 	oldCam();
 	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
