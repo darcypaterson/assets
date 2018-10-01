@@ -96,9 +96,30 @@ nav2.addEventListener('click', function() {
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
 
-	TweenMax.to(camera.position, 3, {x: -20, y: 10, z: 10, ease: Power2.easeOut});
-	TweenMax.to(camera.lookAt, 3, { x: 0, y:0 , z:0, ease: Power2.easeOut, delay:3 } );
+	// TweenMax.to(camera.position, 3, {x: -20, y: 10, z: 10, ease: Power2.easeOut});
 
+	var positionCam = { x: 25, y: 0, z: 25 };
+	var targetCam = { x: 125, y: 50, z: 125 };
+
+	var tweenCam = new TWEEN.Tween(positionCam).to(targetCam, 1000);
+
+
+
+	tweenCam.onUpdate(function() {
+
+		camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
+
+		camera.position.x = positionCam.x;
+		camera.position.y = positionCam.y;
+		camera.position.z = positionCam.z;
+
+	});
+
+	tweenCam.delay(500);
+
+	tweenCam.start();
+
+	
 	// Camera
 
 	// TweenMax.to(camera.position, 3, {x: 26, y: 27, z: -.125, ease: Power2.easeOut });
@@ -336,6 +357,11 @@ document.getElementById('closeInstruct').addEventListener('click', function() {
 	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:1});
 
 });
+
+
+
+
+
 
 
 
