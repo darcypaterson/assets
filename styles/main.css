@@ -373,40 +373,14 @@ footer {
     margin-bottom: 1.5rem; }
 
 /*   Page 3   */
-/* Photo of intersection */
-#intersection {
-  width: 100%;
-  object-fit: cover;
-  height: 165vh; }
-
 @keyframes intersect {
   0% {
-    opacity: 1;
     filter: blur(0); }
   100% {
-    opacity: 0.1;
-    filter: blur(2px); } }
+    filter: blur(10px); } }
 
-.instructIntersect {
-  animation-name: intersect;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-  animation-duration: .5s; }
-
-@keyframes intersectRev {
-  0% {
-    opacity: 1;
-    filter: blur(0); }
-  100% {
-    opacity: 0.1;
-    filter: blur(2px); } }
-
-.instructIntersectRev {
-  animation-name: intersectRev;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-  animation-duration: .5s;
-  animation-direction: reverse; }
+.blur {
+  animation: intersect 1s ease-out forwards; }
 
 /* Instructions Button */
 #bigI {
