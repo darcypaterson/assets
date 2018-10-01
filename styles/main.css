@@ -373,14 +373,23 @@ footer {
     margin-bottom: 1.5rem; }
 
 /*   Page 3   */
-@keyframes intersect {
+@keyframes blurIn {
   0% {
     filter: blur(0); }
   100% {
     filter: blur(10px); } }
 
-.blur {
-  animation: intersect 1s ease-out forwards; }
+@keyframes blurOut {
+  0% {
+    filter: blur(10px); }
+  100% {
+    filter: blur(0px); } }
+
+.blurIn {
+  animation: blurIn 3s ease-out forwards; }
+
+.blurOut {
+  animation: blurOut 3s ease-out forwards; }
 
 /* Instructions Button */
 #bigI {

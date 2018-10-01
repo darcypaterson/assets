@@ -619,18 +619,30 @@ footer {
 
 
 
-@keyframes intersect {
+@keyframes blurIn {
 
     0% { filter: blur(0); }
     100% { filter: blur(10px); }
 
 }
 
+@keyframes blurOut {
+
+    0% { filter: blur(10px); }
+    100% { filter: blur(0px); }
+
+}
 
 
-.blur {
+.blurIn {
 
-    animation: intersect 1s ease-out forwards;
+    animation: blurIn 3s ease-out forwards;
+
+}
+
+.blurOut {
+
+    animation: blurOut 3s ease-out forwards;
 
 }
 
