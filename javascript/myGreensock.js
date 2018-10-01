@@ -97,6 +97,7 @@ nav2.addEventListener('click', function() {
 
 
 	TweenMax.to(camera.position, 3, {x: -20, y: 10, z: 10, ease: Power2.easeOut});
+	TweenMax.to(camera.lookAt, 3, { x: 0, y:0 , z:0, ease: Power2.easeOut, delay:3 } );
 
 	// Camera
 
