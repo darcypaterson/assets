@@ -307,7 +307,8 @@ function oldCam () {
 document.getElementById('closeInstruct').addEventListener('click', function() {
 
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
+	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
+	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
 	// Nav
 
