@@ -96,7 +96,7 @@ nav2.addEventListener('click', function() {
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
 
-	TweenMax.to(camera.position, 3, {x:-20, y: 10, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: -20, y: 10, z: 10, ease: Power2.easeOut});
 
 	// Camera
 
