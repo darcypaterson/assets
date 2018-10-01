@@ -438,7 +438,7 @@ canvas {
 
 }
 
-#mainOne, #mainTwo, #mainFour, #mainFive {
+#mainOne, #mainTwo {
 
     grid-column: 1 / 13;
     grid-row: 2 / 4;
@@ -463,6 +463,28 @@ canvas {
     width: 100%;
     height: 100%;
     z-index: 30;
+    background-color: rgba(61, 61, 61, 0.7);
+    
+
+}
+
+#mainFour, #mainFive {
+
+    grid-column: 1 / 13;
+    grid-row: 1 / 10;
+
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 30;
+
     background-color: rgba(61, 61, 61, 0.7);
     
 
