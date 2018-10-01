@@ -41,10 +41,11 @@ nav1.addEventListener('click', function() {
 
 
 
-camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
+	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 
+	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
+	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
-	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
 	oldCam();
 
 });
@@ -88,6 +89,7 @@ nav2.addEventListener('click', function() {
 	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
 
 	oldCam();
+	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
 	// Camera
@@ -141,6 +143,9 @@ nav3.addEventListener('click', function() {
 
 	camera.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
 	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
+
+
+	document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
 	document.getElementsByTagName('canvas')[0].classList.add('blurIn');
 
 });
@@ -188,10 +193,12 @@ nav4.addEventListener('click', function() {
 
 
 	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
-	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
 
 	oldCam();
+
+	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
+
 
 
 });
@@ -229,11 +236,11 @@ nav5.addEventListener('click', function() {
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
-
-
-	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
-
 	oldCam();
+
+	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
+	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
+
 
 
 });
@@ -273,9 +280,11 @@ nav6.addEventListener('click', function() {
 
 	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 	
-	document.getElementsByTagName('canvas')[0].style.filter = 'blur(0px)';
-
 	oldCam();
+
+	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
+	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
+
 
 });
 
