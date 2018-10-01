@@ -18,6 +18,7 @@ nav1.addEventListener('click', function() {
 
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
 
@@ -26,10 +27,12 @@ nav1.addEventListener('click', function() {
 // Page 4
 
 	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 // Page 5
 
 	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:0});
 
 // Page 6
 
@@ -37,7 +40,7 @@ nav1.addEventListener('click', function() {
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
-
+	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
 
 
@@ -62,6 +65,7 @@ nav2.addEventListener('click', function() {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:1});
 	TweenMax.to("#sorry", 1, {autoAlpha:1});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:1});
 
 // Page 3
 
@@ -70,10 +74,12 @@ nav2.addEventListener('click', function() {
 // Page 4
 
 	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 // Page 5
 
 	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:0});
 
 // Page 6
 
@@ -81,7 +87,7 @@ nav2.addEventListener('click', function() {
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
-
+	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
 
 
@@ -112,6 +118,7 @@ nav3.addEventListener('click', function() {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
 
@@ -120,10 +127,12 @@ nav3.addEventListener('click', function() {
 // Page 4
 
 	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 // Page 5
 
 	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:0});
 
 // Page 6
 
@@ -131,6 +140,7 @@ nav3.addEventListener('click', function() {
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
+	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
 // Nav
 
@@ -170,6 +180,7 @@ nav4.addEventListener('click', function() {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
 
@@ -178,10 +189,12 @@ nav4.addEventListener('click', function() {
 // Page 4
 
 	TweenMax.to("#wantToTry4", 1, {autoAlpha:1});
+	TweenMax.to("#mainFour", 1, {autoAlpha:1});
 
 // Page 5
 
 	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:0});
 
 // Page 6
 
@@ -189,7 +202,7 @@ nav4.addEventListener('click', function() {
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
-
+	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
 	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 
@@ -215,6 +228,7 @@ nav5.addEventListener('click', function() {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
 
@@ -223,10 +237,12 @@ nav5.addEventListener('click', function() {
 // Page 4
 
 	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 // Page 5
 
 	TweenMax.to("#wantToTry5", 1, {autoAlpha:1});
+	TweenMax.to("#mainFive", 1, {autoAlpha:1});
 
 // Page 6
 
@@ -234,6 +250,7 @@ nav5.addEventListener('click', function() {
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
+	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
 	oldCam();
 
@@ -250,11 +267,15 @@ nav6.addEventListener('click', function() {
 	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
 	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
 
+
+
 // Page 2
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
 
 // Page 3
 
@@ -263,10 +284,12 @@ nav6.addEventListener('click', function() {
 // Page 4
 
 	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 // Page 5
 
 	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:0});
 
 // Page 6
 
@@ -274,8 +297,7 @@ nav6.addEventListener('click', function() {
 	TweenMax.to("#share", 1, {autoAlpha:1});
 	TweenMax.to("#subscribe", 1, {autoAlpha:1});
 	TweenMax.to("#learn", 1, {autoAlpha:1});
-
-
+	TweenMax.to("#mainSix", 1, {autoAlpha:1});	
 
 	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 	
