@@ -91,7 +91,7 @@ nav2.addEventListener('click', function() {
 
 
 
-	oldCam();
+	// oldCam();
 	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
