@@ -97,8 +97,9 @@ nav2.addEventListener('click', function() {
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
 
-	TweenMax.to(camera.position, 3, {x: -40, y: 20, z: -30, ease: Power2.easeOut});
 	camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
+	TweenMax.to(camera.position, 3, {x: -50, y: 22, z: 0, ease: Power2.easeOut});
+	
 
 	// var positionCam = { x: -50, y: -30, z: -40 };
 	// var targetCam = { x: 125, y: 50, z: 125 };
