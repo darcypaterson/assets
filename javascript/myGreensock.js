@@ -61,7 +61,8 @@ nav2.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {y: -15, ease: Power2.easeOut});
+	TweenMax.to(scene.rotation, 3, {y: 90 * ( Math.PI / 90 ), ease: Power2.easeOut });
 	TweenMax.to("#wantToTry", 1, {autoAlpha:1});
 	TweenMax.to("#sorry", 1, {autoAlpha:1});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:1});
@@ -119,7 +120,7 @@ nav2.addEventListener('click', function() {
 
 	tweenCam.start();
 
-	
+
 	// Camera
 
 	// TweenMax.to(camera.position, 3, {x: 26, y: 27, z: -.125, ease: Power2.easeOut });
