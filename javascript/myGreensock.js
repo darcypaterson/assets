@@ -7,6 +7,8 @@ var nav4 = document.getElementsByClassName('navButton')[3];
 var nav5 = document.getElementsByClassName('navButton')[4];
 var nav6 = document.getElementsByClassName('navButton')[5];
 
+var cam = {x:-50, y:-30, z:-40 };
+
 nav1.addEventListener('click', function() {
 
 // Page 1
@@ -98,7 +100,8 @@ nav2.addEventListener('click', function() {
 
 
 	camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
-	camera.position.set(-50, 22, 0);
+	cam = { x: -50, y: 22, z: 0 };
+	// camera.position.set(-50, 22, 0);
 	// TweenMax.to(camera.position, 3, {x: -50, y: 22, z: 0, ease: Power2.easeOut});
 	
 

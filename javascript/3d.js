@@ -3,6 +3,7 @@
 		var meshThree;
 
 		var cameraInCar, cameraInCarLook;
+		var cam;
 
 
 		var keyboard = {};
@@ -524,7 +525,7 @@
 
 			// Camera
 
-			camera.position.set( -50, -30, -40 );
+			camera.position.set( cam.x, cam.y, cam.z );
 			camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 
