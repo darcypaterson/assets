@@ -567,7 +567,7 @@
 			
 
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
-			controls.target.set( 0, 30, 0 );
+			controls.target.set( 0, 0, 0 );
 			controls.enablePan = true;
 			controls.enableRotate = true;
 
