@@ -97,28 +97,28 @@ nav2.addEventListener('click', function() {
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
 
-	// TweenMax.to(camera.position, 3, {x: -20, y: 10, z: 10, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: -20, y: 10, z: 10, ease: Power2.easeOut});
 
-	var positionCam = { x: 25, y: 0, z: 25 };
-	var targetCam = { x: 125, y: 50, z: 125 };
+	// var positionCam = { x: 25, y: 0, z: 25 };
+	// var targetCam = { x: 125, y: 50, z: 125 };
 
-	var tweenCam = new TWEEN.Tween(positionCam).to(targetCam, 1000);
+	// var tweenCam = new TWEEN.Tween(positionCam).to(targetCam, 1000);
 
 
 
-	tweenCam.onUpdate(function() {
+	// tweenCam.onUpdate(function() {
 
-		camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
+	// 	camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
 
-		camera.position.x = positionCam.x;
-		camera.position.y = positionCam.y;
-		camera.position.z = positionCam.z;
+	// 	camera.position.x = positionCam.x;
+	// 	camera.position.y = positionCam.y;
+	// 	camera.position.z = positionCam.z;
 
-	});
+	// });
 
-	tweenCam.delay(500);
+	// tweenCam.delay(500);
 
-	tweenCam.start();
+	// tweenCam.start();
 
 
 	// Camera
