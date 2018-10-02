@@ -98,7 +98,8 @@ nav2.addEventListener('click', function() {
 
 
 	camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
-	TweenMax.to(camera.position, 3, {x: -50, y: 22, z: 0, ease: Power2.easeOut});
+	camera.position.set(-50, 22, 0);
+	// TweenMax.to(camera.position, 3, {x: -50, y: 22, z: 0, ease: Power2.easeOut});
 	
 
 	// var positionCam = { x: -50, y: -30, z: -40 };
