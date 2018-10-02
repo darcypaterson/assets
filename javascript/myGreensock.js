@@ -7,7 +7,6 @@ var nav4 = document.getElementsByClassName('navButton')[3];
 var nav5 = document.getElementsByClassName('navButton')[4];
 var nav6 = document.getElementsByClassName('navButton')[5];
 
-var cam = {x:-50, y:-30, z:-40 };
 
 nav1.addEventListener('click', function() {
 
@@ -93,44 +92,13 @@ nav2.addEventListener('click', function() {
 
 
 
-
 	// oldCam();
 	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
-
-	camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
-	cam = { x: -50, y: 22, z: 0 };
-	// camera.position.set(-50, 22, 0);
-	// TweenMax.to(camera.position, 3, {x: -50, y: 22, z: 0, ease: Power2.easeOut});
-	
-
-	// var positionCam = { x: -50, y: -30, z: -40 };
-	// var targetCam = { x: 125, y: 50, z: 125 };
-
-	// var tweenCam = new TWEEN.Tween(positionCam).to(targetCam, 1000);
+	TweenMax.to(controls.target, 3, {y: -15, ease: Power2.easeOut});
 
 
-
-	// tweenCam.onUpdate(function() {
-
-	// 	camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
-
-	// 	camera.position.x = positionCam.x;
-	// 	camera.position.y = positionCam.y;
-	// 	camera.position.z = positionCam.z;
-
-	// });
-
-	// tweenCam.delay(500);
-
-	// tweenCam.start();
-
-
-	// Camera
-
-	// TweenMax.to(camera.position, 3, {x: 26, y: 27, z: -.125, ease: Power2.easeOut });
-	// TweenMax.to(camera.lookAt, 3, { x: 0, y:0 , z:0, ease: Power2.easeOut } );
 
 });
 

@@ -3,7 +3,6 @@
 		var meshThree;
 
 		var cameraInCar, cameraInCarLook;
-		var cam;
 
 
 		var keyboard = {};
@@ -525,8 +524,8 @@
 
 			// Camera
 
-			camera.position.set( cam.x, cam.y, cam.z );
-			camera.lookAt(new THREE.Vector3(0, player.height, 0));
+			camera.position.set( -50, -30, -40 );
+			// camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 
 			// Lighting
@@ -568,6 +567,7 @@
 			
 
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
+			controls.target.set( 0, 30, 0 );
 			controls.enablePan = true;
 			controls.enableRotate = true;
 
@@ -582,6 +582,8 @@
 		function animate() {
 
 			requestAnimationFrame(animate);
+
+			controls.update();
 
 			renderer.render(scene, camera);
 
