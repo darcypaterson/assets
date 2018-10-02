@@ -61,8 +61,8 @@ nav2.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to(scene.rotation, 3, {y: 90 * ( Math.PI / -45 ), ease: Power2.easeOut });
+	TweenMax.to(scene.position, 3, {x: -10, y: 0, z: -10, ease: Power2.easeOut});
+	TweenMax.to(scene.rotation, 3, {y: 90 * ( Math.PI / 15 ), ease: Power2.easeOut });
 	TweenMax.to("#wantToTry", 1, {autoAlpha:1});
 	TweenMax.to("#sorry", 1, {autoAlpha:1});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:1});
