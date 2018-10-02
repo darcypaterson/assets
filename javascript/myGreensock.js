@@ -61,7 +61,7 @@ nav2.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {x: -10, y: 0, z: -10, ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 
 	TweenMax.to("#wantToTry", 1, {autoAlpha:1});
 	TweenMax.to("#sorry", 1, {autoAlpha:1});
@@ -97,29 +97,29 @@ nav2.addEventListener('click', function() {
 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
 
 
-	// TweenMax.to(camera.position, 3, {x: -40, y: 20, z: -30, ease: Power2.easeOut});
-	// camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
+	TweenMax.to(camera.position, 3, {x: -40, y: 20, z: -30, ease: Power2.easeOut});
+	camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
 
-	var positionCam = { x: -50, y: -30, z: -40 };
-	var targetCam = { x: 125, y: 50, z: 125 };
+	// var positionCam = { x: -50, y: -30, z: -40 };
+	// var targetCam = { x: 125, y: 50, z: 125 };
 
-	var tweenCam = new TWEEN.Tween(positionCam).to(targetCam, 1000);
+	// var tweenCam = new TWEEN.Tween(positionCam).to(targetCam, 1000);
 
 
 
-	tweenCam.onUpdate(function() {
+	// tweenCam.onUpdate(function() {
 
-		camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
+	// 	camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
 
-		camera.position.x = positionCam.x;
-		camera.position.y = positionCam.y;
-		camera.position.z = positionCam.z;
+	// 	camera.position.x = positionCam.x;
+	// 	camera.position.y = positionCam.y;
+	// 	camera.position.z = positionCam.z;
 
-	});
+	// });
 
-	tweenCam.delay(500);
+	// tweenCam.delay(500);
 
-	tweenCam.start();
+	// tweenCam.start();
 
 
 	// Camera
