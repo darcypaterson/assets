@@ -145,10 +145,14 @@ nav3.addEventListener('click', function() {
 
 // Change Camera
 
-	newCam();
+	// newCam();
 
-	camera.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
-	camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
+	// TweenMax.to(camera.position, 3, {x: -20, y: 6, z: 0, ease: Power2.easeOut});
+
+	// camera.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
+	// camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
+	
+	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
 	document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
 	document.getElementsByTagName('canvas')[0].classList.add('blurIn');

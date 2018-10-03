@@ -290,7 +290,7 @@ canvas {
 
 #mainFour, #mainFive {
   grid-column: 1 / 13;
-  grid-row: 1 / 10;
+  grid-row: 2 / 4;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -305,6 +305,7 @@ canvas {
   grid-column: 1 / 13;
   grid-row: 3 / 9;
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%; }
 
