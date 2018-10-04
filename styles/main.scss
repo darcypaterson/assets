@@ -473,8 +473,6 @@ canvas {
     grid-column: 1 / 13;
     grid-row: 2 / 4;
 
-    position: absolute;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -484,9 +482,6 @@ canvas {
     height: 100%;
 
     z-index: 30;
-
-    background-color: rgba(61, 61, 61, 0.7);
-    
 
 }
 
@@ -622,13 +617,13 @@ footer {
 @keyframes blurIn {
 
     0% { filter: blur(0); }
-    100% { filter: blur(10px); }
+    100% { filter: blur(5px); }
 
 }
 
 @keyframes blurOut {
 
-    0% { filter: blur(10px); }
+    0% { filter: blur(5px); }
     100% { filter: blur(0px); }
 
 }
@@ -636,13 +631,13 @@ footer {
 
 .blurIn {
 
-    animation: blurIn 1.5s ease-out forwards;
+    animation: blurIn 1s ease-out 3s forwards;
 
 }
 
 .blurOut {
 
-    animation: blurOut 1.5s ease-out forwards;
+    animation: blurOut 1s ease-out forwards;
 
 }
 
@@ -1012,11 +1007,11 @@ footer {
 
 
 
-      border: 1px solid white;
+      /*border: 1px solid white;*/
       position: relative;
       padding: 0.5rem;
       z-index: 20;
-      background-color: rgba(214, 234, 255, 0.5);
+      /*background-color: rgba(214, 234, 255, 0.5);*/
       text-align: center;
 
       hr {
@@ -1024,7 +1019,7 @@ footer {
           border-style: solid;
           border-color: black;
           width: 5vw;
-          margin: 0;
+          margin: 0 auto;
 
       }
 
@@ -1679,9 +1674,9 @@ footer {
 
       #subscribe, #share, #learn {
 
-          -ms-grid-row: 3;          
-          -ms-grid-row-span: 5;          
-          grid-row: 3 / 8;
+          -ms-grid-row: 2;          
+          -ms-grid-row-span: 6;          
+          grid-row: 2 / 8;
 
           padding: 2rem;
       }
@@ -1836,15 +1831,13 @@ footer {
 
       #share, #learn, #subscribe {
 
-          -ms-grid-row: 3;          
-          -ms-grid-row-span: 5;          
-          grid-row: 3 / 8;
+          
 
           padding: 2rem;
 
               form {
 
-                  width: 20vw;
+                  width: 25vw;
 
               }
 
@@ -1882,23 +1875,41 @@ footer {
 
 
       #share {
-          -ms-grid-column: 1;
+          -ms-grid-column: 5;
           -ms-grid-column-span: 4;
-          grid-column: 1 / 5;
+          grid-column: 5 / 9;
+
+          -ms-grid-row: 2;          
+          -ms-grid-row-span: 3;          
+          grid-row: 2 / 5;
+
+          margin: 0 2vh;
         
       }
 
       #subscribe {
-          -ms-grid-column: 5;
+          -ms-grid-column: 9;
           -ms-grid-column-span: 4;
-          grid-column: 5 / 9;
+          grid-column: 9 / 13; 
+
+          -ms-grid-row: 2;          
+          -ms-grid-row-span: 6;          
+          grid-row: 2 / 8;
+
+          margin: 0 2vh;
          
       }
 
       #learn {
-          -ms-grid-column: 9;
-          -ms-grid-column-span: 4;
-          grid-column: 9 / 13;
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 5;
+          grid-column: 1 / 5;
+
+          -ms-grid-row: 2;          
+          -ms-grid-row-span: 4;          
+          grid-row: 2 / 6;
+
+          margin: 0 2vh;
          
       }
 
@@ -1968,20 +1979,20 @@ footer {
 
   }
 
-  #share {
+/*  #share {
       grid-column: 1 / span 4;
-      grid-row: 2 / 8;
+      
   }
 
   #subscribe {
       grid-column: 5 / span 4;
-      grid-row: 2 / 8;
+      
   }
 
   #learn {
       grid-column: 9 / span 4;
-      grid-row: 2 / 8;
-  }
+      
+  }*/
 
 
   #sorry {
@@ -2059,7 +2070,7 @@ footer {
       /*   ///////////////   Page 6   //////////////   */
 
 
-      #share {
+/*      #share {
           grid-column: 1 / span 4;
         
       }
@@ -2072,7 +2083,7 @@ footer {
       #learn {
           grid-column: 9 / span 4;
          
-      }
+      }*/
 
 
   }

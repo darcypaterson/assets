@@ -564,12 +564,8 @@
 
 
 
-			
-
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
 			controls.target.set( 0, 0, 0 );
-			controls.enablePan = true;
-			controls.enableRotate = true;
 
 
 
@@ -583,7 +579,7 @@
 
 			requestAnimationFrame(animate);
 
-			controls.update();
+			controls.update();			
 
 			renderer.render(scene, camera);
 
@@ -625,7 +621,7 @@
 
 			}
 
-			console.log(camera.position.x, camera.position.y, camera.position.z);
+			// console.log(camera.position.x, camera.position.y, camera.position.z);
 
 
 		}
