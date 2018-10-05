@@ -568,7 +568,6 @@
 			controls.target.set( 0, 0, 0 );
 
 
-
 			animate();
 
 
