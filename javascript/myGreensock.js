@@ -91,6 +91,8 @@ nav1.addEventListener('click', function() {
 
 	}
 
+	controls.target.set( 0, 0, 0 );
+
 	TweenMax.to(scene.position, 3, {y: -30, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -50, y: -30, z: -40, ease: Power2.easeOut});
 
@@ -143,6 +145,7 @@ nav2.addEventListener('click', function() {
 
 	}
 
+	controls.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -20, y: 6, z: 0, ease: Power2.easeOut});
@@ -197,7 +200,7 @@ nav3.addEventListener('click', function() {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
-	controls.target.set( 36.4, player.height, 0.5 );
+	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
 	// camera.lookAt(new THREE.Vector3( cameraInCarLook.x, player.height, cameraInCarLook.z ));
 	console.log( cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z );
 
@@ -274,6 +277,8 @@ nav4.addEventListener('click', function() {
 
 	}
 
+	controls.target.set( 0, 0, 0 );
+
 	TweenMax.to(scene.position, 3, {y: -5, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -20.5, y: -2.25, z: -6.5, ease: Power2.easeOut});
 
@@ -328,6 +333,7 @@ nav5.addEventListener('click', function() {
 
 	}
 
+	controls.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: -5, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -20.5, y: -2.25, z: -6.5, ease: Power2.easeOut});
@@ -387,11 +393,10 @@ nav6.addEventListener('click', function() {
 
 	}
 
-
+	controls.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: -10, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -27, y: 2, z: 0, ease: Power2.easeOut});
-
 
 
 });
