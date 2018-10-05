@@ -197,9 +197,9 @@ nav3.addEventListener('click', function() {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
-	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
+	controls.target.set( 36.4, player.height, 0.5 );
 	// camera.lookAt(new THREE.Vector3( cameraInCarLook.x, player.height, cameraInCarLook.z ));
-	console.log(controls.target.x, controls.target.y, controls.target.z );
+	console.log( cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z );
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
 		
