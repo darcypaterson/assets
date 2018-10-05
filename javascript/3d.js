@@ -578,7 +578,7 @@
 
 			requestAnimationFrame(animate);
 	
-			controls.update();
+			// controls.update();
 
 			renderer.render(scene, camera);
 
