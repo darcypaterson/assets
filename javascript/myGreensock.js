@@ -203,10 +203,10 @@ nav3.addEventListener('click', function() {
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
 
+
 	// controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
 
 	camera.lookAt(new THREE.Vector3( cameraInCarLook.x, player.height, cameraInCarLook.z ));
-
 	
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
@@ -217,7 +217,6 @@ nav3.addEventListener('click', function() {
 	} else {
 
 		console.log('do nothing');
-
 
 	}
 
