@@ -565,7 +565,7 @@
 			// camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
-			// controls.target.set( 0, 0, 0 );
+			controls.target.set( 0, 0, 0 );
 
 
 			animate();
@@ -578,7 +578,7 @@
 
 			requestAnimationFrame(animate);
 	
-			// controls.update();
+			controls.update();
 
 			renderer.render(scene, camera);
 
