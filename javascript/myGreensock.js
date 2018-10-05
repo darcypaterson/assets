@@ -94,8 +94,7 @@ nav1.addEventListener('click', function() {
 
 	TweenMax.to(scene.position, 3, {y: -30, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -50, y: -30, z: -40, ease: Power2.easeOut});
-	controls.target.set( 0, 0, 0 );
-	
+
 });
 
 nav2.addEventListener('click', function() {
@@ -151,7 +150,6 @@ nav2.addEventListener('click', function() {
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -20, y: 6, z: 0, ease: Power2.easeOut});
-	controls.target.set( 0, 0, 0 );
 
 });
 
