@@ -106,8 +106,6 @@ nav2.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-
 	TweenMax.to("#wantToTry", 1, {autoAlpha:1});
 	TweenMax.to("#sorry", 1, {autoAlpha:1});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:1});
@@ -149,6 +147,8 @@ nav2.addEventListener('click', function() {
 
 	}
 
+
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -20, y: 6, z: 0, ease: Power2.easeOut});
 
 
@@ -165,7 +165,6 @@ nav3.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
 	TweenMax.to("#sorry", 1, {autoAlpha:0});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
@@ -199,19 +198,14 @@ nav3.addEventListener('click', function() {
 // Change Camera
 	newCam();
 
-	// TweenMax.to(camera.position, 3, {x: -20, y: 6, z: 0, ease: Power2.easeOut});
-
-	// camera.position.set(cameraInCar.x, cameraInCar.y, cameraInCar.z);
-	// camera.lookAt(new THREE.Vector3(cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z));
 	
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
 
-	
-	// controls.target.set(cameraInCar.x, player.height, cameraInCar.z);
+	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
 
-
-	camera.lookAt(new THREE.Vector3(0, player.height, 0));
+	// camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 	
 
@@ -453,72 +447,6 @@ document.getElementById('closeInstruct').addEventListener('click', function() {
 	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:1});
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.getElementsByTagName('body')[0].addEventListener('click', function() {
-
-
-					// var position = { x: 0, y: 0 };
-					// var target = { x: 20, y: 20 };
-
-					// // Tween 1
-
-					// var tween = new TWEEN.Tween(position).to(target, 3000);
-
-					// tween.onUpdate(function() {
-
-					// 	ncube.position.x = position.x;
-					// 	ncube.position.y = position.y;
-					// 	tween.easing(TWEEN.Easing.Elastic.InOut)
-
-					// });
-
-					// tween.start();
-
-
-					// Tween 2
-
-					// var positionCam = { x: 25, y: 0, z: 25 };
-					// var targetCam = { x: 125, y: 50, z: 125 };
-
-					// var tweenCam = new TWEEN.Tween(positionCam).to(targetCam, 1000);
-
-
-
-					// tweenCam.onUpdate(function() {
-
-					// 	camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
-
-					// 	camera.position.x = positionCam.x;
-					// 	camera.position.y = positionCam.y;
-					// 	camera.position.z = positionCam.z;
-
-					// });
-
-					// tweenCam.delay(500);
-
-					// tweenCam.start();
-					// console.log(camera.position.x, camera.position.y, camera.position.z);
-
-
-					// Tween 3
-
-				// 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-
-					
-				// });
-
 
 
 

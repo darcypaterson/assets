@@ -517,7 +517,6 @@
 			
 			    scene.add( gltf.scene );
 
-
 			});
 
 			
@@ -525,7 +524,11 @@
 			// Camera
 
 			camera.position.set( -50, -30, -40 );
+			controls = new THREE.OrbitControls( camera, renderer.domElement );
+			controls.target.set( 0, 0, 0 );
 			// camera.lookAt(new THREE.Vector3(0, player.height, 0));
+
+
 
 
 			// Lighting
@@ -563,12 +566,6 @@
 			});
 
 
-
-			controls = new THREE.OrbitControls( camera, renderer.domElement );
-			// controls.target.set( 0, 0, 0 );
-
-
-
 			animate();
 
 
@@ -579,69 +576,57 @@
 
 			requestAnimationFrame(animate);
 
-			controls.update();			
-
 			renderer.render(scene, camera);
 
+			// function keys() {
 
-			if (keyboard[38]) { // Up arrow key
 
-				camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
-				camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
-			}
+			// 	if (keyboard[38]) { // Up arrow key
 
-			if (keyboard[40]) { // Down arrow key
+			// 		camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
+			// 		camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+			// 	}
 
-				camera.position.x += Math.sin(camera.rotation.y) * player.speed;
-				camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
-			}
+			// 	if (keyboard[40]) { // Down arrow key
 
-			// if (keyboard[65]) { // A key
-			
+			// 		camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+			// 		camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+			// 	}
 
-			// 	camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
-			// 	camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
-			// }
+			// 	if (keyboard[37]) { // left arrow key
 
-			// if (keyboard[68]) { // D key
-			
+			// 		camera.rotation.y -= player.turnSpeed;
 
-			// 	camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
-			// 	camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
-			// }
+			// 	}
+				
+			// 	if (keyboard[39]) { // right arrow key
 
-			if (keyboard[37]) { // left arrow key
+			// 		camera.rotation.y += player.turnSpeed;
 
-				camera.rotation.y -= player.turnSpeed;
+			// 	}
 
-			}
-			if (keyboard[39]) { // right arrow key
 
-				camera.rotation.y += player.turnSpeed;
-
-			}
-
-			// console.log(camera.position.x, camera.position.y, camera.position.z);
+			// };
 
 
 		}
 
 
 
-		function keyDown(e) {
+		// function keyDown(e) {
 
-			keyboard[e.keyCode] = true;
+		// 	keyboard[e.keyCode] = true;
 
-		}
+		// }
 
-		function keyUp(e) {
+		// function keyUp(e) {
 
-			keyboard[e.keyCode] = false;
+		// 	keyboard[e.keyCode] = false;
 
-		}
+		// }
 
-		window.addEventListener('keydown', keyDown);
-		window.addEventListener('keyup', keyUp);
+		// window.addEventListener('keydown', keyDown);
+		// window.addEventListener('keyup', keyUp);
 
 	
 		window.onload = init;
