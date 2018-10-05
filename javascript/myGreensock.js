@@ -80,7 +80,6 @@ nav1.addEventListener('click', function() {
 	// } 
 
 
-	oldCam();
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
 		
@@ -132,9 +131,6 @@ nav2.addEventListener('click', function() {
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
-
-
-	oldCam();
 
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
@@ -196,15 +192,11 @@ nav3.addEventListener('click', function() {
 	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:0, delay: 3});
 
 // Change Camera
-	newCam();
 
 	
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
-
-
-	// controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
 
 	camera.lookAt(new THREE.Vector3( cameraInCarLook.x, player.height, cameraInCarLook.z ));
 	
@@ -271,7 +263,6 @@ nav4.addEventListener('click', function() {
 	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
 
-	oldCam();
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
 		
@@ -325,7 +316,7 @@ nav5.addEventListener('click', function() {
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
-	oldCam();
+
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
 		
@@ -383,7 +374,7 @@ nav6.addEventListener('click', function() {
 	TweenMax.to("#learn", 1, {autoAlpha:1});
 	TweenMax.to("#mainSix", 1, {autoAlpha:1});	
 
-	oldCam();
+
 
 	
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
@@ -397,7 +388,6 @@ nav6.addEventListener('click', function() {
 	}
 
 
-	// TweenMax.to(camera.position, 3, {x: -44, y: 45, z: 0, ease: Power2.easeOut});
 
 	TweenMax.to(scene.position, 3, {y: -10, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -27, y: 2, z: 0, ease: Power2.easeOut});
@@ -409,21 +399,21 @@ nav6.addEventListener('click', function() {
 
 
 
-function newCam () {
+// function newCam () {
 
-	controls.enablePan = false;
-	controls.enableRotate = false;
-	controls.enabled = false;
+// 	controls.enablePan = false;
+// 	controls.enableRotate = false;
+// 	controls.enabled = false;
 
-};
+// };
 
-function oldCam () {
+// function oldCam () {
 
-	controls.enablePan = true;
-	controls.enableRotate = true;
-	controls.enabled = true;
+// 	controls.enablePan = true;
+// 	controls.enableRotate = true;
+// 	controls.enabled = true;
 
-};
+// };
 
 document.getElementById('closeInstruct').addEventListener('click', function() {
 
