@@ -203,9 +203,9 @@ nav3.addEventListener('click', function() {
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
 
-	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
+	// controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
 
-	// camera.lookAt(new THREE.Vector3(0, player.height, 0));
+	camera.lookAt(new THREE.Vector3( cameraInCarLook.x, player.height, cameraInCarLook.z ));
 
 	
 
