@@ -606,6 +606,13 @@
 
 			}
 
+			document.getElementsByTagName('button')[0].addEventListener('click', function() {
+				
+				console.log(camera.position.x, camera.position.y, camera.position.z);
+								
+			});
+
+
 
 
 		}

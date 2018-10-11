@@ -2,6 +2,21 @@
 /*   //////////////////   SASS   /////////////////   */
 /*   Variables   */
 /*$brandBlue: #1659a7;*/
+#overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
 /*   /////////////   Elements   ////////////   */
 body {
   font-family: 'acumin-pro', Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -105,6 +120,15 @@ a:hover {
 
 .visVisible {
   visibility: visible; }
+
+.optionBorder {
+  border-color: white;
+  border-radius: 25px;
+  border-style: solid;
+  border-width: 1px;
+  width: 300px;
+  height: 50px;
+  text-align: center; }
 
 /*   //////////////////   GRID   ////////////////   */
 .gridContainer {
