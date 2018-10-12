@@ -488,6 +488,9 @@
 			scene.position.y = -30;
 			
 			    scene.add( gltf.scene );
+			    scene.addEventListener('load', function() {
+			    	console.log('loaded');
+			    });
 				
 			});
 			
