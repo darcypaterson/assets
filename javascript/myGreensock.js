@@ -10,9 +10,6 @@ var nav5 = document.getElementsByClassName('navButton')[4];
 var nav6 = document.getElementsByClassName('navButton')[5];
 
 
-window.addEventListener('load', function(){
-	document.getElementById("overlay").style.display = 'none';
-});
 
 
 // Navigation
