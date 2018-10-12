@@ -11,6 +11,9 @@
 		cameraInCar = {x: -6.35, y: 0.8125, z: .5 };
 		cameraInCarLook = {x: 36.4, y: 0.8125, z: .5 };
 
+
+		var blaze = 'cool';
+
 		function init() {
 
 			scene = new THREE.Scene();
