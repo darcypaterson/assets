@@ -492,10 +492,7 @@
 				
 			});
 
-			loader.addEventListener('load', function() {
-			    	console.log('loaded');
-			    });
-			
+
 			
 			var womanLoader = new THREE.GLTFLoader();
 			womanLoader.load("scenes/bp_scene_6_woman.gltf", function ( gltf ) {
@@ -563,6 +560,13 @@
 
 
 			});
+
+			renderer.addEventListener('load', function() {
+			    	console.log('loaded');
+			    });
+			
+
+
 
 			// Camera
 
