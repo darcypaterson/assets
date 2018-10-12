@@ -486,10 +486,13 @@
 			scene.scale.y = 2;
 			scene.scale.z = 2;
 			scene.position.y = -30;
+
+			var blaze = 'hot';
+
+			console.log(blaze);
 			
 			    scene.add( gltf.scene );
 			    
-				
 			});
 
 
@@ -504,7 +507,6 @@
 			
 			    scene.add( gltf.scene );
 
-
 			});
 
 			
@@ -518,12 +520,7 @@
 			
 			    scene.add( gltf.scene );
 
-
-
 			});
-
-			
-
 
 
 
@@ -536,8 +533,6 @@
 			var light = new THREE.PointLight( 0xffffff, 1.5, 0, 2 );
 			light.position.set( 0, 8, 0.5 );
 			scene.add( light );
-
-
 
 
 
@@ -561,9 +556,7 @@
 
 			});
 
-			renderer.domElement.addEventListener('load', function() {
-			    	console.log('loaded');
-			    });
+
 			
 
 
