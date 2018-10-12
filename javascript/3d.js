@@ -12,7 +12,7 @@
 		cameraInCarLook = {x: 36.4, y: 0.8125, z: .5 };
 
 
-		var blaze = 'cool';
+		var blaze;
 
 		function init() {
 
