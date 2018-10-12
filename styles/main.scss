@@ -448,6 +448,15 @@ canvas {
 
 }
 
+
+#overlay {
+
+    grid-column: 1 / 13;
+    grid-row: 1 / 11;
+    z-index: 40;
+
+}
+
 #mainOne, #mainTwo {
 
     grid-column: 1 / 13;
@@ -1936,13 +1945,12 @@ footer {
 
   .gridContainer {
 
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: 10vh;
-      grid-gap: 1vh;
-      grid-auto-flow: row;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 9.1vh;
+    grid-gap: 1vh;
+    grid-auto-flow: row;
       
-
   }
 
 /*  .gridContainer > * {
