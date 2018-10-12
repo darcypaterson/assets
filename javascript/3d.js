@@ -488,11 +488,13 @@
 			scene.position.y = -30;
 			
 			    scene.add( gltf.scene );
-			    scene.addEventListener('load', function() {
-			    	console.log('loaded');
-			    });
+			    
 				
 			});
+
+			loader.addEventListener('load', function() {
+			    	console.log('loaded');
+			    });
 			
 			
 			var womanLoader = new THREE.GLTFLoader();
