@@ -561,7 +561,7 @@
 
 			});
 
-			renderer.addEventListener('load', function() {
+			renderer.domElement.addEventListener('load', function() {
 			    	console.log('loaded');
 			    });
 			
