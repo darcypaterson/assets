@@ -160,9 +160,9 @@ a:hover {
   -ms-grid-column: 5;
   -ms-grid-column-span: 4;
   grid-column: 5 / 9;
-  -ms-grid-row: 9;
+  -ms-grid-row: 10;
   -ms-grid-row-span: 1;
-  grid-row: 8 / 9;
+  grid-row: 9 / 10;
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
@@ -278,7 +278,8 @@ canvas {
 #overlay {
   grid-column: 1 / 13;
   grid-row: 1 / 11;
-  z-index: 40; }
+  z-index: 40;
+  background-color: crimson; }
 
 #mainOne, #mainTwo {
   grid-column: 1 / 13;
@@ -1172,7 +1173,7 @@ footer {
   /*  ///  Go Full Screen  ///  */
   #nav {
     grid-column: 5 / span 4;
-    grid-row: 8 / 9; }
+    grid-row: 9 / 10; }
   /* Instructions */
   #instructions {
     grid-column: 2 / span 10;
