@@ -286,9 +286,9 @@ $backGrad: to bottom right, $brandBlue, hsla(46, 100%, 93%, 1);
     -ms-grid-column-span: 4;
     grid-column: 5 / 9;
 
-    -ms-grid-row: 9;
+    -ms-grid-row: 10;
     -ms-grid-row-span: 1;
-    grid-row: 8 / 9;
+    grid-row: 9 / 10;
 
     -webkit-box-align: end;
     -ms-flex-align: end;
@@ -454,6 +454,7 @@ canvas {
     grid-column: 1 / 13;
     grid-row: 1 / 11;
     z-index: 40;
+    background-color: crimson;
 
 }
 
@@ -1970,7 +1971,7 @@ footer {
   #nav {
 
       grid-column: 5 / span 4;
-      grid-row: 8 / 9;
+      grid-row: 9 / 10;
 
   }
 
