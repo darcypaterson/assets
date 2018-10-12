@@ -488,7 +488,10 @@
 			scene.position.y = -30;
 			
 			    scene.add( gltf.scene );
-
+			    
+				scene.addEventListener('load', function(){
+					document.getElementById("overlay").style.display = 'none';
+				});
 
 			});
 			
@@ -518,12 +521,10 @@
 			    scene.add( gltf.scene );
 
 
+
 			});
 
 			
-			scene.addEventListener('load', function(){
-				document.getElementById("overlay").style.display = 'none';
-			});
 
 
 
