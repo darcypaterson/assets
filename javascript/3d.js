@@ -520,8 +520,8 @@
 			    
 
 			});
-			
-			womanLoader.add();
+
+			scene.add(womanLoader);
 			
 			var carLoader = new THREE.GLTFLoader();
 			carLoader.load("scenes/bp_scene_6_car.gltf", function ( car ) {
