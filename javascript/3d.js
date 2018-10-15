@@ -529,11 +529,10 @@
 
 			    scene.add( car.scene );
 
-			    carLoader.position.x = -20;
-				carLoader.rotation.y = 90 * ( Math.PI / 180 );
 
 			});
-
+			    carLoader.position.x = -20;
+				carLoader.rotation.y = 90 * ( Math.PI / 180 );
 
 
 			// Lighting
