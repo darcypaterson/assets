@@ -522,7 +522,8 @@
 			// });
 
 			var heyLady;
-			loader.load("scenes/bp_scene_6_woman.gltf", function( gltf ) {
+			var womanLoader = new THREE.GLTFLoader();
+			womanLoader.load("scenes/bp_scene_6_woman.gltf", function( gltf ) {
 
 				heyLady = gltf.scene;
 				scene.add(heyLady);
