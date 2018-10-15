@@ -528,7 +528,7 @@
 				heyLady = girl.scene;
 				scene.add(heyLady);
 
-				heyLady.position.y = 2;
+				// heyLady.position.y = 2;
 
 			});
 
@@ -543,7 +543,7 @@
 				theCar = car.scene;
 			    scene.add( theCar );
 
-				theCar.rotation.y = 90 * ( Math.PI / 180 );
+				theCar.rotation.y = -90 * ( Math.PI / 180 );
 
 			});
 			    
