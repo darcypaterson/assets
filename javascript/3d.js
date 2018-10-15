@@ -508,7 +508,7 @@
 			scene.scale.z = 2;
 			scene.position.y = -30;
 	
-			    scene.add( gltf.scene );
+			    scene.add( loader );
 			    
 			});
 
@@ -517,12 +517,8 @@
 			var womanLoader = new THREE.GLTFLoader();
 			womanLoader.load("scenes/bp_scene_6_woman.gltf", function ( gltf ) {
 
-			scene.scale.x = 2;
-			scene.scale.y = 2;
-			scene.scale.z = 2;
-			scene.position.y = -30;
 			
-			    scene.add( gltf.scene );
+			    scene.add( womanLoader );
 
 			});
 
@@ -530,15 +526,12 @@
 			var carLoader = new THREE.GLTFLoader();
 			carLoader.load("scenes/bp_scene_6_car.gltf", function ( gltf ) {
 
-			scene.scale.x = 2;
-			scene.scale.y = 2;
-			scene.scale.z = 2;
-			scene.position.y = -30;
+
 
 			// scene.position.x = -20;
 			// scene.rotation.y = 90 * ( Math.PI / 180 );
 
-			    scene.add( gltf.scene );
+			    scene.add( carLoader );
 
 			});
 
