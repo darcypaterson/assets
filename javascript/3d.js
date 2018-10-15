@@ -517,11 +517,11 @@
 			var womanLoader = new THREE.GLTFLoader();
 			womanLoader.load("scenes/bp_scene_6_woman.gltf", function () {
 
-			    
+			    scene.add(womanLoader);
 
 			});
 
-			scene.add(womanLoader);
+			
 			
 			var carLoader = new THREE.GLTFLoader();
 			carLoader.load("scenes/bp_scene_6_car.gltf", function ( car ) {
