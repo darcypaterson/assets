@@ -515,24 +515,21 @@
 
 			
 			var womanLoader = new THREE.GLTFLoader();
-			womanLoader.load("scenes/bp_scene_6_woman.gltf", function ( gltf ) {
+			womanLoader.load("scenes/bp_scene_6_woman.gltf", function () {
 
-
-			
-			    scene.add( gltf.scene );
+			    scene.add();
 
 			});
 
 			
 			var carLoader = new THREE.GLTFLoader();
-			carLoader.load("scenes/bp_scene_6_car.gltf", function ( gltf ) {
-
+			carLoader.load("scenes/bp_scene_6_car.gltf", function ( car ) {
 
 
 			// scene.position.x = -20;
 			// scene.rotation.y = 90 * ( Math.PI / 180 );
 
-			    scene.add( gltf.scene );
+			    scene.add( car.scene );
 
 			});
 
