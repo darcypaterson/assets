@@ -532,7 +532,7 @@
 
 
 
-			heyLady.rotation.y = 90 * ( Math.PI / 180 );
+			heyLady.position.y = 10;
 			
 			
 			var carLoader = new THREE.GLTFLoader();
