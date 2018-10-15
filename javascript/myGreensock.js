@@ -37,11 +37,72 @@ function navigation() {
 
 navigation();
 
+
+
 butt1.addEventListener('click', function() {
 
 	TweenMax.to("#nav", 1, {autoAlpha:1});
 	TweenMax.to("#butt1", 1, {autoAlpha:0});
-	
+
+// Page 1
+
+	TweenMax.to("#introTextSm", 1, {autoAlpha:1});
+	TweenMax.to("#introTextLg", 1, {autoAlpha:1});
+
+// Page 2
+
+	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
+	TweenMax.to("#sorry", 1, {autoAlpha:0});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
+// Page 3
+
+	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+
+// Page 4
+
+	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
+
+// Page 5
+
+	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:0});
+
+// Page 6
+
+	TweenMax.to("#logo", 1, {autoAlpha:0});
+	TweenMax.to("#share", 1, {autoAlpha:0});
+	TweenMax.to("#subscribe", 1, {autoAlpha:0});
+	TweenMax.to("#learn", 1, {autoAlpha:0});
+	TweenMax.to("#mainSix", 1, {autoAlpha:0});
+
+
+	// if ( document.getElementsByTagName('canvas')[0].classList.contains(); ) {
+
+	// 	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
+	// 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
+
+	// } 
+
+
+
+	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
+		
+		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
+
+	} else {
+
+		console.log('do nothing');
+
+	}
+
+	controls.target.set( 0, 0, 0 );
+
+	TweenMax.to(scene.position, 3, {y: -30, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: -50, y: -30, z: -40, ease: Power2.easeOut});
+
+
 });
 
 
