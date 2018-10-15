@@ -529,7 +529,8 @@
 				scene.add(heyLady);
 
 				heyLady.rotation.y = -90 * ( Math.PI / 180 );
-				heyLady.position.z = 1;
+				heyLady.position.z = 0;
+				heyLady.position.x = 1;
 
 			});
 
