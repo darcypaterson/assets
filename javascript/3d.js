@@ -528,7 +528,8 @@
 				heyLady = girl.scene;
 				scene.add(heyLady);
 
-				// heyLady.position.y = 2;
+				heyLady.position.x = 0;
+				heyLady.position.z = 0;
 
 			});
 
