@@ -528,7 +528,7 @@
 				heyLady = girl.scene;
 				scene.add(heyLady);
 
-				heyLady.position.x = 0;
+				heyLady.position.x = -2;
 				heyLady.position.z = 0;
 
 			});
