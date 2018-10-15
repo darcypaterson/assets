@@ -535,7 +535,7 @@
 			scene.scale.z = 2;
 			scene.position.y = -30;
 
-			scene.position.x = -20;
+			// scene.position.x = -20;
 			// scene.rotation.y = 90 * ( Math.PI / 180 );
 
 			    scene.add( gltf.scene );
