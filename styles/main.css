@@ -235,6 +235,16 @@ a:hover {
   animation-fill-mode: forwards;
   animation-direction: reverse; }
 
+#butt1 {
+  grid-column: 3 / 9;
+  grid-row: 9 / 10;
+  z-index: 200;
+  text-align: center;
+  border-radius: 25px;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid; }
+
 /* /////////////   Main Content   ///////////// */
 /*   Main  */
 /*(This is the grid item that holds the main content on every page except the last one)*/

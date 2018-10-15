@@ -402,7 +402,16 @@ $backGrad: to bottom right, $brandBlue, hsla(46, 100%, 93%, 1);
 
 
 
-
+#butt1 {
+    grid-column: 3 / 9;
+    grid-row: 9 / 10;
+    z-index: 200;
+    text-align: center;
+    border-radius: 25px;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+}
 
 
 
