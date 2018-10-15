@@ -573,6 +573,8 @@
 				camera.aspect = width / height;
 				camera.updateProjectionMatrix();
 
+				heyLady.rotation.y = 90 * ( Math.PI / 180 );
+
 
 			});
 
@@ -603,9 +605,7 @@
 			controls.update();
 
 			renderer.render(scene, camera);
-			
 
-			heyLady.rotation.y = 90 * ( Math.PI / 180 );
 
 
 			if (keyboard[38]) { // Up arrow key
