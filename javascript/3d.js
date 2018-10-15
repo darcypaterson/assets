@@ -523,9 +523,9 @@
 
 			var heyLady;
 			var womanLoader = new THREE.GLTFLoader();
-			womanLoader.load("scenes/bp_scene_6_woman.gltf", function( gltf ) {
+			womanLoader.load("scenes/bp_scene_6_woman.gltf", function( girl) {
 
-				heyLady = gltf.scene;
+				heyLady = girl.scene;
 				scene.add(heyLady);
 
 			});
