@@ -529,7 +529,6 @@
 				scene.add(heyLady);
 
 				heyLady.position.y = 2;
-				heyLady.rotation.y = 90 * ( Math.PI / 180 );
 
 			});
 
@@ -537,12 +536,14 @@
 
 			
 			
+			var theCar;
 			var carLoader = new THREE.GLTFLoader();
 			carLoader.load("scenes/bp_scene_6_car.gltf", function ( car ) {
 
+				theCar = car.scene;
+			    scene.add( theCar );
 
-			    scene.add( car.scene );
-
+				theCar.rotation.y = 90 * ( Math.PI / 180 );
 
 			});
 			    
