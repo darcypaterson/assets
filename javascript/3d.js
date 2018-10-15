@@ -523,16 +523,17 @@
 
 			var heyLady;
 			var womanLoader = new THREE.GLTFLoader();
-			womanLoader.load("scenes/bp_scene_6_woman.gltf", function( girl) {
+			womanLoader.load("scenes/bp_scene_6_woman.gltf", function( girl ) {
 
 				heyLady = girl.scene;
 				scene.add(heyLady);
 
+				heyLady.position.y = 10;
+				
 			});
 
 
 
-			heyLady.position.y = 10;
 			
 			
 			var carLoader = new THREE.GLTFLoader();
