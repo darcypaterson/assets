@@ -44,7 +44,7 @@ butt1.addEventListener('click', function() {
 	TweenMax.to("#nav", 1, {autoAlpha:1});
 	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
-	
+
 // Page 1
 	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
 	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
@@ -100,6 +100,9 @@ butt1.addEventListener('click', function() {
 
 
 nav1.addEventListener('click', function() {
+
+	TweenMax.to("#nav", 1, {autoAlpha:0});
+	TweenMax.to("#butt1", 1, {autoAlpha:1});
 
 // Page 1
 
@@ -164,6 +167,9 @@ nav1.addEventListener('click', function() {
 nav2.addEventListener('click', function() {
 
 
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+	TweenMax.to("#butt1", 1, {autoAlpha:0});
+
 // Page 1
 	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
 	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
@@ -219,6 +225,9 @@ nav2.addEventListener('click', function() {
 
 
 nav3.addEventListener('click', function() {
+
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
 
 // Page 1
@@ -294,6 +303,8 @@ nav3.addEventListener('click', function() {
 
 nav4.addEventListener('click', function() {
 
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
 // Page 1
 	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
@@ -349,6 +360,9 @@ nav4.addEventListener('click', function() {
 
 
 nav5.addEventListener('click', function() {
+
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
 
 // Page 1
@@ -406,11 +420,13 @@ nav5.addEventListener('click', function() {
 
 nav6.addEventListener('click', function() {
 
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+	TweenMax.to("#butt1", 1, {autoAlpha:0});
+
 // Page 1
 
 	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
 	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
-
 
 
 // Page 2
