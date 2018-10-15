@@ -529,7 +529,7 @@
 
 			});
 
-			heyLady.rotation.y = 90 * ( Math.PI / 180 );
+
 
 			
 			
