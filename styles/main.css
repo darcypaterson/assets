@@ -281,6 +281,9 @@ canvas {
   z-index: 40;
   background-color: crimson; }
 
+#overlay.fade-out {
+  opacity: 0; }
+
 #mainOne, #mainTwo {
   grid-column: 1 / 13;
   grid-row: 2 / 4;

@@ -18,7 +18,27 @@
 			camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 			
 			scene.background = new THREE.Color( 0x4893AA );
+
+			const loadingManager = new THREE.LoadingManager( () => {
 			
+				const loadingScreen = document.getElementById( 'overlay' );
+				loadingScreen.classList.add( 'fade-out' );
+				
+				// optional: remove loader from DOM via event listener
+				loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
+				
+			} );
+
+
+			function onTransitionEnd( event ) {
+
+				event.target.remove();
+				
+			}
+						
+
+
+
 
 			// Polygons
 

@@ -458,6 +458,10 @@ canvas {
 
 }
 
+#overlay.fade-out {
+    opacity: 0;
+}
+
 #mainOne, #mainTwo {
 
     grid-column: 1 / 13;
