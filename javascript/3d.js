@@ -515,9 +515,9 @@
 
 			
 			var womanLoader = new THREE.GLTFLoader();
-			womanLoader.load("scenes/bp_scene_6_woman.gltf", function () {
+			womanLoader.load("scenes/bp_scene_6_woman.gltf", function ( woman ) {
 
-			    scene.add();
+			    scene.add( woman.scene );
 
 			});
 
@@ -527,10 +527,10 @@
 			carLoader.load("scenes/bp_scene_6_car.gltf", function ( car ) {
 
 
-			// scene.position.x = -20;
-			// scene.rotation.y = 90 * ( Math.PI / 180 );
-
 			    scene.add( car.scene );
+
+			    car.position.x = -20;
+				car.rotation.y = 90 * ( Math.PI / 180 );
 
 			});
 
