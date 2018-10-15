@@ -519,7 +519,7 @@
 
 
 			
-
+			    scene.add( gltf.scene );
 
 			});
 
@@ -532,6 +532,7 @@
 			// scene.position.x = -20;
 			// scene.rotation.y = 90 * ( Math.PI / 180 );
 
+			    scene.add( gltf.scene );
 
 			});
 
