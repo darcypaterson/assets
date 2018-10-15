@@ -514,12 +514,22 @@
 
 
 			
-			var womanLoader = new THREE.GLTFLoader();
-			womanLoader.load("scenes/bp_scene_6_woman.gltf", function ( woman ) {
+			// var womanLoader = new THREE.GLTFLoader();
+			// womanLoader.load("scenes/bp_scene_6_woman.gltf", function ( woman ) {
 
-			    scene.add( woman.scene );
+			//     scene.add( woman.scene );
+
+			// });
+
+			var heyLady;
+			loader.load("scenes/bp_scene_6_woman.gltf", function( gltf ) {
+
+				heyLady = gltf.scene;
+				scene.add(heyLady);
 
 			});
+
+			heyLady.rotation.y = 90 * ( Math.PI / 180 );
 
 			
 			
@@ -531,8 +541,7 @@
 
 
 			});
-			    carLoader.position.x = -20;
-				carLoader.rotation.y = 90 * ( Math.PI / 180 );
+			    
 
 
 			// Lighting
