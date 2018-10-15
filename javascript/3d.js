@@ -529,8 +529,8 @@
 
 			    scene.add( car.scene );
 
-			    car.position.x = -20;
-				car.rotation.y = 90 * ( Math.PI / 180 );
+			    carLoader.position.x = -20;
+				carLoader.rotation.y = 90 * ( Math.PI / 180 );
 
 			});
 
