@@ -532,6 +532,7 @@
 
 
 
+			heyLady.rotation.y = 90 * ( Math.PI / 180 );
 			
 			
 			var carLoader = new THREE.GLTFLoader();
@@ -606,7 +607,6 @@
 
 			renderer.render(scene, camera);
 
-			heyLady.rotation.y = 90 * ( Math.PI / 180 );
 
 
 			if (keyboard[38]) { // Up arrow key
