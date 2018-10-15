@@ -9,7 +9,7 @@ var nav4 = document.getElementsByClassName('navButton')[3];
 var nav5 = document.getElementsByClassName('navButton')[4];
 var nav6 = document.getElementsByClassName('navButton')[5];
 
-
+var butt1 = document.getElementById('butt1');
 
 
 // Navigation
@@ -36,6 +36,13 @@ function navigation() {
 };
 
 navigation();
+
+butt1.addEventListener('click', function() {
+
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+	TweenMax.to("#butt1", 1, {autoAlpha:0});
+	
+});
 
 
 nav1.addEventListener('click', function() {
