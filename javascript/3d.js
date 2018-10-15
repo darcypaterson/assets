@@ -507,11 +507,7 @@
 			scene.scale.y = 2;
 			scene.scale.z = 2;
 			scene.position.y = -30;
-
-			var blaze = 'hot';
-
-			console.log(blaze);
-			
+	
 			    scene.add( gltf.scene );
 			    
 			});
@@ -538,7 +534,10 @@
 			scene.scale.y = 2;
 			scene.scale.z = 2;
 			scene.position.y = -30;
-			
+
+			scene.position.x = -20;
+			scene.rotation.y = 90 * ( Math.PI / 180 );
+
 			    scene.add( gltf.scene );
 
 			});

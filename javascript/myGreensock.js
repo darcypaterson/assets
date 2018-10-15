@@ -15,6 +15,7 @@ var butt1 = document.getElementById('butt1');
 // Navigation
 var nav = document.getElementById("nav");
 
+
 function navigation() {
 
 	var btns = nav.getElementsByClassName("navButton");
@@ -92,7 +93,7 @@ butt1.addEventListener('click', function() {
 	controls.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: -20, y: 6, z: 0, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: 0, y: 6, z: -30, ease: Power2.easeOut});
 
 
 
