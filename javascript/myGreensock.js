@@ -14,17 +14,14 @@ var butt1 = document.getElementById('butt1');
 
 // Navigation
 var nav = document.getElementById("nav");
-
+var btns = nav.getElementsByClassName("navButton");
+var current = document.getElementsByClassName("navButtonHere");
 
 function navigation() {
-
-	var btns = nav.getElementsByClassName("navButton");
-
+	
 	for (var i = 0; i < btns.length; i++) {
 
 		btns[i].addEventListener("click", function() {
-
-		    var current = document.getElementsByClassName("navButtonHere");
 
 		    current[0].className = current[0].className.replace(" navButtonHere", "");
 
@@ -38,12 +35,13 @@ function navigation() {
 
 navigation();
 
-
-
 butt1.addEventListener('click', function() {
 
 	// TweenMax.to("#nav", 1, {autoAlpha:1});
 	TweenMax.to("#butt1", 1, {autoAlpha:0});
+
+	current[0].className.replace(" navButtonHere", "");
+	btns[1].className += " navButtonHere";
 
 
 // Page 1
