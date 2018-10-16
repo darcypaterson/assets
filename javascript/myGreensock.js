@@ -78,7 +78,10 @@ butt1.addEventListener('click', function() {
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
+// Nav
 
+	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:0, delay: 3});
+	
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
 		
