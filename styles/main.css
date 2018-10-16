@@ -240,18 +240,17 @@ a:hover {
   grid-row: 9 / 10;
   z-index: 200;
   text-align: center;
-  border-radius: 25px;
-  border-width: 2px;
-  border-color: white;
-  border-style: solid;
-  width: 75%;
-  padding: 0;
-  margin: 0 auto;
-  font-size: 1rem;
-  height: 63%;
   display: flex;
   align-items: center;
   justify-content: center; }
+  #butt1 button {
+    border-radius: 25px;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    width: 75%;
+    height: 63%;
+    font-size: 1rem; }
 
 /* /////////////   Main Content   ///////////// */
 /*   Main  */
