@@ -209,7 +209,7 @@ $backGrad: to bottom right, $brandBlue, hsla(46, 100%, 93%, 1);
     }
 
     .h1Instructions {
-        
+
         color: #d0c700;
         text-align: center;
         font-family: quatro, sans-serif;
@@ -217,6 +217,55 @@ $backGrad: to bottom right, $brandBlue, hsla(46, 100%, 93%, 1);
         font-weight: 900;
         margin-top: 10vh;
 
+    }
+
+    .white {
+
+        color: white;
+
+    }
+
+    .fSmall {
+        font-size: small;
+    }
+
+    .newIns {
+
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 50vh;
+        flex-wrap: wrap;
+
+    }
+
+    .insRow {
+
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .insDiv {
+
+       background-color: #d0c287;
+       color: #3c3634;
+       border-radius: 25px;
+       margin-left: -20px;
+       width: 35%;
+
+       p {
+            margin-left: 40px;
+            margin-top: 0.75rem;
+       }
+
+    }
+
+    .z30 {
+        z-index: 30;
     }
 
 
@@ -1188,6 +1237,22 @@ footer {
 .insClose {
     height: 0;
 }
+
+.insHr {
+    border-top: 1px solid white;
+    width: 50%;
+}
+
+.closeInstruct {
+
+    position: absolute; 
+    top: 20px; 
+    right:20px; 
+    z-index: 60;  
+      
+}
+
+
 
 #instructionsBG {
 
