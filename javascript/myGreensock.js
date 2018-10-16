@@ -90,7 +90,7 @@ butt1.addEventListener('click', function() {
 
 	}
 
-	controls.target.set( 0, 0, 0 );
+	controls.target.set( x: -0.5, y: 0.8125, z: -36.4 );
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -.5, y: 0.8125, z: -6.35, ease: Power2.easeOut});
