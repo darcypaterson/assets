@@ -176,7 +176,7 @@ nav2.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to("#mainTwo", 1, {autoAlpha:1});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
 
