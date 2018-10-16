@@ -52,9 +52,7 @@ butt1.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to("#wantToTry", 1, {autoAlpha:1});
-	TweenMax.to("#sorry", 1, {autoAlpha:1});
-	TweenMax.to("#mainTwo", 1, {autoAlpha:1});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:1, delay: 3});
 
 // Page 3
 
@@ -81,10 +79,11 @@ butt1.addEventListener('click', function() {
 // Nav
 
 	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:0, delay: 3});
-	
 
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
+
+	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
 		
+		document.getElementsByTagName('canvas')[0].classList.add('blurIn');
 		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
 
 	} else {
@@ -114,8 +113,6 @@ nav1.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
-	TweenMax.to("#sorry", 1, {autoAlpha:0});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
@@ -179,8 +176,6 @@ nav2.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to("#wantToTry", 1, {autoAlpha:1});
-	TweenMax.to("#sorry", 1, {autoAlpha:1});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:1});
 
 // Page 3
@@ -239,8 +234,6 @@ nav3.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
-	TweenMax.to("#sorry", 1, {autoAlpha:0});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
@@ -276,8 +269,6 @@ nav3.addEventListener('click', function() {
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
 	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
-	// camera.lookAt(new THREE.Vector3( cameraInCarLook.x, player.height, cameraInCarLook.z ));
-	console.log( cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z );
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
 		
@@ -310,8 +301,6 @@ nav4.addEventListener('click', function() {
 // Page 2
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
-	TweenMax.to("#sorry", 1, {autoAlpha:0});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
@@ -369,8 +358,6 @@ nav5.addEventListener('click', function() {
 // Page 2
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
-	TweenMax.to("#sorry", 1, {autoAlpha:0});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
@@ -428,9 +415,6 @@ nav6.addEventListener('click', function() {
 
 // Page 2
 
-	
-	TweenMax.to("#wantToTry", 1, {autoAlpha:0});
-	TweenMax.to("#sorry", 1, {autoAlpha:0});
 	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 
@@ -495,6 +479,19 @@ nav6.addEventListener('click', function() {
 // 	controls.enabled = true;
 
 // };
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.getElementsByClassName('closeInstruct')[0].addEventListener('click', function() {
 
 	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
