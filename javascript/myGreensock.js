@@ -462,13 +462,16 @@ nav6.addEventListener('click', function() {
 
 
 
-document.getElementById('sayNo').addEventListener('click', function() {
+document.getElementById('sayNo').addEventListener('click', function(e) {
 
+	e.preventDefault();
 	console.log('they said no');
 
 });
 
-document.getElementById('sayYes').addEventListener('click', function() {
+document.getElementById('sayYes').addEventListener('click', function(e) {
+
+	e.preventDefault();
 
 	TweenMax.to("#nav", 1, {autoAlpha:1});
 	TweenMax.to("#butt1", 1, {autoAlpha:0});
