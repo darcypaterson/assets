@@ -42,7 +42,7 @@ navigation();
 
 butt1.addEventListener('click', function() {
 
-	TweenMax.to("#nav", 1, {autoAlpha:1});
+	// TweenMax.to("#nav", 1, {autoAlpha:1});
 	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
 
