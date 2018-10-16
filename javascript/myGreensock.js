@@ -40,7 +40,7 @@ butt1.addEventListener('click', function() {
 	// TweenMax.to("#nav", 1, {autoAlpha:1});
 	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
-	current[0].className.replace(" navButtonHere", "");
+	current[0].className = current[0].className.replace(" navButtonHere", "");
 	btns[1].className += " navButtonHere";
 
 
