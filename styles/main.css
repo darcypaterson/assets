@@ -115,6 +115,14 @@ a:hover {
   height: 50px;
   text-align: center; }
 
+.h1Instructions {
+  color: #d0c700;
+  text-align: center;
+  font-family: quatro, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  margin-top: 10vh; }
+
 /*   //////////////////   GRID   ////////////////   */
 .gridContainer {
   display: -ms-grid;
