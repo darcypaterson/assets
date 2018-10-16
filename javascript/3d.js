@@ -548,6 +548,18 @@
 				theCar.rotation.y = -90 * ( Math.PI / 180 );
 
 			});
+
+
+			var theCarTwo;
+			var carLoaderTwo = new THREE.GLTFLoader();
+			carLoaderTwo.load("scenes/bp_scene_6_car.gltf", function ( carTwo ) {
+
+				theCarTwo = carTwo.scene;
+			    scene.add( theCarTwo );
+
+				theCarTwo.rotation.y = -180 * ( Math.PI / 180 );
+
+			});
 			    
 
 
