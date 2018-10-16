@@ -8,8 +8,8 @@
 		var keyboard = {};
 		var player = { height: 0.8125, speed: 0.01, turnSpeed: Math.PI * 0.002 };
 
-		cameraInCar = {x: -6.35, y: 0.8125, z: .5 };
-		cameraInCarLook = {x: 36.4, y: 0.8125, z: .5 };
+		cameraInCar = { x: -6.35, y: 0.8125, z: .5 };
+		cameraInCarLook = { x: 36.4, y: 0.8125, z: .5 };
 
 
 		function init() {
@@ -579,7 +579,6 @@
 				renderer.setSize( width, height );
 				camera.aspect = width / height;
 				camera.updateProjectionMatrix();
-
 
 
 			});
