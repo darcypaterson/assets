@@ -236,7 +236,7 @@ nav3.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to("#mainThree", 1, {autoAlpha:1, delay: 3});
+	TweenMax.to("#mainThree", 1, {autoAlpha:1, delay: 1});
 
 // Page 4
 
@@ -279,12 +279,12 @@ nav4.addEventListener('click', function() {
 
 // Page 3
 
-	TweenMax.to("#mainThree", 1, {autoAlpha:1, delay: 3});
+	TweenMax.to("#mainThree", 1, {autoAlpha:0});
 
 // Page 4
 
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
-	TweenMax.to("#mainFour", 1, {autoAlpha:0});
+	TweenMax.to("#wantToTry4", 1, {autoAlpha:1});
+	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 3});
 
 // Page 5
 
@@ -462,8 +462,73 @@ nav6.addEventListener('click', function() {
 
 
 
+document.getElementById('sayNo').addEventListener('click', function() {
+
+	console.log('they said no');
+
+});
+
+document.getElementById('sayYes').addEventListener('click', function() {
+
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
 
+// Page 1
+	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
+	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
+
+// Page 2
+
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
+// Page 3
+
+	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+
+// Page 4
+
+	TweenMax.to("#wantToTry4", 1, {autoAlpha:1});
+	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 3});
+
+// Page 5
+
+	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:0});
+
+// Page 6
+
+	TweenMax.to("#logo", 1, {autoAlpha:0});
+	TweenMax.to("#share", 1, {autoAlpha:0});
+	TweenMax.to("#subscribe", 1, {autoAlpha:0});
+	TweenMax.to("#learn", 1, {autoAlpha:0});
+	TweenMax.to("#mainSix", 1, {autoAlpha:0});
+
+// Nav
+
+	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:0, delay: 3});
+
+// Change Camera
+
+	
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
+
+	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
+
+	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
+		
+		document.getElementsByTagName('canvas')[0].classList.add('blurIn');
+		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
+
+	} else {
+
+		console.log('do nothing');
+
+	}
+
+
+});
 
 
 document.getElementsByClassName('closeInstruct')[0].addEventListener('click', function() {
