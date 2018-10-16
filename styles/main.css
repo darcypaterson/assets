@@ -241,14 +241,14 @@ a:hover {
   z-index: 200;
   text-align: center;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center; }
   #butt1 button {
     border-radius: 25px;
     border-width: 2px;
     border-color: white;
     border-style: solid;
-    width: 75%;
+    width: 85%;
     height: 63%;
     font-size: 1rem; }
 

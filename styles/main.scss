@@ -409,7 +409,7 @@ $backGrad: to bottom right, $brandBlue, hsla(46, 100%, 93%, 1);
     z-index: 200;
     text-align: center;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 
     button {
@@ -419,7 +419,7 @@ $backGrad: to bottom right, $brandBlue, hsla(46, 100%, 93%, 1);
         border-color: white;
         border-style: solid;
 
-        width: 75%;
+        width: 85%;
         height: 63%;
         font-size: 1rem;
 
