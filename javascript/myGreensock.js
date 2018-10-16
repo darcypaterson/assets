@@ -295,12 +295,6 @@ nav3.addEventListener('click', function() {
 
 
 
-
-
-
-
-
-
 nav4.addEventListener('click', function() {
 
 	TweenMax.to("#nav", 1, {autoAlpha:1});
@@ -498,8 +492,30 @@ nav6.addEventListener('click', function() {
 // 	controls.enabled = true;
 
 // };
+document.getElementsByClassName('closeInstruct')[0].addEventListener('click', function() {
 
-document.getElementById('closeInstruct').addEventListener('click', function() {
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
+	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true ) {
+
+		document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
+		document.getElementsByTagName('canvas')[0].classList.add('blurOut');	
+
+	} else {
+
+		console.log('do nothing');
+
+	}
+
+
+	// Nav
+
+	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:1});
+
+});
+
+
+document.getElementsByClassName('closeInstruct')[1].addEventListener('click', function() {
 
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
 

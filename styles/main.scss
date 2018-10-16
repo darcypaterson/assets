@@ -840,11 +840,8 @@ canvas {
 
 }
 
-#mainTwo {
-    grid-column: 1 / 13;
-    grid-row: 2 / 10;
-}
-#mainThree {
+
+#mainTwo, #mainThree {
 
     grid-column: 1 / 13;
     grid-row: 1 / 10;
