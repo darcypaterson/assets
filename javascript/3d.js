@@ -623,10 +623,10 @@
 			requestAnimationFrame(animate);
 	
 			controls.update();
-
+			city.rotation.y += 0.001;
 			renderer.render(scene, camera);
 
-			city.rotation.y += 0.001;
+
 
 
 
