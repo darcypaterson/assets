@@ -19,22 +19,22 @@
 			
 			scene.background = new THREE.Color( 0x4893AA );
 
-			const loadingManager = new THREE.LoadingManager( () => {
+			// const loadingManager = new THREE.LoadingManager( () => {
 			
-				const loadingScreen = document.getElementById( 'overlay' );
-				loadingScreen.classList.add( 'fade-out' );
+			// 	const loadingScreen = document.getElementById( 'overlay' );
+			// 	loadingScreen.classList.add( 'fade-out' );
 				
 				// optional: remove loader from DOM via event listener
-				loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
+			// 	loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
 				
-			} );
+			// } );
 
 
-			function onTransitionEnd( event ) {
+			// function onTransitionEnd( event ) {
 
-				event.target.remove();
+			// 	event.target.remove();
 				
-			}
+			// }
 						
 
 
@@ -42,10 +42,10 @@
 
 			// Polygons
 
-			// var ngeometry = new THREE.BoxGeometry( 1, 1, 1 );
-			// var nmaterial = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
-			// var ncube = new THREE.Mesh( ngeometry, nmaterial );
-			// scene.add( ncube );
+			var ngeometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var nmaterial = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
+			var ncube = new THREE.Mesh( ngeometry, nmaterial );
+			scene.add( ncube );
 
 
 
@@ -623,7 +623,7 @@
 			requestAnimationFrame(animate);
 	
 			controls.update();
-			city.rotation.y += 0.001;
+			ncube.rotation.y += 0.001;
 			renderer.render(scene, camera);
 
 
