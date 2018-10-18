@@ -465,9 +465,9 @@ $backGrad: to bottom right, $brandBlue, hsla(46, 100%, 93%, 1);
 
 
 
-#butt1 {
+#butt1, #butt2 {
 
-    grid-column: 5 / 9;
+    grid-column: 3 / 7;
     grid-row: 9 / 10;
     z-index: 200;
     text-align: center;
@@ -489,6 +489,10 @@ $backGrad: to bottom right, $brandBlue, hsla(46, 100%, 93%, 1);
     }
 
 
+}
+
+#butt2 {
+    grid-column: 7 / 11;
 }
 
 

@@ -491,7 +491,6 @@ document.getElementById('sayYes').addEventListener('click', function(e) {
 
 // Page 4
 
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:1});
 	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 3});
 
 // Page 5

@@ -276,15 +276,15 @@ a:hover {
   animation-fill-mode: forwards;
   animation-direction: reverse; }
 
-#butt1 {
-  grid-column: 5 / 9;
+#butt1, #butt2 {
+  grid-column: 3 / 7;
   grid-row: 9 / 10;
   z-index: 200;
   text-align: center;
   display: flex;
   align-items: flex-end;
   justify-content: center; }
-  #butt1 button {
+  #butt1 button, #butt2 button {
     border-radius: 25px;
     border-width: 2px;
     border-color: white;
@@ -292,6 +292,9 @@ a:hover {
     width: 85%;
     height: 63%;
     font-size: 1rem; }
+
+#butt2 {
+  grid-column: 7 / 11; }
 
 /* /////////////   Main Content   ///////////// */
 /*   Main  */
