@@ -612,23 +612,27 @@
 			controls.target.set( 0, 0, 0 );
 
 
+
+			function animate() {
+
+				requestAnimationFrame(animate);
+				ncube.rotation.y += 0.001;
+		
+				controls.update();
+				
+				renderer.render(scene, camera);
+
+			}
+
 			animate();
 
 
 		}
 
 
-		function animate() {
-
-			requestAnimationFrame(animate);
-	
-			controls.update();
-			
-			renderer.render(scene, camera);
 
 
-
-
+		function firstPersonCam () {
 
 			if (keyboard[38]) { // Up arrow key
 
@@ -653,26 +657,21 @@
 
 			}
 
+			function keyDown(e) {
 
+				keyboard[e.keyCode] = true;
 
-		}
+			}
 
+			function keyUp(e) {
 
+				keyboard[e.keyCode] = false;
 
-		function keyDown(e) {
+			}
 
-			keyboard[e.keyCode] = true;
+			window.addEventListener('keydown', keyDown);
+			window.addEventListener('keyup', keyUp);
 
-		}
+		};
 
-		function keyUp(e) {
-
-			keyboard[e.keyCode] = false;
-
-		}
-
-		window.addEventListener('keydown', keyDown);
-		window.addEventListener('keyup', keyUp);
-
-	
 		window.onload = init;
