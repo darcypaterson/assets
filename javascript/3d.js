@@ -499,16 +499,19 @@
 
 
 			
+			var city;
 			var loader = new THREE.GLTFLoader();
 
 			loader.load("scenes/bp_scene_6.gltf", function ( gltf ) {
+
+			city = gltf.scene;
 
 			scene.scale.x = 2;
 			scene.scale.y = 2;
 			scene.scale.z = 2;
 			scene.position.y = -30;
 	
-			    scene.add( gltf.scene );
+			    scene.add( city );
 			    
 			});
 
@@ -622,6 +625,8 @@
 			controls.update();
 
 			renderer.render(scene, camera);
+
+			city.rotation.y += 0.001;
 
 
 
