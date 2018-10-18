@@ -623,7 +623,7 @@
 			requestAnimationFrame(animate);
 	
 			controls.update();
-			ncube.rotation.y += 0.001;
+			
 			renderer.render(scene, camera);
 
 
