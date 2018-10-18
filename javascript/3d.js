@@ -504,14 +504,14 @@
 
 			loader.load("scenes/bp_scene_6.gltf", function ( gltf ) {
 
-			city = gltf.scene;
-
-			scene.scale.x = 2;
-			scene.scale.y = 2;
-			scene.scale.z = 2;
-			scene.position.y = -30;
+				city = gltf.scene;
 	
 			    scene.add( city );
+
+				scene.scale.x = 2;
+				scene.scale.y = 2;
+				scene.scale.z = 2;
+				scene.position.y = -30;
 			    
 			});
 
