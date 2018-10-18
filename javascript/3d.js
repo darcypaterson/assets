@@ -616,7 +616,7 @@
 			function animate() {
 
 				requestAnimationFrame(animate);
-				ncube.rotation.y += 0.001;
+				city.rotation.y += 0.001;
 		
 				controls.update();
 				
