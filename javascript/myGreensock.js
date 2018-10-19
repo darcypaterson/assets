@@ -116,7 +116,7 @@ butt2.addEventListener('click', function() {
 
 // Page 2
 
-	TweenMax.to("#mainTwo", 1, {autoAlpha:1, delay: 3});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
 // Page 3
 
@@ -124,12 +124,10 @@ butt2.addEventListener('click', function() {
 
 // Page 4
 
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
-	TweenMax.to("#mainFour", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 3});
 
 // Page 5
 
-	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
 	TweenMax.to("#mainFive", 1, {autoAlpha:0});
 
 // Page 6
