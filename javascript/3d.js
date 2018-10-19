@@ -605,7 +605,7 @@
 
 			// Camera
 
-			camera.position.set( -50, -10, -40 );
+			camera.position.set( -50, -20, -40 );
 			// camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
