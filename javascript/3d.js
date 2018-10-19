@@ -614,10 +614,9 @@
 				requestAnimationFrame(animate);
 				
 				// city.rotation.y += 0.001;		
-			
+				controls.update();			
 				renderer.render(scene, camera);	
-				
-				controls.update();
+
 
 				if (keyboard[38]) { // Up arrow key
 
