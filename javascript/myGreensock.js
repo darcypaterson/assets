@@ -629,6 +629,7 @@ document.getElementsByClassName('closeInstruct')[1].addEventListener('click', fu
 
 	
 	controls.dispose();
+	camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
