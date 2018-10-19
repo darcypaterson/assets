@@ -627,6 +627,9 @@ document.getElementsByClassName('closeInstruct')[0].addEventListener('click', fu
 
 document.getElementsByClassName('closeInstruct')[1].addEventListener('click', function() {
 
+	
+	controls.dispose();
+
 	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true ) {
