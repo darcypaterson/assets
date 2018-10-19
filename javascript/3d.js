@@ -499,23 +499,22 @@
 
 
 			
-			
+			var city;
 			var loader = new THREE.GLTFLoader();
 
 			loader.load("scenes/bp_scene_6.gltf", function ( gltf ) {
 
-				
-	
-			    scene.add( gltf.scene );
+				city = gltf.scene;
+			    scene.add( city );
+
+
+			    
+			});
 
 				scene.scale.x = 2;
 				scene.scale.y = 2;
 				scene.scale.z = 2;
 				scene.position.y = -30;
-			    
-			});
-
-
 			
 			// var womanLoader = new THREE.GLTFLoader();
 			// womanLoader.load("scenes/bp_scene_6_woman.gltf", function ( woman ) {
@@ -617,11 +616,9 @@
 
 				requestAnimationFrame(animate);
 				
-				gltf.scene.rotation.y += 0.001;
-		
-				controls.update();
-				
-				renderer.render(scene, camera);
+				city.rotation.y += 0.001;		
+				controls.update();				
+				renderer.render(scene, camera);				
 
 			}
 
