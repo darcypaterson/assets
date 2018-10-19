@@ -617,6 +617,7 @@
 
 				requestAnimationFrame(animate);
 				
+				var city;
 				city.rotation.y += 0.001;
 		
 				controls.update();
