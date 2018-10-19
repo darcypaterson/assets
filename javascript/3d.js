@@ -615,9 +615,15 @@
 				
 				// city.rotation.y += 0.001;		
 				controls.update();				
-				renderer.render(scene, camera);				
+				renderer.render(scene, camera);	
+
+				firstPersonCam();
+
+
 
 			}
+
+
 
 			animate();
 
