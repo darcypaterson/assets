@@ -91,7 +91,7 @@ butt1.addEventListener('click', function() {
 
 	}
 
-	controls.target.set( -0.5, 0.8125, 36.4 );
+	camera.target.set( -0.5, 0.8125, 36.4 );
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -.5, y: 0.8125, z: -6.35, ease: Power2.easeOut});
@@ -154,7 +154,7 @@ butt2.addEventListener('click', function() {
 
 	}
 
-	controls.target.set( cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z );
+	camera.target.set( cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z );
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y:cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
@@ -220,7 +220,7 @@ nav1.addEventListener('click', function() {
 
 	}
 
-	controls.target.set( 0, 0, 0 );
+	camera.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: -30, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -50, y: -20, z: -40, ease: Power2.easeOut});
@@ -275,7 +275,7 @@ nav2.addEventListener('click', function() {
 
 	}
 
-	controls.target.set( 0, 0, 0 );
+	camera.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -20, y: 6, z: 0, ease: Power2.easeOut});
@@ -374,7 +374,7 @@ nav4.addEventListener('click', function() {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
-	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
+	camera.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
 		
@@ -439,7 +439,7 @@ nav5.addEventListener('click', function() {
 
 	}
 
-	controls.target.set( 0, 0, 0 );
+	camera.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: -5, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -20.5, y: -2.25, z: -6.5, ease: Power2.easeOut});
@@ -498,7 +498,7 @@ nav6.addEventListener('click', function() {
 
 	}
 
-	controls.target.set( 0, 0, 0 );
+	camera.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: -10, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -27, y: 2, z: 0, ease: Power2.easeOut});
@@ -581,7 +581,7 @@ document.getElementById('sayYes').addEventListener('click', function(e) {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
-	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
+	camera.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
 		
