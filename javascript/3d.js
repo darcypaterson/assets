@@ -508,13 +508,14 @@
 			    scene.add( city );
 
 
-			    
-			});
-
 				scene.scale.x = 2;
 				scene.scale.y = 2;
 				scene.scale.z = 2;
 				scene.position.y = -30;
+			    
+			});
+
+
 			
 			// var womanLoader = new THREE.GLTFLoader();
 			// womanLoader.load("scenes/bp_scene_6_woman.gltf", function ( woman ) {
@@ -604,7 +605,7 @@
 
 			// Camera
 
-			camera.position.set( -50, -30, -40 );
+			camera.position.set( -50, -10, -40 );
 			// camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
