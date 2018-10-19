@@ -631,9 +631,9 @@ document.getElementsByClassName('closeInstruct')[1].addEventListener('click', fu
 
 
 
-	controls.dispose();
+	controls.enabled = false;
 	camera.lookAt(new THREE.Vector3(0, player.height, 0));
-	
+
 	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true ) {

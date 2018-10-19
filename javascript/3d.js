@@ -614,8 +614,7 @@
 				requestAnimationFrame(animate);
 				
 				// city.rotation.y += 0.001;		
-				controls.update();
-				controls.dispose();			
+				controls.update();			
 				renderer.render(scene, camera);	
 
 
