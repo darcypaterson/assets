@@ -604,8 +604,8 @@
 			camera.position.set( -50, -20, -40 );
 			// camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
-			controls = new THREE.OrbitControls( camera, renderer.domElement );
-			controls.target.set( 0, 0, 0 );
+			// controls = new THREE.OrbitControls( camera, renderer.domElement );
+			// controls.target.set( 0, 0, 0 );
 
 
 
@@ -614,7 +614,7 @@
 				requestAnimationFrame(animate);
 				
 				// city.rotation.y += 0.001;		
-				controls.update();				
+				// controls.update();				
 				renderer.render(scene, camera);	
 
 
