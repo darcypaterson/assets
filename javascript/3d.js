@@ -38,14 +38,12 @@
 						
 
 
-
-
 			// Polygons
 
-			var ngeometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var nmaterial = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
-			var ncube = new THREE.Mesh( ngeometry, nmaterial );
-			scene.add( ncube );
+			// var ngeometry = new THREE.BoxGeometry( 1, 1, 1 );
+			// var nmaterial = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
+			// var ncube = new THREE.Mesh( ngeometry, nmaterial );
+			// scene.add( ncube );
 
 
 
@@ -617,7 +615,7 @@
 
 				requestAnimationFrame(animate);
 				
-				city.rotation.y += 0.001;		
+				// city.rotation.y += 0.001;		
 				controls.update();				
 				renderer.render(scene, camera);				
 

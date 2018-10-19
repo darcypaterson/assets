@@ -10,7 +10,7 @@ var nav5 = document.getElementsByClassName('navButton')[4];
 var nav6 = document.getElementsByClassName('navButton')[5];
 
 var butt1 = document.getElementById('butt1');
-
+var butt2 = document.getElementById('butt2');
 
 // Navigation
 var nav = document.getElementById("nav");
@@ -35,10 +35,13 @@ function navigation() {
 
 navigation();
 
-butt1.addEventListener('click', function() {
+
+
+butt2.addEventListener('click', function() {
 
 	// TweenMax.to("#nav", 1, {autoAlpha:1});
 	TweenMax.to("#butt1", 1, {autoAlpha:0});
+	TweenMax.to("#butt2", 1, {autoAlpha:0});
 
 	current[0].className = current[0].className.replace(" navButtonHere", "");
 	btns[1].className += " navButtonHere";
@@ -158,7 +161,7 @@ nav1.addEventListener('click', function() {
 	controls.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: -30, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: -50, y: -30, z: -40, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: -50, y: -20, z: -40, ease: Power2.easeOut});
 
 });
 
