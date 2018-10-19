@@ -155,8 +155,6 @@ butt2.addEventListener('click', function() {
 	}
 
 	
-	controls.dispose();
-	camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 	// controls.target.set( cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z );
 
@@ -632,6 +630,10 @@ document.getElementsByClassName('closeInstruct')[0].addEventListener('click', fu
 document.getElementsByClassName('closeInstruct')[1].addEventListener('click', function() {
 
 
+
+	controls.dispose();
+	camera.lookAt(new THREE.Vector3(0, player.height, 0));
+	
 	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true ) {
