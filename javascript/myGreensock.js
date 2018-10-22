@@ -160,7 +160,8 @@ butt2.addEventListener('click', function() {
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y:cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
-
+	
+	controls.enabled = false;
 
 });
 
@@ -631,7 +632,7 @@ document.getElementsByClassName('closeInstruct')[1].addEventListener('click', fu
 
 
 
-	controls.enabled = false;
+	
 	// camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 	TweenMax.to("#mainFour", 1, {autoAlpha:0});
