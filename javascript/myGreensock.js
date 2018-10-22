@@ -161,6 +161,7 @@ butt2.addEventListener('click', function() {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y:cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
+	console.log('hey dude');
 
 });
 
