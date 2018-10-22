@@ -102,7 +102,7 @@ butt1.addEventListener('click', function() {
 
 butt2.addEventListener('click', function() {
 
-	console.log('hey dude');
+	console.log('hey man');
 	butt2.style.backgroundColor = 'red';
 
 });
