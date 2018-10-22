@@ -606,64 +606,6 @@
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
 			controls.target.set( 0, 0, 0 );
 
-
-
-			function animate() {
-
-				requestAnimationFrame(animate);
-				
-						
-				if ( controls.enabled ) {
-
-					controls.update();
-
-				}	
-
-				renderer.render(scene, camera);	
-
-
-				if (keyboard[38]) { // Up arrow key
-
-					camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
-					camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
-				}
-
-				if (keyboard[40]) { // Down arrow key
-
-					camera.position.x += Math.sin(camera.rotation.y) * player.speed;
-					camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
-				}
-
-				if (keyboard[37]) { // left arrow key
-
-					camera.rotation.y -= player.turnSpeed;
-
-				}
-				if (keyboard[39]) { // right arrow key
-
-					camera.rotation.y += player.turnSpeed;
-
-				}
-
-				function keyDown(e) {
-
-					keyboard[e.keyCode] = true;
-
-				}
-
-				function keyUp(e) {
-
-					keyboard[e.keyCode] = false;
-
-				}
-
-				window.addEventListener('keydown', keyDown);
-				window.addEventListener('keyup', keyUp);
-
-			}
-
-
-
 			animate();
 
 
@@ -672,6 +614,58 @@
 
 
 
+		function animate() {
+
+					
+			if ( controls.enabled ) {
+
+				controls.update();
+
+			}	
+
+			requestAnimationFrame(animate);
+			renderer.render(scene, camera);	
 
 
-		window.onload = init;
+			if (keyboard[38]) { // Up arrow key
+
+				camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
+				camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+			}
+
+			if (keyboard[40]) { // Down arrow key
+
+				camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+				camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+			}
+
+			if (keyboard[37]) { // left arrow key
+
+				camera.rotation.y -= player.turnSpeed;
+
+			}
+			if (keyboard[39]) { // right arrow key
+
+				camera.rotation.y += player.turnSpeed;
+
+			}
+
+			function keyDown(e) {
+
+				keyboard[e.keyCode] = true;
+
+			}
+
+			function keyUp(e) {
+
+				keyboard[e.keyCode] = false;
+
+			}
+
+			window.addEventListener('keydown', keyDown);
+			window.addEventListener('keyup', keyUp);
+
+		}
+
+
+		init();
