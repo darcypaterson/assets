@@ -620,6 +620,7 @@
 			if ( controls.enabled ) {
 
 				controls.update();
+				console.log('Darcy');
 
 			}	
 
@@ -644,6 +645,7 @@
 				camera.rotation.y -= player.turnSpeed;
 
 			}
+
 			if (keyboard[39]) { // right arrow key
 
 				camera.rotation.y += player.turnSpeed;
