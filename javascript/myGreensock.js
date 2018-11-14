@@ -1,21 +1,40 @@
-var camera;
-var cameraInCar, cameraInCarLook;
-var controls;
+// Start/First Page Buttons
+const butt1 = document.getElementById('butt1');
+const butt2 = document.getElementById('butt2');
 
-var nav1 = document.getElementsByClassName('navButton')[0];
-var nav2 = document.getElementsByClassName('navButton')[1];
-var nav3 = document.getElementsByClassName('navButton')[2];
-var nav4 = document.getElementsByClassName('navButton')[3];
-var nav5 = document.getElementsByClassName('navButton')[4];
-var nav6 = document.getElementsByClassName('navButton')[5];
+// Content 
+const mainTwo = document.getElementById('mainTwo');
+const mainThree = document.getElementById('mainThree');
+const mainFour = document.getElementById('mainFour');
+const mainFive = document.getElementById('mainFive');
+const share = document.getElementById('share');
+const learn = document.getElementById('learn');
+const subscribe = document.getElementById('subscribe');
 
-var butt1 = document.getElementById('butt1');
-var butt2 = document.getElementById('butt2');
+// Canvas Element
+const mainCanvas = document.getElementsByTagName('canvas');
+
+// Instructions close button
+const closeInstruct = document.getElementsByClassName('closeInstruct');
 
 // Navigation
-var nav = document.getElementById("nav");
-var btns = nav.getElementsByClassName("navButton");
-var current = document.getElementsByClassName("navButtonHere");
+const nav = document.getElementById("nav");
+const btns = nav.getElementsByClassName("navButton");
+const current = document.getElementsByClassName("navButtonHere");
+const nav1 = document.getElementById('home');
+const nav2 = document.getElementById('numOne');
+const nav3 = document.getElementById('numTwo');
+const nav4 = document.getElementById('learnMore');
+const nav5 = document.getElementById('contactUs');
+
+
+
+
+
+navigation();
+closeInstructions();
+
+
 
 function navigation() {
 	
@@ -33,95 +52,109 @@ function navigation() {
 	}
 };
 
-navigation();
-
-butt1.addEventListener('click', function() {
-
-	// TweenMax.to("#nav", 1, {autoAlpha:1});
-	TweenMax.to("#butt1", 1, {autoAlpha:0});
-	TweenMax.to("#butt2", 1, {autoAlpha:0});
-
-	current[0].className = current[0].className.replace(" navButtonHere", "");
-	btns[1].className += " navButtonHere";
 
 
-// Page 1
-	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
-	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
 
-// Page 2
+// Removes blurry background on the canvas element when instructions appear
+function removeBlur() {
 
-	TweenMax.to("#mainTwo", 1, {autoAlpha:1, delay: 3});
+	if ( mainCanvas[0].classList.contains('blurIn') == true ) {
 
-// Page 3
+		mainCanvas[0].classList.remove('blurIn');
+		mainCanvas[0].classList.add('blurOut');	
 
-	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+	} 
 
-// Page 4
+}
 
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
-	TweenMax.to("#mainFour", 1, {autoAlpha:0});
+// Adds blurry background on the canvas element when instructions appear
+function makeBlur() {
 
-// Page 5
-
-	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
-	TweenMax.to("#mainFive", 1, {autoAlpha:0});
-
-// Page 6
-
-	TweenMax.to("#logo", 1, {autoAlpha:0});
-	TweenMax.to("#share", 1, {autoAlpha:0});
-	TweenMax.to("#subscribe", 1, {autoAlpha:0});
-	TweenMax.to("#learn", 1, {autoAlpha:0});
-	TweenMax.to("#mainSix", 1, {autoAlpha:0});
-
-// Nav
-
-	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:0, delay: 3});
-
-
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
+	if ( mainCanvas[0].classList.contains('blurIn') == false || mainCanvas[0].classList.contains('blurOut') == true ) {
 		
-		document.getElementsByTagName('canvas')[0].classList.add('blurIn');
-		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
+		mainCanvas[0].classList.add('blurIn');
+		mainCanvas[0].classList.remove('blurOut');
 
-	} else {
+	} 
+}
 
-		console.log('do nothing');
+
+// Close Instructions
+function closeInstructions() {
+
+	for (var i = 0; i < closeInstruct.length; i++) {
+
+		closeInstruct[i].addEventListener('click', function() {
+
+			controls.enabled = false;
+			TweenMax.to("#nav", 1, {autoAlpha:1});
+			removeBlur();
+			TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:1});
+
+			if (document.getElementById('mainTwo').style.opacity == 1) {
+
+				TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
+			} else if (document.getElementById('mainFour').style.opacity == 1) {
+
+				TweenMax.to("#mainFour", 1, {autoAlpha:0});
+			}
+
+		});
 
 	}
 
-	controls.target.set( -0.5, 0.8125, 36.4 );
-
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: -.5, y: 0.8125, z: -6.35, ease: Power2.easeOut});
+}
 
 
-});
+function success() {
+
+	document.addEventListener('keyup', function(event) {
+
+		if ( event.keyCode == 38 && theCar.position.x >= 1.5 && youreDone == false ) {
+
+			document.getElementById('youStopped').classList.add('dFlex');
+			document.getElementById('youStopped').classList.remove('dNone');
+			document.getElementById('tryAnother').classList.add('dFlex');
+			document.getElementById('tryAnother').classList.remove('dNone');
 
 
-butt2.addEventListener('click', function() {
+		} else if ( event.keyCode == 38 && theCar.position.x >= 1.5 && youreDone == true ) {
 
-	console.log('hey man');
-	butt2.style.backgroundColor = 'red';
+			document.getElementById('youStopped').classList.add('dFlex');
+			document.getElementById('youStopped').classList.remove('dNone');
+			document.getElementById('goNext').classList.add('dFlex');
+			document.getElementById('goNext').classList.remove('dNone');
 
-});
+		}
+
+
+	});
+
+}
+
+
 
 
 nav1.addEventListener('click', function() {
 
-	TweenMax.to("#nav", 1, {autoAlpha:0});
-	TweenMax.to("#butt1", 1, {autoAlpha:1});
-	TweenMax.to("#butt2", 1, {autoAlpha:1});
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+
 
 // Page 1
 
-	TweenMax.to("#introTextSm", 1, {autoAlpha:1});
-	TweenMax.to("#introTextLg", 1, {autoAlpha:1});
+	TweenMax.to("#mainOne", 1, {autoAlpha:1});
 
 // Page 2
+// mainThree.style.visibility == 'visible' || mainFour.style.visibility == 'visible' || mainFive.style.visibility == 'visible' || share.style.visibility == 'visible' || subscribe.style.visibility == 'visible' || learn.style.visibility == 'visible' 
+	
 
-	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+	if ( mainTwo.style.visibility == 'visible' && mainTwo.style.opacity == 1 ) {
+
+		TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
+	} 
+
 
 // Page 3
 
@@ -129,147 +162,126 @@ nav1.addEventListener('click', function() {
 
 // Page 4
 
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
 	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 // Page 5
 
-	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
 	TweenMax.to("#mainFive", 1, {autoAlpha:0});
 
 // Page 6
 
-	TweenMax.to("#logo", 1, {autoAlpha:0});
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
-	TweenMax.to("#mainSix", 1, {autoAlpha:0});
-
-
-	// if ( document.getElementsByTagName('canvas')[0].classList.contains(); ) {
-
-	// 	document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
-	// 	document.getElementsByTagName('canvas')[0].classList.add('blurOut');
-
-	// } 
 
 
 
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
-		
-		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
+	TweenMax.to(highway.position, 3, {x: 0, y: sceneUp, z: 0, ease: Power2.easeOut});
+	TweenMax.to(theCar.position, 3, {x: theCarPosOne.x, y: theCarPosOne.y, z: theCarPosOne.z, ease: Power2.easeOut});
+	TweenMax.to(theCar.rotation, 3, {y: -90 * ( Math.PI / 180 ), ease: Power2.easeOut});
 
-	} else {
 
-		console.log('do nothing');
-
-	}
-
+	controls.enabled = true;
 	controls.target.set( 0, 0, 0 );
 
-	TweenMax.to(scene.position, 3, {y: -30, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: -50, y: -20, z: -40, ease: Power2.easeOut});
+	TweenMax.to(scene.position, 3, {y: sceneStart, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: cameraInit.x, y: cameraInit.y, z: cameraInit.z, ease: Power2.easeOut});
+	
+
 
 });
+
+
+
 
 nav2.addEventListener('click', function() {
 
 
-	TweenMax.to("#nav", 1, {autoAlpha:1});
-	TweenMax.to("#butt1", 1, {autoAlpha:0});
-
 // Page 1
-	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
-	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
 
+	TweenMax.to("#mainOne", 1, {autoAlpha:0});
+	
 // Page 2
 
-	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:1, delay: 3});
 
-// Page 3
+// Nav
 
-	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-
-// Page 4
-
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
-	TweenMax.to("#mainFour", 1, {autoAlpha:0});
-
-// Page 5
-
-	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
-	TweenMax.to("#mainFive", 1, {autoAlpha:0});
-
-// Page 6
-
-	TweenMax.to("#logo", 1, {autoAlpha:0});
-	TweenMax.to("#share", 1, {autoAlpha:0});
-	TweenMax.to("#subscribe", 1, {autoAlpha:0});
-	TweenMax.to("#learn", 1, {autoAlpha:0});
-	TweenMax.to("#mainSix", 1, {autoAlpha:0});
+	TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:0, delay: 0.5});
+	current[0].className = current[0].className.replace(" navButtonHere", "");
+	btns[1].className += " navButtonHere";
 
 
 
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
-		
-		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
+	TweenMax.to(theCar.position, 3, {x: theCarPosOne.x, y: theCarPosOne.y, z: theCarPosOne.z, ease: Power2.easeOut});
+	TweenMax.to(theCar.rotation, 3, {y: -90 * ( Math.PI / 180 ), ease: Power2.easeOut});
 
-	} else {
 
-		console.log('do nothing');
-
-	}
-
-	controls.target.set( 0, 0, 0 );
+	controls.enabled = true;
+	controls.target.set( cameraInCarLookOne.x, cameraInCarLookOne.y, cameraInCarLookOne.z );
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: -20, y: 6, z: 0, ease: Power2.easeOut});
-
+	TweenMax.to(camera.position, 3, {x: cameraInCarOne.x, y: cameraInCarOne.y, z: cameraInCarOne.z, ease: Power2.easeOut});
+	
+	makeBlur();	
+	youreDone = true;
+	console.log(theCar.position.x, theCar.position.y, theCar.position.z);
 
 });
 
 
 
-nav3.addEventListener('click', function() {
+nav3.addEventListener('click', function(e) {
 
-	TweenMax.to("#nav", 1, {autoAlpha:1});
-	TweenMax.to("#butt1", 1, {autoAlpha:0});
+	e.preventDefault();
+
+
 
 
 // Page 1
-	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
-	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
 
-// Page 2
+	TweenMax.to("#mainOne", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 3});
 
-	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+// Nav
 
-// Page 3
+	TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:0, delay: 0.5});
 
-	TweenMax.to("#mainThree", 1, {autoAlpha:1, delay: 1});
-
-// Page 4
-
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
-	TweenMax.to("#mainFour", 1, {autoAlpha:0});
-
-// Page 5
-
-	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
-	TweenMax.to("#mainFive", 1, {autoAlpha:0});
-
-// Page 6
-
-	TweenMax.to("#logo", 1, {autoAlpha:0});
-	TweenMax.to("#share", 1, {autoAlpha:0});
-	TweenMax.to("#subscribe", 1, {autoAlpha:0});
-	TweenMax.to("#learn", 1, {autoAlpha:0});
-	TweenMax.to("#mainSix", 1, {autoAlpha:0});
+	current[0].className = current[0].className.replace(" navButtonHere", "");
+	btns[2].className += " navButtonHere";
 
 
+
+
+	TweenMax.to(theCar.position, 3, {x: 0, y: 0, z: 0, ease: Power2.easeOut});
+	TweenMax.to(theCar.rotation, 3, {y: 0, ease: Power2.easeOut});
+
+
+	TweenMax.to(heyLady.position, 3, {x: 0, y: 0, z: 0, ease: Power2.easeOut});
+
+	// TweenMax.to("#youStopped", 1, {autoAlpha:1});
+	// document.getElementById('youStopped').classList.add('dNone');
+	// document.getElementById('youStopped').classList.remove('dFlex');
+	// TweenMax.to("#tryAnother", 1, {autoAlpha:1});
+	// document.getElementById('tryAnother').classList.add('dNone');
+	// document.getElementById('tryAnother').classList.remove('dFlex');
+	// TweenMax.to("#goNext", 1, {autoAlpha:1});
+	// document.getElementById('goNext').classList.add('dNone');
+	// document.getElementById('goNext').classList.remove('dFlex');
+
+
+
+
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
+
+	controls.enabled = true;
+	controls.target.set( cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z );
+
+	makeBlur();
+	success();
 
 });
-
 
 
 
@@ -278,59 +290,62 @@ nav4.addEventListener('click', function() {
 	TweenMax.to("#nav", 1, {autoAlpha:1});
 	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
-
 // Page 1
-	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
-	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
 
+	TweenMax.to("#mainOne", 1, {autoAlpha:0});
+	
 // Page 2
 
-	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+	if ( mainTwo.style.visibility == 'visible' && mainTwo.style.opacity == 1 ) {
+
+		TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
+	} 
 
 // Page 3
 
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:1});
 
 // Page 4
 
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:1});
-	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 3});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 // Page 5
 
-	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
-	TweenMax.to("#mainFive", 1, {autoAlpha:0});
+
 
 // Page 6
 
-	TweenMax.to("#logo", 1, {autoAlpha:0});
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
-	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
 // Nav
 
-	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:0, delay: 3});
+
 
 // Change Camera
 
 	
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
-	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
 
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
+	if ( mainCanvas[0].classList.contains('blurIn') == false || mainCanvas[0].classList.contains('blurOut') == true ) {
 		
-		document.getElementsByTagName('canvas')[0].classList.add('blurIn');
-		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
+		mainCanvas[0].classList.remove('blurIn');
+		mainCanvas[0].classList.add('blurOut');
 
 	} else {
 
 		console.log('do nothing');
 
 	}
+
+	TweenMax.to("#youStopped", 1, {autoAlpha:0});
+	
+	controls.enabled = true;
+	controls.target.set( 0, 0, 0 );
+	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
 
 
 });
@@ -342,13 +357,16 @@ nav5.addEventListener('click', function() {
 	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
 // Page 1
-	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
-	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
+
+	TweenMax.to("#mainOne", 1, {autoAlpha:0});
 
 // Page 2
 
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+	if ( mainTwo.style.visibility == 'visible' && mainTwo.style.opacity == 1 ) {
+
+		TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
+	} 
 
 // Page 3
 
@@ -356,86 +374,23 @@ nav5.addEventListener('click', function() {
 
 // Page 4
 
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:1});
-	TweenMax.to("#mainFour", 1, {autoAlpha:1});
-
-// Page 5
-
-	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
-	TweenMax.to("#mainFive", 1, {autoAlpha:0});
-
-// Page 6
-
-	TweenMax.to("#logo", 1, {autoAlpha:0});
-	TweenMax.to("#share", 1, {autoAlpha:0});
-	TweenMax.to("#subscribe", 1, {autoAlpha:0});
-	TweenMax.to("#learn", 1, {autoAlpha:0});
-	TweenMax.to("#mainSix", 1, {autoAlpha:0});
-
-
-
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
-		
-		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
-
-	} else {
-
-		console.log('do nothing');
-
-	}
-
-	controls.target.set( 0, 0, 0 );
-
-	TweenMax.to(scene.position, 3, {y: -5, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: -20.5, y: -2.25, z: -6.5, ease: Power2.easeOut});
-
-
-});
-
-nav6.addEventListener('click', function() {
-
-	TweenMax.to("#nav", 1, {autoAlpha:1});
-	TweenMax.to("#butt1", 1, {autoAlpha:0});
-
-// Page 1
-
-	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
-	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
-
-
-// Page 2
-
-	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
-
-
-// Page 3
-
-	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-
-// Page 4
-
-	TweenMax.to("#wantToTry4", 1, {autoAlpha:0});
 	TweenMax.to("#mainFour", 1, {autoAlpha:0});
 
 // Page 5
 
-	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
 	TweenMax.to("#mainFive", 1, {autoAlpha:0});
 
 // Page 6
 
-	TweenMax.to("#logo", 1, {autoAlpha:1});
 	TweenMax.to("#share", 1, {autoAlpha:1});
 	TweenMax.to("#subscribe", 1, {autoAlpha:1});
 	TweenMax.to("#learn", 1, {autoAlpha:1});
-	TweenMax.to("#mainSix", 1, {autoAlpha:1});	
 
 
-
-	
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
+	if ( mainCanvas[0].classList.contains('blurIn') == true || mainCanvas[0].classList.contains('blurOut') == true ) {
 		
-		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
+		mainCanvas[0].classList.remove('blurIn');
+		mainCanvas[0].classList.add('blurOut');
 
 	} else {
 
@@ -444,40 +399,43 @@ nav6.addEventListener('click', function() {
 	}
 
 	controls.target.set( 0, 0, 0 );
-
-	TweenMax.to(scene.position, 3, {y: -10, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: -27, y: 2, z: 0, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
+	controls.enabled = true;
 
 
 });
 
-
-
-
-// function newCam () {
-
-// 	controls.enablePan = false;
-// 	controls.enableRotate = false;
-// 	controls.enabled = false;
-
-// };
-
-// function oldCam () {
-
-// 	controls.enablePan = true;
-// 	controls.enableRotate = true;
-// 	controls.enabled = true;
-
-// };
 
 
 
 document.getElementById('sayNo').addEventListener('click', function(e) {
 
 	e.preventDefault();
-	console.log('they said no');
+	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:1});
+
+	current[0].className = current[0].className.replace(" navButtonHere", "");
+	btns[3].className += " navButtonHere";
+
+	if ( mainCanvas[0].classList.contains('blurIn') == false || mainCanvas[0].classList.contains('blurOut') == true ) {
+		
+		mainCanvas[0].classList.remove('blurIn');
+		mainCanvas[0].classList.add('blurOut');
+
+	} else {
+
+		console.log('do nothing');
+
+	}
 
 });
+
+
+
+
+
+
+
 
 document.getElementById('sayYes').addEventListener('click', function(e) {
 
@@ -488,9 +446,9 @@ document.getElementById('sayYes').addEventListener('click', function(e) {
 
 
 // Page 1
-	TweenMax.to("#introTextSm", 1, {autoAlpha:0});
-	TweenMax.to("#introTextLg", 1, {autoAlpha:0});
 
+	TweenMax.to("#mainOne", 1, {autoAlpha:0});
+	
 // Page 2
 
 	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
@@ -501,37 +459,131 @@ document.getElementById('sayYes').addEventListener('click', function(e) {
 
 // Page 4
 
-	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 3});
+	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 1});
 
 // Page 5
 
-	TweenMax.to("#wantToTry5", 1, {autoAlpha:0});
 	TweenMax.to("#mainFive", 1, {autoAlpha:0});
 
 // Page 6
 
-	TweenMax.to("#logo", 1, {autoAlpha:0});
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
-	TweenMax.to("#mainSix", 1, {autoAlpha:0});
 
 // Nav
 
-	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:0, delay: 3});
+	TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:0, delay: 3});
+
+// Change Camera
+
+
+
+	// heyLady.position.set( 0, 0, 0 );
+	TweenMax.to("#youStopped", 1, {autoAlpha:1});
+	document.getElementById('youStopped').classList.add('dNone');
+	document.getElementById('youStopped').classList.remove('dFlex');
+	TweenMax.to("#tryAnother", 1, {autoAlpha:1});
+	document.getElementById('tryAnother').classList.add('dNone');
+	document.getElementById('tryAnother').classList.remove('dFlex');
+	TweenMax.to("#goNext", 1, {autoAlpha:1});
+	document.getElementById('goNext').classList.add('dNone');
+	document.getElementById('goNext').classList.remove('dFlex');
+	
+});
+
+
+
+document.getElementById('sayYes2').addEventListener('click', function(e) {
+
+
+	e.preventDefault();
+
+
+
+
+
+	current[0].className = current[0].className.replace(" navButtonHere", "");
+	btns[2].className += " navButtonHere";
+
+	TweenMax.to("#youStopped", 1, {autoAlpha:0});
+
+	controls.enabled = true;
+
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: -0.9, y: 0.8125, z: -10.4, ease: Power2.easeOut});
+	controls.target.set( -0.5, 0.8125, 10.4 );
+
+
+	TweenMax.to("#mainTwo", 1, {autoAlpha:1, delay: 3});
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById('nextPage').addEventListener('click', function() {
+
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+
+
+// Page 1
+
+	TweenMax.to("#mainOne", 1, {autoAlpha:0});
+	
+// Page 2
+
+	if ( mainTwo.style.visibility == 'visible' && mainTwo.style.opacity == 1 ) {
+
+		TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
+	} 
+
+// Page 3
+
+	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+	TweenMax.to("#mainFive", 1, {autoAlpha:1});
+
+// Page 4
+
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
+
+// Page 5
+
+
+
+// Page 6
+
+	TweenMax.to("#share", 1, {autoAlpha:0});
+	TweenMax.to("#subscribe", 1, {autoAlpha:0});
+	TweenMax.to("#learn", 1, {autoAlpha:0});
+
+// Nav
+
+
 
 // Change Camera
 
 	
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
-	controls.target.set( cameraInCarLook.x, player.height, cameraInCarLook.z );
 
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == false || document.getElementsByTagName('canvas')[0].classList.contains('blurOut') == true ) {
+	if ( mainCanvas[0].classList.contains('blurIn') == false || mainCanvas[0].classList.contains('blurOut') == true ) {
 		
-		document.getElementsByTagName('canvas')[0].classList.add('blurIn');
-		document.getElementsByTagName('canvas')[0].classList.remove('blurOut');
+		mainCanvas[0].classList.remove('blurIn');
+		mainCanvas[0].classList.add('blurOut');
 
 	} else {
 
@@ -539,63 +591,21 @@ document.getElementById('sayYes').addEventListener('click', function(e) {
 
 	}
 
-
-});
-
-
-document.getElementsByClassName('closeInstruct')[0].addEventListener('click', function() {
-
-	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
-
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true ) {
-
-		document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
-		document.getElementsByTagName('canvas')[0].classList.add('blurOut');	
-
-	} else {
-
-		console.log('do nothing');
-
-	}
+	controls.target.set( 0, 0, 0 );
+	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
+	controls.enabled = true;
 
 
-	// Nav
+	TweenMax.to("#youStopped", 1, {autoAlpha:0});
 
-	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:1});
+	current[0].className = current[0].className.replace(" navButtonHere", "");
+	btns[3].className += " navButtonHere";
+
 
 });
 
 
 
-
-
-
-document.getElementsByClassName('closeInstruct')[1].addEventListener('click', function() {
-
-
-
-	controls.enabled = false;
-	// camera.lookAt(new THREE.Vector3(0, player.height, 0));
-
-	TweenMax.to("#mainFour", 1, {autoAlpha:0});
-
-	if ( document.getElementsByTagName('canvas')[0].classList.contains('blurIn') == true ) {
-
-		document.getElementsByTagName('canvas')[0].classList.remove('blurIn');
-		document.getElementsByTagName('canvas')[0].classList.add('blurOut');	
-
-	} else {
-
-		console.log('do nothing');
-
-	}
-
-
-	// Nav
-
-	TweenMax.to([ nav1, nav2, nav3, nav4, nav5, nav6 ], 1, {autoAlpha:1});
-
-});
 
 
 

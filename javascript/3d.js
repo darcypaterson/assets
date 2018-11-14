@@ -1,15 +1,28 @@
-		var scene, camera, renderer, mesh;
-		var meshFloor;
+		var scene, camera, renderer, mesh, controls;
 		var meshThree;
 
-		var cameraInCar, cameraInCarLook;
+
+		const sceneDown = -50;
+		const sceneUp = 0;
+		const sceneStart = -10;
 
 
 		var keyboard = {};
 		var player = { height: 0.8125, speed: 0.01, turnSpeed: Math.PI * 0.002 };
 
-		cameraInCar = { x: -6.35, y: 0.8125, z: .5 };
-		cameraInCarLook = { x: 36.4, y: 0.8125, z: .5 };
+
+		const cameraInCar = { x: -6.35, y: player.height, z: .5 };
+		const cameraInCarLook = { x: 36.4, y: player.height, z: .5 };
+
+		const cameraInCarOne = { x: -0.9, y: player.height, z: 49.25 };
+		const cameraInCarLookOne = { x: -0.5, y: player.height, z: 69.25 };
+
+		const cameraInit = { x: -70, y: -8.5, z: 71 };
+
+		const theCarPosOne = {	x: -0.2, y: 0, z: 27.825 };			
+
+
+		let highway, heyLady, theCar, theCarTwo;
 
 
 		function init() {
@@ -18,6 +31,15 @@
 			camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 			
 			scene.background = new THREE.Color( 0x4893AA );
+
+
+
+			scene.scale.x = 2;
+			scene.scale.y = 2;
+			scene.scale.z = 2;
+			scene.position.y = sceneStart;
+
+
 
 			// const loadingManager = new THREE.LoadingManager( () => {
 			
@@ -47,445 +69,12 @@
 
 
 
+
+
 			// SVG Loader 
 
 
 
-			// instantiate a loader
-			var svgLoaderCloudOne = new THREE.SVGLoader();
-
-			// load a SVG resource
-			svgLoaderCloudOne.load(
-				// resource URL
-				'images/cloud-1.svg',
-				// called when the resource is loaded
-				function ( paths ) {
-
-					var group = new THREE.Group();
-
-					for ( var i = 0; i < paths.length; i ++ ) {
-
-						var path = paths[ i ];
-
-						var material = new THREE.MeshBasicMaterial( {
-							// color: path.color,
-							color: 0xffffff,
-							side: THREE.DoubleSide,
-							depthWrite: true,
-							opacity: 0.7,
-							transparent: true
-						} );
-
-						var shapes = path.toShapes( true );
-
-						for ( var j = 0; j < shapes.length; j ++ ) {
-
-							var shape = shapes[ j ];
-							var geometry = new THREE.ShapeBufferGeometry( shape );
-							var mesh = new THREE.Mesh( geometry, material );
-							group.add( mesh );
-
-
-						}
-
-					}
-
-					scene.add( group );
-					group.scale.x = 0.0095;
-					group.scale.y = 0.0095;
-					group.scale.z = 0.0095;
-					group.rotation.x = 180 * ( Math.PI / 180 );
-					group.rotation.y = 90 * ( Math.PI / 180 );
-					group.position.x = 1; 
-					group.position.y = 10;
-
-
-					function clouds() {
-
-
-						function makeNewNumber () {
-
-
-
-							if ( group.position.z <= 10 ) {
-
-								group.position.z += 0.01;
-								
-
-							} else {
-
-								group.position.z = -10;
-
-							}
-
-							
-						};
-
-
-						makeNewNumber();
-
-						function changeOpacityCloud () {
-
-							if ( group.position.z >= -10 && group.position.z <= -9 ) {
-
-								material.opacity += 0.01;
-
-							} else if ( group.position.z >= 9 && group.position.z <= 10) {
-
-								material.opacity -= 0.01;
-
-							} else if ( group.position.z >= -9 && group.position.z <= 9 ) {
-
-								material.opacity = 0.7;
-							}
-
-						};
-
-						changeOpacityCloud();						
-
-						requestAnimationFrame(clouds);
-
-
-					};
-
-					clouds();
-
-
-
-				
-
-
-				},
-
-			);
-
-
-
-			// instantiate a loader
-			var svgLoaderCloudOneB = new THREE.SVGLoader();
-
-			// load a SVG resource
-			svgLoaderCloudOneB.load(
-				// resource URL
-				'images/cloud-1.svg',
-				// called when the resource is loaded
-				function ( paths ) {
-
-					var group = new THREE.Group();
-
-					for ( var i = 0; i < paths.length; i ++ ) {
-
-						var path = paths[ i ];
-
-						var material = new THREE.MeshBasicMaterial( {
-							// color: path.color,
-							color: 0xffffff,
-							side: THREE.DoubleSide,
-							depthWrite: true,
-							opacity: 0.7,
-							transparent: true
-						} );
-
-						var shapes = path.toShapes( true );
-
-						for ( var j = 0; j < shapes.length; j ++ ) {
-
-							var shape = shapes[ j ];
-							var geometry = new THREE.ShapeBufferGeometry( shape );
-							var mesh = new THREE.Mesh( geometry, material );
-							group.add( mesh );
-
-
-						}
-
-					}
-
-					scene.add( group );
-					group.scale.x = 0.0095;
-					group.scale.y = 0.0095;
-					group.scale.z = 0.0095;
-					group.rotation.x = 180 * ( Math.PI / 180 );
-					group.rotation.y = 90 * ( Math.PI / 180 );
-					group.position.x = -5; 
-					group.position.y = 10;
-
-					function clouds() {
-
-
-
-						function makeNewNumber () {
-
-
-
-							if ( group.position.z <= 10 ) {
-
-								group.position.z += 0.02;
-								
-
-							} else {
-
-								group.position.z = -10;
-
-							}
-
-							
-						};
-
-
-						makeNewNumber();
-
-						function changeOpacityCloud () {
-
-							if ( group.position.z >= -10 && group.position.z <= -9 ) {
-
-								material.opacity += 0.01;
-
-							} else if ( group.position.z >= 9 && group.position.z <= 10) {
-
-								material.opacity -= 0.01;
-
-							} else if ( group.position.z >= -9 && group.position.z <= 9 ) {
-
-								material.opacity = 0.7;
-							}
-
-						};
-
-						changeOpacityCloud();						
-
-						requestAnimationFrame(clouds);
-
-
-					};
-
-					clouds();
-
-
-
-				
-
-
-				},
-
-			);
-
-
-
-
-
-
-
-
-
-
-
-
-			// instantiate a loader
-			var svgLoaderCloudTwo = new THREE.SVGLoader();
-
-			// load a SVG resource
-			svgLoaderCloudTwo.load(
-				// resource URL
-				'images/cloud-2.svg',
-				// called when the resource is loaded
-				function ( paths ) {
-
-					var group = new THREE.Group();
-
-					for ( var i = 0; i < paths.length; i ++ ) {
-
-						var path = paths[ i ];
-
-						var material = new THREE.MeshBasicMaterial( {
-							// color: path.color,
-							color: 0xffffff,
-							side: THREE.DoubleSide,
-							depthWrite: true,
-							opacity: 0.7,
-							transparent: true
-						} );
-
-						var shapes = path.toShapes( true );
-
-						for ( var j = 0; j < shapes.length; j ++ ) {
-
-							var shape = shapes[ j ];
-							var geometry = new THREE.ShapeBufferGeometry( shape );
-							var mesh = new THREE.Mesh( geometry, material );
-							group.add( mesh );
-
-
-						}
-
-					}
-
-					scene.add( group );
-					group.scale.x = 0.0095;
-					group.scale.y = 0.0095;
-					group.scale.z = 0.0095;
-					group.rotation.x = 180 * ( Math.PI / 180 );
-					group.rotation.y = 90 * ( Math.PI / 180 );
-					group.position.set( 3, 10, 1);
-
-
-					function clouds() {
-
-
-						function makeNewNumber () {
-
-
-
-							if ( group.position.z <= 10 ) {
-
-								group.position.z += 0.01;
-								
-
-							} else {
-
-								group.position.z = -10;
-
-							}
-
-							
-						};
-
-
-						makeNewNumber();
-
-						function changeOpacityCloud () {
-
-							if ( group.position.z >= -10 && group.position.z <= -9 ) {
-
-								material.opacity += 0.01;
-
-							} else if ( group.position.z >= 9 && group.position.z <= 10) {
-
-								material.opacity -= 0.01;
-
-							} else if ( group.position.z >= -9 && group.position.z <= 9 ) {
-
-								material.opacity = 0.7;
-							}
-
-						};
-
-						changeOpacityCloud();						
-						requestAnimationFrame(clouds);
-
-
-					};
-
-					clouds();
-
-
-				},
-
-			);
-
-
-			// instantiate a loader
-			var svgLoaderCloudThree = new THREE.SVGLoader();
-
-			// load a SVG resource
-			svgLoaderCloudThree.load(
-				// resource URL
-				'images/cloud-3.svg',
-				// called when the resource is loaded
-				function ( paths ) {
-
-					var group = new THREE.Group();
-
-					for ( var i = 0; i < paths.length; i ++ ) {
-
-						var path = paths[ i ];
-
-						var material = new THREE.MeshBasicMaterial( {
-							// color: path.color,
-							color: 0xffffff,
-							side: THREE.DoubleSide,
-							depthWrite: true,
-							opacity: 0.7,
-							transparent: true
-						} );
-
-						var shapes = path.toShapes( true );
-
-						for ( var j = 0; j < shapes.length; j ++ ) {
-
-							var shape = shapes[ j ];
-							var geometry = new THREE.ShapeBufferGeometry( shape );
-							var meshThree = new THREE.Mesh( geometry, material );
-							group.add( meshThree );
-
-
-						}
-
-					}
-
-					scene.add( group );
-					group.scale.x = 0.0095;
-					group.scale.y = 0.0095;
-					group.scale.z = 0.0095;
-					group.rotation.x = 180 * ( Math.PI / 180 );
-					group.rotation.y = 90 * ( Math.PI / 180 );
-					group.position.set( 5, 10, 3);
-
-
-
-						function clouds() {
-
-
-						function makeNewNumber () {
-
-
-
-							if ( group.position.z <= 10 ) {
-
-								group.position.z += 0.01;
-								
-
-							} else {
-
-								group.position.z = -10;
-
-							}
-
-							
-						};
-
-
-						makeNewNumber();
-
-						function changeOpacityCloud () {
-
-							if ( group.position.z >= -10 && group.position.z <= -9 ) {
-
-								material.opacity += 0.01;
-
-							} else if ( group.position.z >= 9 && group.position.z <= 10) {
-
-								material.opacity -= 0.01;
-
-							} else if ( group.position.z >= -9 && group.position.z <= 9 ) {
-
-								material.opacity = 0.7;
-							}
-
-						};
-
-						changeOpacityCloud();						
-
-						requestAnimationFrame(clouds);
-
-
-					};
-
-					clouds();
-
-
-				},
-
-			);
 
 
 
@@ -494,62 +83,66 @@
 
 
 			// End SVG Loader
+	
+			
+
+			// var loader = new THREE.GLTFLoader();
+			// loader.load("scenes/bp_scene_6.gltf", function ( gltf ) {
+
+			// 	city = gltf.scene;
+			//     scene.add( city );
+
+			//     city.position.y = sceneDown;
+			    
+			// });
 
 
 			
-			var city;
 			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/bp_scene_full.gltf", function ( hwy ) {
 
-			loader.load("scenes/bp_scene_6.gltf", function ( gltf ) {
-
-				city = gltf.scene;
-			    scene.add( city );
+				highway = hwy.scene;
+			    scene.add( hwy.scene );
 
 
-				scene.scale.x = 2;
-				scene.scale.y = 2;
-				scene.scale.z = 2;
-				scene.position.y = -30;
-			    
 			});
 
 
-			
-			// var womanLoader = new THREE.GLTFLoader();
-			// womanLoader.load("scenes/bp_scene_6_woman.gltf", function ( woman ) {
 
-			//     scene.add( woman.scene );
 
-			// });
 
-			var heyLady;
+
 			var womanLoader = new THREE.GLTFLoader();
 			womanLoader.load("scenes/bp_scene_6_woman.gltf", function( girl ) {
 
 				heyLady = girl.scene;
-				scene.add(heyLady);
+				scene.add( heyLady );
+
 
 				// heyLady.rotation.y = -90 * ( Math.PI / 180 );
 				// heyLady.position.z = 0;
 				// heyLady.position.x = 1;
 
+
 			});
 
 
 
-			
-			
-			var theCar;
 			var carLoader = new THREE.GLTFLoader();
 			carLoader.load("scenes/bp_scene_6_car.gltf", function ( car ) {
 
 				theCar = car.scene;
-			    scene.add( theCar );
+				scene.add( theCar );
+
+				theCar.rotation.y = -90 * ( Math.PI / 180 );
+				theCar.position.x = theCarPosOne.x;
+				theCar.position.z = theCarPosOne.z;
 
 			});
 
 
-			var theCarTwo;
+
+
 			var carLoaderTwo = new THREE.GLTFLoader();
 			carLoaderTwo.load("scenes/bp_scene_6_car.gltf", function ( carTwo ) {
 
@@ -557,7 +150,10 @@
 			    scene.add( theCarTwo );
 
 				theCarTwo.rotation.y = -180 * ( Math.PI / 180 );
+				theCarTwo.position.x = 0.2;
+				theCarTwo.position.z = 29.8;
 
+				
 			});
 			    
 
@@ -591,81 +187,92 @@
 				camera.aspect = width / height;
 				camera.updateProjectionMatrix();
 
-
 			});
 
-
-			
 
 
 
 			// Camera
 
-			camera.position.set( -50, -20, -40 );
+			camera.position.set( cameraInit.x, cameraInit.y, cameraInit.z );
 
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
 			controls.target.set( 0, 0, 0 );
 
+
+
 			animate();
 
-
-		}
-
+			function animate() {
 
 
 
-		function animate() {
+				if ( controls.enabled ) {
 
-					
-			if ( controls.enabled ) {
+					controls.update();
 
-				controls.update();
-				console.log('Darcy');
+				}	
 
-			}	
-
-			requestAnimationFrame(animate);
-			renderer.render(scene, camera);	
+				requestAnimationFrame(animate);
+				renderer.render(scene, camera);
 
 
-			if (keyboard[38]) { // Up arrow key
 
-				camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
-				camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+
+
+				if (keyboard[38])   { // Up arrow key
+
+					camera.position.x -= Math.sin(camera.rotation.y) * (player.speed + 0.02);
+					// camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+
+					theCar.position.x -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
+					heyLady.position.z -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
+
+
+
+				} 
+
+				
+
+				if (keyboard[40]) { // Down arrow key
+
+					camera.position.x += Math.sin(camera.rotation.y) * (player.speed + 0.02);
+					// camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+
+					theCar.position.x += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
+					heyLady.position.z += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
+
+	
+				}
+
+				if (keyboard[37]) { // left arrow key
+
+					camera.rotation.y -= player.turnSpeed;
+
+				}
+
+				if (keyboard[39]) { // right arrow key
+
+					camera.rotation.y += player.turnSpeed;
+
+				}
+
+				function keyDown(e) {
+
+					keyboard[e.keyCode] = true;
+
+				}
+
+				function keyUp(e) {
+
+					keyboard[e.keyCode] = false;
+
+				}
+
+				window.addEventListener('keydown', keyDown);
+				window.addEventListener('keyup', keyUp);
+
 			}
-
-			if (keyboard[40]) { // Down arrow key
-
-				camera.position.x += Math.sin(camera.rotation.y) * player.speed;
-				camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
-			}
-
-			if (keyboard[37]) { // left arrow key
-
-				camera.rotation.y -= player.turnSpeed;
-
-			}
-
-			if (keyboard[39]) { // right arrow key
-
-				camera.rotation.y += player.turnSpeed;
-
-			}
-
-			function keyDown(e) {
-
-				keyboard[e.keyCode] = true;
-
-			}
-
-			function keyUp(e) {
-
-				keyboard[e.keyCode] = false;
-
-			}
-
-			window.addEventListener('keydown', keyDown);
-			window.addEventListener('keyup', keyUp);
 
 		}
 
