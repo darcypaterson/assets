@@ -14,6 +14,9 @@ const mainCanvas = document.getElementsByTagName('canvas');
 // Instructions close button
 const closeInstruct = document.getElementById('closeInstruct');
 
+// link to last page 
+const helpUs = document.getElementsByClassName('helpUs')[0];
+
 // Navigation
 const nav = document.getElementById("nav");
 const btns = nav.getElementsByClassName("navButton");
@@ -88,7 +91,7 @@ function closeInstructions() {
 		controls.enabled = false;
 		TweenMax.to("#nav", 1, {autoAlpha:1});
 		TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:1});
-		
+
 		removeBlur();
 		infoIcon();
 
@@ -444,6 +447,44 @@ document.getElementById('nextPage').addEventListener('click', function(e) {
 	youStopped.classList.add('fadeOut');
 
 	removeBlur();
+
+
+});
+
+
+helpUs.addEventListener('click', function(e) {
+
+	e.preventDefault();
+
+// Nav
+
+	TweenMax.to("#nav", 1, {autoAlpha:1});
+
+// Pages
+
+	TweenMax.to("#mainOne", 1, {autoAlpha:0});
+
+	if ( mainTwo.style.visibility == 'visible' && mainTwo.style.opacity == 1 ) {
+
+		TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+
+	} 
+
+	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:1});
+	TweenMax.to("#share", 1, {autoAlpha:0});
+	TweenMax.to("#subscribe", 1, {autoAlpha:0});
+	TweenMax.to("#learn", 1, {autoAlpha:0});
+
+
+// Scenes
+
+	controls.enabled = true;
+	controls.target.set( 0, 0, 0 );
+	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
+	
+	removeBlur();
+	infoRecede();
 
 
 });

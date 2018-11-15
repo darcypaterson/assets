@@ -177,7 +177,10 @@ a:hover {
 
 .helpUs {
   font-weight: 600;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 /*   //////////////////   GRID   ////////////////   */
 .gridContainer {
@@ -836,14 +839,14 @@ footer {
 #wantToTry4 {
   padding: 0 4rem; }
 
-#arrow {
-  color: #226d8d;
-  transition: all 0.3s ease-out; }
+.arrow {
+  color: white;
+  transition: all 0.3s ease-out;
+  margin-left: 0.5rem; }
 
-#arrow:hover {
-  color: white; }
+.arrow:hover {
+  color: #d0c700; }
 
-/*   Page 5   */
 /*   Last Page   */
 #share, #learn, #subscribe {
   -webkit-box-orient: vertical;

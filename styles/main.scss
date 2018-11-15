@@ -314,6 +314,9 @@ button {
 
         font-weight: 600;
         font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
     }
 
@@ -1588,32 +1591,28 @@ footer {
 
   /*   Page 4   */
 
-  #wantToTry4 {
+    #wantToTry4 {
 
-      padding: 0 4rem;
+        padding: 0 4rem;
 
-  }
+    }
 
-  #arrow {
-      color: $brandBlue;
+    .arrow {
 
-      transition: all 0.3s ease-out;
-  }
+        color: white;
+        transition: all 0.3s ease-out;
+        margin-left: 0.5rem;
 
-  #arrow:hover {
+    }
 
-      color: white;
+    .arrow:hover {
 
-  }
+        color: $brandYellow;
 
-
-  /*   Page 5   */
-
-  #wantToTry5 {
+    }
 
 
 
-  }
 
 
 
