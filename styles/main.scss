@@ -98,6 +98,12 @@ button {
 
   }
 
+  #nextPage {
+
+    margin-top: 1rem;
+
+  }
+
 
   h1 {
 
@@ -416,6 +422,9 @@ button {
 
     padding: 0.5rem 2rem;
 
+    a {
+        margin: 0.4rem 0.2rem;
+    }
 
 
 
@@ -541,42 +550,7 @@ button {
 
 
 
-#butt1, #butt2 {
 
-    grid-column: 3 / 7;
-    grid-row: 8 / 10;
-    z-index: 200;
-    text-align: center;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    button {
-
-        border-radius: 25px;
-        border-width: 2px;
-        border-color: white;
-        border-style: solid;
-        background-color: $brandYellow;
-
-        width: 85%;
-        height: 63%;
-        font-size: 1.25rem;
-        padding: 0.5rem 2rem;
-
-    }
-
-    button:hover {
-        color: $brandBlue;
-        background-color: white;
-    }
-
-
-}
-
-#butt2 {
-    grid-column: 7 / 11;
-}
 
 
 
@@ -991,38 +965,35 @@ canvas {
 }
 
 
-#mainTwo, #mainFour {
+#mainTwo, #mainThree {
 
     grid-column: 1 / 13;
-    grid-row: 1 / 10;
-    position: absolute;
+    grid-row: 1 / 11;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 50;
     background-color: rgba(61, 61, 61, 0.7);
     
 
 }
 
-#mainThree {
+#mainFour {
 
-    grid-column: 4 / 10;
-    grid-row: 4 / 8;
-
+    grid-column: 1 / 13;
+    grid-row: 1 / 4;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 100%;
-    background-color: rgba(61, 61, 61, 1);
     z-index: 30;
-    border-radius: 25px;
+
 
 }
 
@@ -1079,17 +1050,27 @@ canvas {
 }
 
 
-#mainSix {
+#info {
 
-    grid-column: 1 / 13;
-    grid-row: 3 / 9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    grid-column: 12 / 13; 
+    grid-row: 1 / 2; 
+    background-color: gold; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 60;
 
 }
 
+#closeInstruct {
+
+    grid-column: 12 / 13;
+    grid-row: 1 / 2;   
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    z-index: 60;
+      
+}
 
 #introTextSm {
 
@@ -1217,6 +1198,12 @@ footer {
 .blurIn {
 
     animation: blurIn 1s ease-out forwards 3s;
+
+}
+
+.blurInFast {
+
+    animation: blurIn 1s ease-out forwards;
 
 }
 
@@ -1377,17 +1364,7 @@ footer {
     width: 50%;
 }
 
-.closeInstruct {
 
-    position: absolute; 
-    top: 20px; 
-    right:20px; 
-    z-index: 60;  
-    background-color: red;
-    width: 100px;
-    height: 100px;
-      
-}
 
 
 
@@ -1947,7 +1924,7 @@ footer {
   .fadeInDelay {
       
       opacity:0;
-      animation-delay: 1.5s;
+      animation-delay: 3s;
       animation-name: fadeIn;
       animation-duration: 1s;
       animation-timing-function: ease-out;
@@ -2055,7 +2032,6 @@ footer {
   @keyframes fadeOut {
 
       0%{opacity: 1;}
-      25%{opacity: 1;}
       100%{opacity: 0;}
 
   }
@@ -2069,7 +2045,6 @@ footer {
 
   .fadeOut {
       
-      opacity:1;
       animation-name: fadeOut;
       animation-duration: 0.5s;
       animation-timing-function: ease-out;

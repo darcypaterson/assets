@@ -1,15 +1,12 @@
 		var scene, camera, renderer, mesh, controls;
 		var meshThree;
 
-
 		const sceneDown = -50;
 		const sceneUp = 0;
 		const sceneStart = -10;
 
-
-		var keyboard = {};
-		var player = { height: 0.8125, speed: 0.01, turnSpeed: Math.PI * 0.002 };
-
+		const keyboard = {};
+		const player = { height: 0.8125, speed: 0.01, turnSpeed: Math.PI * 0.002 };
 
 		const cameraInCar = { x: -6.35, y: player.height, z: .5 };
 		const cameraInCarLook = { x: 36.4, y: player.height, z: .5 };
@@ -18,9 +15,7 @@
 		const cameraInCarLookOne = { x: -0.5, y: player.height, z: 69.25 };
 
 		const cameraInit = { x: -70, y: -8.5, z: 71 };
-
 		const theCarPosOne = {	x: -0.2, y: 0, z: 27.825 };			
-
 
 		let highway, heyLady, theCar, theCarTwo;
 
@@ -31,8 +26,6 @@
 			camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 			
 			scene.background = new THREE.Color( 0x4893AA );
-
-
 
 			scene.scale.x = 2;
 			scene.scale.y = 2;
@@ -203,78 +196,73 @@
 
 			animate();
 
-			function animate() {
+
+		}
+
+
+		function animate() {
+
+
+			requestAnimationFrame(animate);
+			renderer.render(scene, camera);
+
+
+			if ( controls.enabled ) {
+
+				controls.update();
+
+			}	
 
 
 
-				if ( controls.enabled ) {
+			if (keyboard[38])   { // Up arrow key
 
-					controls.update();
+				camera.position.x -= Math.sin(camera.rotation.y) * (player.speed + 0.02);
+				theCar.position.x -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
+				heyLady.position.z -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
 
-				}	
+			} 
 
-				requestAnimationFrame(animate);
-				renderer.render(scene, camera);
+			
 
+			if (keyboard[40]) { // Down arrow key
 
+				camera.position.x += Math.sin(camera.rotation.y) * (player.speed + 0.02);
+				theCar.position.x += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
+				heyLady.position.z += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
 
+			}
 
+			if (keyboard[37]) { // left arrow key
 
-				if (keyboard[38])   { // Up arrow key
+				camera.rotation.y -= player.turnSpeed;
 
-					camera.position.x -= Math.sin(camera.rotation.y) * (player.speed + 0.02);
-					// camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+			}
 
-					theCar.position.x -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
-					heyLady.position.z -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
+			if (keyboard[39]) { // right arrow key
 
-
-
-				} 
-
-				
-
-				if (keyboard[40]) { // Down arrow key
-
-					camera.position.x += Math.sin(camera.rotation.y) * (player.speed + 0.02);
-					// camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
-
-					theCar.position.x += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
-					heyLady.position.z += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
-
-	
-				}
-
-				if (keyboard[37]) { // left arrow key
-
-					camera.rotation.y -= player.turnSpeed;
-
-				}
-
-				if (keyboard[39]) { // right arrow key
-
-					camera.rotation.y += player.turnSpeed;
-
-				}
-
-				function keyDown(e) {
-
-					keyboard[e.keyCode] = true;
-
-				}
-
-				function keyUp(e) {
-
-					keyboard[e.keyCode] = false;
-
-				}
-
-				window.addEventListener('keydown', keyDown);
-				window.addEventListener('keyup', keyUp);
+				camera.rotation.y += player.turnSpeed;
 
 			}
 
 		}
 
+		function keyDown(e) {
+
+			keyboard[e.keyCode] = true;
+
+		}
+
+		function keyUp(e) {
+
+			keyboard[e.keyCode] = false;
+
+		}
+
+
+		window.addEventListener('keydown', keyDown);
+		window.addEventListener('keyup', keyUp);
+
+		
 
 		init();

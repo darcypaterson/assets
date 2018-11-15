@@ -1,21 +1,18 @@
-// Start/First Page Buttons
-const butt1 = document.getElementById('butt1');
-const butt2 = document.getElementById('butt2');
-
-// Content 
+// Content
+const mainOne = document.getElementById('mainOne'); 
 const mainTwo = document.getElementById('mainTwo');
 const mainThree = document.getElementById('mainThree');
 const mainFour = document.getElementById('mainFour');
-const mainFive = document.getElementById('mainFive');
 const share = document.getElementById('share');
 const learn = document.getElementById('learn');
 const subscribe = document.getElementById('subscribe');
+const youStopped = 	document.getElementById('youStopped');
 
 // Canvas Element
 const mainCanvas = document.getElementsByTagName('canvas');
 
 // Instructions close button
-const closeInstruct = document.getElementsByClassName('closeInstruct');
+const closeInstruct = document.getElementById('closeInstruct');
 
 // Navigation
 const nav = document.getElementById("nav");
@@ -26,8 +23,6 @@ const nav2 = document.getElementById('numOne');
 const nav3 = document.getElementById('numTwo');
 const nav4 = document.getElementById('learnMore');
 const nav5 = document.getElementById('contactUs');
-
-
 
 
 
@@ -46,8 +41,6 @@ function navigation() {
 
 		    this.className += " navButtonHere";
 
-		    console.log(this.innerText);
-
 		});
 	}
 };
@@ -58,9 +51,10 @@ function navigation() {
 // Removes blurry background on the canvas element when instructions appear
 function removeBlur() {
 
-	if ( mainCanvas[0].classList.contains('blurIn') == true ) {
+	if ( mainCanvas[0].classList.contains('blurIn') == true || mainCanvas[0].classList.contains('blurInFast') == true ) {
 
 		mainCanvas[0].classList.remove('blurIn');
+		mainCanvas[0].classList.remove('blurInFast');
 		mainCanvas[0].classList.add('blurOut');	
 
 	} 
@@ -79,55 +73,128 @@ function makeBlur() {
 }
 
 
+
+
+
+//  INSTRUCTIONS  //  
+
 // Close Instructions
 function closeInstructions() {
 
-	for (var i = 0; i < closeInstruct.length; i++) {
+	closeInstruct.addEventListener('click', function(e) {
 
-		closeInstruct[i].addEventListener('click', function() {
+	e.preventDefault();
 
-			controls.enabled = false;
-			TweenMax.to("#nav", 1, {autoAlpha:1});
-			removeBlur();
-			TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:1});
+		controls.enabled = false;
+		TweenMax.to("#nav", 1, {autoAlpha:1});
+		TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:1});
+		
+		removeBlur();
+		infoIcon();
 
-			if (document.getElementById('mainTwo').style.opacity == 1) {
+		closeInstruct.classList.remove('dFlex');
+		closeInstruct.classList.add('dNone');
+		closeInstruct.classList.remove('fadeInDelay');
 
-				TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
-			} else if (document.getElementById('mainFour').style.opacity == 1) {
+		if (document.getElementById('mainTwo').style.opacity == 1) {
 
-				TweenMax.to("#mainFour", 1, {autoAlpha:0});
-			}
+			TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
-		});
+		} else if (document.getElementById('mainThree').style.opacity == 1) {
+
+			TweenMax.to("#mainThree", 1, {autoAlpha:0});
+		}
+
+	});
+
+}
+
+function closeIns() {
+
+	closeInstruct.classList.add('dFlex');
+	closeInstruct.classList.remove('dNone');
+	closeInstruct.classList.add('fadeInDelay');
+
+}
+
+
+// escape hatch... Let's the user toggle instructions on/off
+
+function infoIcon() {
+
+	if ( document.getElementById('info').classList.contains('dNone') ) {
+
+		document.getElementById('info').classList.add('dFlex');
+		document.getElementById('info').classList.remove('dNone');
+		document.getElementById('info').classList.add('fadeIn');
+	}
+}
+
+function infoRecede() {
+
+	if ( document.getElementById('info').classList.contains('dFlex') ) {
+
+		document.getElementById('info').classList.remove('dFlex');
+		document.getElementById('info').classList.add('dNone');
+		document.getElementById('info').classList.remove('fadeIn');
 
 	}
 
 }
 
+document.getElementById('info').addEventListener('click', function(e) {
 
+	e.preventDefault();
+
+	if ( nav2.classList.contains('navButtonHere') ) {
+
+		TweenMax.to("#mainTwo", 1, {autoAlpha:1});
+		TweenMax.to("#nav", 1, {autoAlpha:0});
+
+	} else if ( nav3.classList.contains('navButtonHere') ) {
+
+		TweenMax.to("#mainThree", 1, {autoAlpha:1});
+		TweenMax.to("#nav", 1, {autoAlpha:0});
+
+	}
+
+	infoRecede();
+
+	closeInstruct.classList.add('dFlex');
+	closeInstruct.classList.remove('dNone');
+	closeInstruct.classList.add('fadeIn');
+
+	mainCanvas[0].classList.add('blurInFast');
+	mainCanvas[0].classList.remove('blurOut');
+
+});
+
+//  End INSTRUCTIONS  //
+
+
+
+
+// Reward statement that pops up for not running over the pedestrian
 function success() {
+
+
+	if ( youStopped.classList.contains('fadeOut') || youStopped.classList.contains('dFlex') ) {
+
+			youStopped.classList.remove('fadeOut');
+			youStopped.classList.remove('dFlex');
+			youStopped.classList.add('dNone');
+	}
 
 	document.addEventListener('keyup', function(event) {
 
-		if ( event.keyCode == 38 && theCar.position.x >= 1.5 && youreDone == false ) {
 
-			document.getElementById('youStopped').classList.add('dFlex');
-			document.getElementById('youStopped').classList.remove('dNone');
-			document.getElementById('tryAnother').classList.add('dFlex');
-			document.getElementById('tryAnother').classList.remove('dNone');
+		if ( event.keyCode == 38 && theCar.position.x >= 1.5 ) {
 
+			youStopped.classList.add('dFlex');
+			youStopped.classList.remove('dNone');
 
-		} else if ( event.keyCode == 38 && theCar.position.x >= 1.5 && youreDone == true ) {
-
-			document.getElementById('youStopped').classList.add('dFlex');
-			document.getElementById('youStopped').classList.remove('dNone');
-			document.getElementById('goNext').classList.add('dFlex');
-			document.getElementById('goNext').classList.remove('dNone');
-
-		}
-
+		} 
 
 	});
 
@@ -135,19 +202,18 @@ function success() {
 
 
 
+//  //////  NAVIGATION  //////  //
+nav1.addEventListener('click', function(e) {
 
-nav1.addEventListener('click', function() {
+	e.preventDefault();
+
+// Nav
 
 	TweenMax.to("#nav", 1, {autoAlpha:1});
 
+// Pages
 
-// Page 1
-
-	TweenMax.to("#mainOne", 1, {autoAlpha:1});
-
-// Page 2
-// mainThree.style.visibility == 'visible' || mainFour.style.visibility == 'visible' || mainFive.style.visibility == 'visible' || share.style.visibility == 'visible' || subscribe.style.visibility == 'visible' || learn.style.visibility == 'visible' 
-	
+	TweenMax.to("#mainOne", 1, {autoAlpha:1});	
 
 	if ( mainTwo.style.visibility == 'visible' && mainTwo.style.opacity == 1 ) {
 
@@ -155,55 +221,35 @@ nav1.addEventListener('click', function() {
 
 	} 
 
-
-// Page 3
-
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-
-// Page 4
-
 	TweenMax.to("#mainFour", 1, {autoAlpha:0});
-
-// Page 5
-
-	TweenMax.to("#mainFive", 1, {autoAlpha:0});
-
-// Page 6
-
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
 
+// Scenes
 
 	TweenMax.to(highway.position, 3, {x: 0, y: sceneUp, z: 0, ease: Power2.easeOut});
 	TweenMax.to(theCar.position, 3, {x: theCarPosOne.x, y: theCarPosOne.y, z: theCarPosOne.z, ease: Power2.easeOut});
 	TweenMax.to(theCar.rotation, 3, {y: -90 * ( Math.PI / 180 ), ease: Power2.easeOut});
-
 
 	controls.enabled = true;
 	controls.target.set( 0, 0, 0 );
 
 	TweenMax.to(scene.position, 3, {y: sceneStart, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInit.x, y: cameraInit.y, z: cameraInit.z, ease: Power2.easeOut});
-	
 
+	infoRecede();	
 
 });
 
 
 
 
-nav2.addEventListener('click', function() {
+nav2.addEventListener('click', function(e) {
 
-
-// Page 1
-
-	TweenMax.to("#mainOne", 1, {autoAlpha:0});
-	
-// Page 2
-
-	TweenMax.to("#mainTwo", 1, {autoAlpha:1, delay: 3});
+	e.preventDefault();
 
 // Nav
 
@@ -212,10 +258,21 @@ nav2.addEventListener('click', function() {
 	btns[1].className += " navButtonHere";
 
 
+// Pages
+
+	TweenMax.to("#mainOne", 1, {autoAlpha:0});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:1, delay: 3});
+	TweenMax.to("#mainThree", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
+	TweenMax.to("#share", 1, {autoAlpha:0});
+	TweenMax.to("#subscribe", 1, {autoAlpha:0});
+	TweenMax.to("#learn", 1, {autoAlpha:0});
+
+
+// Scenes
 
 	TweenMax.to(theCar.position, 3, {x: theCarPosOne.x, y: theCarPosOne.y, z: theCarPosOne.z, ease: Power2.easeOut});
 	TweenMax.to(theCar.rotation, 3, {y: -90 * ( Math.PI / 180 ), ease: Power2.easeOut});
-
 
 	controls.enabled = true;
 	controls.target.set( cameraInCarLookOne.x, cameraInCarLookOne.y, cameraInCarLookOne.z );
@@ -223,9 +280,10 @@ nav2.addEventListener('click', function() {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCarOne.x, y: cameraInCarOne.y, z: cameraInCarOne.z, ease: Power2.easeOut});
 	
-	makeBlur();	
-	youreDone = true;
-	console.log(theCar.position.x, theCar.position.y, theCar.position.z);
+	makeBlur();
+	infoRecede();
+	closeIns();	
+
 
 });
 
@@ -235,42 +293,29 @@ nav3.addEventListener('click', function(e) {
 
 	e.preventDefault();
 
-
-
-
-// Page 1
-
-	TweenMax.to("#mainOne", 1, {autoAlpha:0});
-	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 3});
-
 // Nav
 
 	TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:0, delay: 0.5});
-
 	current[0].className = current[0].className.replace(" navButtonHere", "");
 	btns[2].className += " navButtonHere";
 
 
+// Pages
 
+	TweenMax.to("#mainOne", 1, {autoAlpha:0});
+	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
+	TweenMax.to("#mainThree", 1, {autoAlpha:1, delay: 3});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
+	TweenMax.to("#share", 1, {autoAlpha:0});
+	TweenMax.to("#subscribe", 1, {autoAlpha:0});
+	TweenMax.to("#learn", 1, {autoAlpha:0});
+
+
+// Scenes
 
 	TweenMax.to(theCar.position, 3, {x: 0, y: 0, z: 0, ease: Power2.easeOut});
 	TweenMax.to(theCar.rotation, 3, {y: 0, ease: Power2.easeOut});
-
-
 	TweenMax.to(heyLady.position, 3, {x: 0, y: 0, z: 0, ease: Power2.easeOut});
-
-	// TweenMax.to("#youStopped", 1, {autoAlpha:1});
-	// document.getElementById('youStopped').classList.add('dNone');
-	// document.getElementById('youStopped').classList.remove('dFlex');
-	// TweenMax.to("#tryAnother", 1, {autoAlpha:1});
-	// document.getElementById('tryAnother').classList.add('dNone');
-	// document.getElementById('tryAnother').classList.remove('dFlex');
-	// TweenMax.to("#goNext", 1, {autoAlpha:1});
-	// document.getElementById('goNext').classList.add('dNone');
-	// document.getElementById('goNext').classList.remove('dFlex');
-
-
-
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
@@ -280,21 +325,24 @@ nav3.addEventListener('click', function(e) {
 
 	makeBlur();
 	success();
+	infoRecede();	
+	closeIns();
 
 });
 
 
 
-nav4.addEventListener('click', function() {
+nav4.addEventListener('click', function(e) {
+
+	e.preventDefault();
+
+// Nav
 
 	TweenMax.to("#nav", 1, {autoAlpha:1});
-	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
-// Page 1
+// Pages
 
 	TweenMax.to("#mainOne", 1, {autoAlpha:0});
-	
-// Page 2
 
 	if ( mainTwo.style.visibility == 'visible' && mainTwo.style.opacity == 1 ) {
 
@@ -302,65 +350,36 @@ nav4.addEventListener('click', function() {
 
 	} 
 
-// Page 3
-
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-	TweenMax.to("#mainFive", 1, {autoAlpha:1});
-
-// Page 4
-
-	TweenMax.to("#mainFour", 1, {autoAlpha:0});
-
-// Page 5
-
-
-
-// Page 6
-
+	TweenMax.to("#mainFour", 1, {autoAlpha:1});
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
 
-// Nav
 
+// Scenes
 
-
-// Change Camera
-
-	
-
-
-	if ( mainCanvas[0].classList.contains('blurIn') == false || mainCanvas[0].classList.contains('blurOut') == true ) {
-		
-		mainCanvas[0].classList.remove('blurIn');
-		mainCanvas[0].classList.add('blurOut');
-
-	} else {
-
-		console.log('do nothing');
-
-	}
-
-	TweenMax.to("#youStopped", 1, {autoAlpha:0});
-	
 	controls.enabled = true;
 	controls.target.set( 0, 0, 0 );
 	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
-
+	
+	removeBlur();
+	infoRecede();	
 
 });
 
 
-nav5.addEventListener('click', function() {
+nav5.addEventListener('click', function(e) {
+
+	e.preventDefault();
+
+// Nav
 
 	TweenMax.to("#nav", 1, {autoAlpha:1});
-	TweenMax.to("#butt1", 1, {autoAlpha:0});
 
-// Page 1
+// Pages
 
 	TweenMax.to("#mainOne", 1, {autoAlpha:0});
-
-// Page 2
 
 	if ( mainTwo.style.visibility == 'visible' && mainTwo.style.opacity == 1 ) {
 
@@ -368,183 +387,41 @@ nav5.addEventListener('click', function() {
 
 	} 
 
-// Page 3
-
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-
-// Page 4
-
 	TweenMax.to("#mainFour", 1, {autoAlpha:0});
-
-// Page 5
-
-	TweenMax.to("#mainFive", 1, {autoAlpha:0});
-
-// Page 6
-
 	TweenMax.to("#share", 1, {autoAlpha:1});
 	TweenMax.to("#subscribe", 1, {autoAlpha:1});
 	TweenMax.to("#learn", 1, {autoAlpha:1});
 
 
-	if ( mainCanvas[0].classList.contains('blurIn') == true || mainCanvas[0].classList.contains('blurOut') == true ) {
-		
-		mainCanvas[0].classList.remove('blurIn');
-		mainCanvas[0].classList.add('blurOut');
-
-	} else {
-
-		console.log('do nothing');
-
-	}
+// Scenes
 
 	controls.target.set( 0, 0, 0 );
 	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
 	controls.enabled = true;
 
+	removeBlur();
+	infoRecede();	
 
 });
 
 
 
 
-document.getElementById('sayNo').addEventListener('click', function(e) {
+document.getElementById('nextPage').addEventListener('click', function(e) {
 
 	e.preventDefault();
-	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-	TweenMax.to("#mainFive", 1, {autoAlpha:1});
-
-	current[0].className = current[0].className.replace(" navButtonHere", "");
-	btns[3].className += " navButtonHere";
-
-	if ( mainCanvas[0].classList.contains('blurIn') == false || mainCanvas[0].classList.contains('blurOut') == true ) {
-		
-		mainCanvas[0].classList.remove('blurIn');
-		mainCanvas[0].classList.add('blurOut');
-
-	} else {
-
-		console.log('do nothing');
-
-	}
-
-});
-
-
-
-
-
-
-
-
-document.getElementById('sayYes').addEventListener('click', function(e) {
-
-	e.preventDefault();
-
-	TweenMax.to("#nav", 1, {autoAlpha:1});
-	TweenMax.to("#butt1", 1, {autoAlpha:0});
-
-
-// Page 1
-
-	TweenMax.to("#mainOne", 1, {autoAlpha:0});
-	
-// Page 2
-
-	TweenMax.to("#mainTwo", 1, {autoAlpha:0});
-
-// Page 3
-
-	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-
-// Page 4
-
-	TweenMax.to("#mainFour", 1, {autoAlpha:1, delay: 1});
-
-// Page 5
-
-	TweenMax.to("#mainFive", 1, {autoAlpha:0});
-
-// Page 6
-
-	TweenMax.to("#share", 1, {autoAlpha:0});
-	TweenMax.to("#subscribe", 1, {autoAlpha:0});
-	TweenMax.to("#learn", 1, {autoAlpha:0});
 
 // Nav
 
-	TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:0, delay: 3});
-
-// Change Camera
-
-
-
-	// heyLady.position.set( 0, 0, 0 );
-	TweenMax.to("#youStopped", 1, {autoAlpha:1});
-	document.getElementById('youStopped').classList.add('dNone');
-	document.getElementById('youStopped').classList.remove('dFlex');
-	TweenMax.to("#tryAnother", 1, {autoAlpha:1});
-	document.getElementById('tryAnother').classList.add('dNone');
-	document.getElementById('tryAnother').classList.remove('dFlex');
-	TweenMax.to("#goNext", 1, {autoAlpha:1});
-	document.getElementById('goNext').classList.add('dNone');
-	document.getElementById('goNext').classList.remove('dFlex');
-	
-});
-
-
-
-document.getElementById('sayYes2').addEventListener('click', function(e) {
-
-
-	e.preventDefault();
-
-
-
-
-
-	current[0].className = current[0].className.replace(" navButtonHere", "");
-	btns[2].className += " navButtonHere";
-
-	TweenMax.to("#youStopped", 1, {autoAlpha:0});
-
-	controls.enabled = true;
-
-	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
-	TweenMax.to(camera.position, 3, {x: -0.9, y: 0.8125, z: -10.4, ease: Power2.easeOut});
-	controls.target.set( -0.5, 0.8125, 10.4 );
-
-
-	TweenMax.to("#mainTwo", 1, {autoAlpha:1, delay: 3});
-
-
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.getElementById('nextPage').addEventListener('click', function() {
-
 	TweenMax.to("#nav", 1, {autoAlpha:1});
+	current[0].className = current[0].className.replace(" navButtonHere", "");
+	btns[3].className += " navButtonHere";
 
 
-// Page 1
+// Pages
 
 	TweenMax.to("#mainOne", 1, {autoAlpha:0});
-	
-// Page 2
 
 	if ( mainTwo.style.visibility == 'visible' && mainTwo.style.opacity == 1 ) {
 
@@ -552,63 +429,24 @@ document.getElementById('nextPage').addEventListener('click', function() {
 
 	} 
 
-// Page 3
-
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-	TweenMax.to("#mainFive", 1, {autoAlpha:1});
-
-// Page 4
-
-	TweenMax.to("#mainFour", 1, {autoAlpha:0});
-
-// Page 5
-
-
-
-// Page 6
-
+	TweenMax.to("#mainFour", 1, {autoAlpha:1});
 	TweenMax.to("#share", 1, {autoAlpha:0});
 	TweenMax.to("#subscribe", 1, {autoAlpha:0});
 	TweenMax.to("#learn", 1, {autoAlpha:0});
-
-// Nav
-
-
-
-// Change Camera
-
 	
-
-
-	if ( mainCanvas[0].classList.contains('blurIn') == false || mainCanvas[0].classList.contains('blurOut') == true ) {
-		
-		mainCanvas[0].classList.remove('blurIn');
-		mainCanvas[0].classList.add('blurOut');
-
-	} else {
-
-		console.log('do nothing');
-
-	}
+// Scenes
 
 	controls.target.set( 0, 0, 0 );
 	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
 	controls.enabled = true;
 
+	youStopped.classList.add('fadeOut');
 
-	TweenMax.to("#youStopped", 1, {autoAlpha:0});
-
-	current[0].className = current[0].className.replace(" navButtonHere", "");
-	btns[3].className += " navButtonHere";
+	removeBlur();
 
 
 });
-
-
-
-
-
-
 
 
 
