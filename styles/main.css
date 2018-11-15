@@ -501,18 +501,30 @@ canvas {
 #info {
   grid-column: 12 / 13;
   grid-row: 1 / 2;
-  background-color: gold;
   width: 100%;
   height: 100%;
-  z-index: 60; }
+  z-index: 60;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: color 0.3s ease-out; }
+
+#info:hover {
+  color: #d0c700; }
 
 #closeInstruct {
   grid-column: 12 / 13;
   grid-row: 1 / 2;
-  background-color: red;
   width: 100%;
   height: 100%;
-  z-index: 60; }
+  z-index: 60;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: color 0.3s ease-out; }
+
+#closeInstruct:hover {
+  color: #d0c700; }
 
 #introTextSm {
   color: white;
