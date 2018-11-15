@@ -15,7 +15,7 @@ const mainCanvas = document.getElementsByTagName('canvas');
 const closeInstruct = document.getElementById('closeInstruct');
 
 // link to last page 
-const helpUs = document.getElementsByClassName('helpUs');
+let helpUs = document.getElementsByClassName('helpUs');
 
 // Navigation
 const nav = document.getElementById("nav");

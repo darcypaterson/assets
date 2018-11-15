@@ -81,7 +81,7 @@ button {
 
   }
 
-#nextPage > button > i:hover {
+#nextPage > button:hover > i {
 
       color: $brandBlue;
 }
@@ -327,7 +327,7 @@ button {
 
     }
 
-    #wantToTry4 > a > i:hover {
+    #wantToTry4 > a:hover > i {
 
         color: $brandYellow;
         

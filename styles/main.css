@@ -22,7 +22,7 @@ button:hover {
   background-color: white;
   border: 2px solid white; }
 
-#nextPage > button > i:hover {
+#nextPage > button:hover > i {
   color: #226d8d; }
 
 .noButton {
@@ -185,7 +185,7 @@ a:hover {
   align-items: center;
   justify-content: center; }
 
-#wantToTry4 > a > i:hover {
+#wantToTry4 > a:hover > i {
   color: #d0c700; }
 
 /*   //////////////////   GRID   ////////////////   */
