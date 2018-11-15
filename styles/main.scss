@@ -81,6 +81,13 @@ button {
 
   }
 
+#nextPage > button > i:hover {
+
+      color: $brandBlue;
+}
+
+
+
 .noButton {
 
     background-color: #8a8a8a;
@@ -320,6 +327,11 @@ button {
 
     }
 
+    #wantToTry4 > a > i:hover {
+
+        color: $brandYellow;
+        
+    }
 
 
 

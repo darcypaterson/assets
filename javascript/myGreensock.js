@@ -15,7 +15,7 @@ const mainCanvas = document.getElementsByTagName('canvas');
 const closeInstruct = document.getElementById('closeInstruct');
 
 // link to last page 
-const helpUs = document.getElementsByClassName('helpUs')[0];
+const helpUs = document.getElementsByClassName('helpUs');
 
 // Navigation
 const nav = document.getElementById("nav");
@@ -452,7 +452,7 @@ document.getElementById('nextPage').addEventListener('click', function(e) {
 });
 
 
-helpUs.addEventListener('click', function(e) {
+helpUs[0].addEventListener('click', function(e) {
 
 	e.preventDefault();
 

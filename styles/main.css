@@ -22,6 +22,9 @@ button:hover {
   background-color: white;
   border: 2px solid white; }
 
+#nextPage > button > i:hover {
+  color: #226d8d; }
+
 .noButton {
   background-color: #8a8a8a;
   color: #ffffff;
@@ -181,6 +184,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+#wantToTry4 > a > i:hover {
+  color: #d0c700; }
 
 /*   //////////////////   GRID   ////////////////   */
 .gridContainer {
