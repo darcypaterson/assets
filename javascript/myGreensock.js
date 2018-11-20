@@ -111,7 +111,7 @@ function closeInstructions() {
 
 			TweenMax.to("#mainThree", 1, {autoAlpha:0});
 
-			if (window.matchMedia("only screen and (max-width: 600px) and (orientation: landscape)").matches) {
+			if (window.matchMedia("(orientation: landscape)").matches) {
 
 				mobileControls.classList.remove('dNone');
 				mobileControls.classList.add('dGrid');
