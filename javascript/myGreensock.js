@@ -7,7 +7,7 @@ const share = document.getElementById('share');
 const learn = document.getElementById('learn');
 const subscribe = document.getElementById('subscribe');
 const youStopped = 	document.getElementById('youStopped');
-const mobileControls = document.getElementById('mobileControls');
+
 
 // Canvas Element
 const mainCanvas = document.getElementsByTagName('canvas');
@@ -110,15 +110,6 @@ function closeInstructions() {
 		} else if (document.getElementById('mainThree').style.opacity == 1) {
 
 			TweenMax.to("#mainThree", 1, {autoAlpha:0});
-
-			
-
-				mobileControls.classList.remove('dNone');
-				mobileControls.classList.add('dGrid');
-				TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:0});
-
-			
-
 		}
 
 
@@ -211,36 +202,11 @@ function success() {
 			youStopped.classList.add('dFlex');
 			youStopped.classList.remove('dNone');
 
-			mobileControls.classList.add('dNone');
-			mobileControls.classList.remove('dGrid');
-
-		} 
-
-	});
-
-	document.getElementById('arrowUp').addEventListener('touchstart', function() {
-
-		if ( theCar.position.x >= 1.5 ) {
-
-			youStopped.classList.add('dFlex');
-			youStopped.classList.remove('dNone');
-
-			mobileControls.classList.add('dNone');
-			mobileControls.classList.remove('dGrid');
-
 		} 
 
 	});
 
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -459,11 +425,11 @@ document.getElementById('nextPage').addEventListener('click', function(e) {
 	TweenMax.to("#nav", 1, {autoAlpha:1});
 	current[0].className = current[0].className.replace(" navButtonHere", "");
 	btns[3].className += " navButtonHere";
-	if (nav1.style.opacity == 0) {
+	// if (nav1.style.opacity == 0) {
 
-		TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:1});
+	// 	TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:1});
 
-	}
+	// }
 
 
 // Pages
