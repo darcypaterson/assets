@@ -7,6 +7,7 @@ const share = document.getElementById('share');
 const learn = document.getElementById('learn');
 const subscribe = document.getElementById('subscribe');
 const youStopped = 	document.getElementById('youStopped');
+const mobileControls = document.getElementById('mobileControls');
 
 // Canvas Element
 const mainCanvas = document.getElementsByTagName('canvas');
@@ -15,7 +16,7 @@ const mainCanvas = document.getElementsByTagName('canvas');
 const closeInstruct = document.getElementById('closeInstruct');
 
 // link to last page 
-let helpUs = document.getElementsByClassName('helpUs');
+const helpUs = document.getElementsByClassName('helpUs');
 
 // Navigation
 const nav = document.getElementById("nav");
@@ -38,7 +39,7 @@ function navigation() {
 	
 	for (var i = 0; i < btns.length; i++) {
 
-		btns[i].addEventListener("click", function() {
+		btns[i].addEventListener('click', function() {
 
 		    current[0].className = current[0].className.replace(" navButtonHere", "");
 
@@ -72,7 +73,8 @@ function makeBlur() {
 		mainCanvas[0].classList.add('blurIn');
 		mainCanvas[0].classList.remove('blurOut');
 
-	} 
+	}
+
 }
 
 
@@ -100,6 +102,7 @@ function closeInstructions() {
 		closeInstruct.classList.remove('fadeInDelay');
 
 
+
 		if (document.getElementById('mainTwo').style.opacity == 1) {
 
 			TweenMax.to("#mainTwo", 1, {autoAlpha:0});
@@ -107,7 +110,18 @@ function closeInstructions() {
 		} else if (document.getElementById('mainThree').style.opacity == 1) {
 
 			TweenMax.to("#mainThree", 1, {autoAlpha:0});
+
+			if (window.matchMedia("only screen and (max-width: 600px) and (orientation: landscape)").matches) {
+
+				mobileControls.classList.remove('dNone');
+				mobileControls.classList.add('dGrid');
+				TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:0});
+
+			}
+
 		}
+
+
 
 	});
 
@@ -197,11 +211,36 @@ function success() {
 			youStopped.classList.add('dFlex');
 			youStopped.classList.remove('dNone');
 
+			mobileControls.classList.add('dNone');
+			mobileControls.classList.remove('dGrid');
+
+		} 
+
+	});
+
+	document.getElementById('arrowUp').addEventListener('touchstart', function() {
+
+		if ( theCar.position.x >= 1.5 ) {
+
+			youStopped.classList.add('dFlex');
+			youStopped.classList.remove('dNone');
+
+			mobileControls.classList.add('dNone');
+			mobileControls.classList.remove('dGrid');
+
 		} 
 
 	});
 
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -238,7 +277,7 @@ nav1.addEventListener('click', function(e) {
 	TweenMax.to(theCar.rotation, 3, {y: -90 * ( Math.PI / 180 ), ease: Power2.easeOut});
 
 	controls.enabled = true;
-	controls.target.set( 0, 0, 0 );
+	TweenMax.to(controls.target, 3, { x:0, y:0, z:0, ease:Power2.easeOut });
 
 	TweenMax.to(scene.position, 3, {y: sceneStart, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInit.x, y: cameraInit.y, z: cameraInit.z, ease: Power2.easeOut});
@@ -278,7 +317,7 @@ nav2.addEventListener('click', function(e) {
 	TweenMax.to(theCar.rotation, 3, {y: -90 * ( Math.PI / 180 ), ease: Power2.easeOut});
 
 	controls.enabled = true;
-	controls.target.set( cameraInCarLookOne.x, cameraInCarLookOne.y, cameraInCarLookOne.z );
+	TweenMax.to(controls.target, 3, { x: -0.5, y: player.height, z: 69.25, ease: Power2.easeOut });
 
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCarOne.x, y: cameraInCarOne.y, z: cameraInCarOne.z, ease: Power2.easeOut});
@@ -324,7 +363,7 @@ nav3.addEventListener('click', function(e) {
 	TweenMax.to(camera.position, 3, {x: cameraInCar.x, y: cameraInCar.y, z: cameraInCar.z, ease: Power2.easeOut});
 
 	controls.enabled = true;
-	controls.target.set( cameraInCarLook.x, cameraInCarLook.y, cameraInCarLook.z );
+	TweenMax.to(controls.target, 3, { x: 36.4, y: player.height, z: 0.5, ease: Power2.easeOut });
 
 	makeBlur();
 	success();
@@ -363,8 +402,8 @@ nav4.addEventListener('click', function(e) {
 // Scenes
 
 	controls.enabled = true;
-	controls.target.set( 0, 0, 0 );
-	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
+	TweenMax.to(controls.target, 3, { x:0, y:0, z:0, ease:Power2.easeOut });
+	TweenMax.to(camera.position, 3, {x: -67.5, y: 3.05, z: 26.5, ease: Power2.easeOut});
 	
 	removeBlur();
 	infoRecede();	
@@ -399,8 +438,8 @@ nav5.addEventListener('click', function(e) {
 
 // Scenes
 
-	controls.target.set( 0, 0, 0 );
-	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
+	TweenMax.to(controls.target, 3, {x: 45, y: 20, z: 70, ease: Power2.easeOut} );
+	TweenMax.to(camera.position, 3, {x: -62.5, y: 11.25, z: 10.9, ease: Power2.easeOut});
 	controls.enabled = true;
 
 	removeBlur();
@@ -420,6 +459,11 @@ document.getElementById('nextPage').addEventListener('click', function(e) {
 	TweenMax.to("#nav", 1, {autoAlpha:1});
 	current[0].className = current[0].className.replace(" navButtonHere", "");
 	btns[3].className += " navButtonHere";
+	if (nav1.style.opacity == 0) {
+
+		TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:1});
+
+	}
 
 
 // Pages
@@ -440,8 +484,8 @@ document.getElementById('nextPage').addEventListener('click', function(e) {
 	
 // Scenes
 
-	controls.target.set( 0, 0, 0 );
-	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
+	TweenMax.to(controls.target, 3, { x:0, y:0, z:0, ease:Power2.easeOut });
+	TweenMax.to(camera.position, 3, {x: -67.5, y: 3.05, z: 26.5, ease: Power2.easeOut});
 	controls.enabled = true;
 
 	youStopped.classList.add('fadeOut');
@@ -453,6 +497,7 @@ document.getElementById('nextPage').addEventListener('click', function(e) {
 
 
 helpUs[0].addEventListener('click', function(e) {
+
 
 	e.preventDefault();
 
@@ -471,20 +516,20 @@ helpUs[0].addEventListener('click', function(e) {
 	} 
 
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-	TweenMax.to("#mainFour", 1, {autoAlpha:1});
-	TweenMax.to("#share", 1, {autoAlpha:0});
-	TweenMax.to("#subscribe", 1, {autoAlpha:0});
-	TweenMax.to("#learn", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
+	TweenMax.to("#share", 1, {autoAlpha:1});
+	TweenMax.to("#subscribe", 1, {autoAlpha:1});
+	TweenMax.to("#learn", 1, {autoAlpha:1});
 
 
 // Scenes
 
+	TweenMax.to(controls.target, 3, {x: 45, y: 20, z: 70, ease: Power2.easeOut} );
+	TweenMax.to(camera.position, 3, {x: -62.5, y: 11.25, z: 10.9, ease: Power2.easeOut});
 	controls.enabled = true;
-	controls.target.set( 0, 0, 0 );
-	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
-	
+
 	removeBlur();
-	infoRecede();
+	infoRecede();	
 
 
 });
