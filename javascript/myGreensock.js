@@ -111,13 +111,13 @@ function closeInstructions() {
 
 			TweenMax.to("#mainThree", 1, {autoAlpha:0});
 
-			if (window.matchMedia("(orientation: landscape)").matches) {
+			
 
 				mobileControls.classList.remove('dNone');
 				mobileControls.classList.add('dGrid');
 				TweenMax.to([ nav1, nav2, nav3, nav4, nav5 ], 1, {autoAlpha:0});
 
-			}
+			
 
 		}
 
