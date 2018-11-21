@@ -212,6 +212,16 @@ function success() {
 
 	});
 
+	document.getElementById('up').addEventListener('touchstart', function() {
+
+		if ( theCar.position.x >= 1.5 ) {
+			
+			youStopped.classList.add('dFlex');
+			youStopped.classList.remove('dNone');
+
+		}
+	})
+
 }
 
 
