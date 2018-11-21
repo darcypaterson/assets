@@ -1303,3 +1303,7 @@ footer {
     grid-column: 1 / 5;
     grid-row: 2 / 6;
     margin: 0 2vh; } }
+
+@media only screen and (orientation: landscape) {
+  .navButton {
+    font-size: 1.75rem; } }

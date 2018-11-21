@@ -7,7 +7,7 @@ const share = document.getElementById('share');
 const learn = document.getElementById('learn');
 const subscribe = document.getElementById('subscribe');
 const youStopped = 	document.getElementById('youStopped');
-
+const mobileNav = document.getElementById('mobileNav');
 
 // Canvas Element
 const mainCanvas = document.getElementsByTagName('canvas');
@@ -29,11 +29,16 @@ const nav4 = document.getElementById('learnMore');
 const nav5 = document.getElementById('contactUs');
 
 
-
 navigation();
 closeInstructions();
 
 
+
+document.getElementById('hamburger').addEventListener('touchstart', function() {
+
+	mobileNav.classList.toggle('dFlex');
+
+})
 
 function navigation() {
 	
@@ -110,6 +115,7 @@ function closeInstructions() {
 		} else if (document.getElementById('mainThree').style.opacity == 1) {
 
 			TweenMax.to("#mainThree", 1, {autoAlpha:0});
+			document.getElementById('controls').classList.add('dGrid');
 		}
 
 
