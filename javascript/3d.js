@@ -7,6 +7,7 @@
 
 		const keyboard = {};
 		const player = { height: 0.8125, speed: 0.01, turnSpeed: Math.PI * 0.002 };
+		const playerSpeedTwo = 0.0001;
 
 		const cameraInCar = { x: -6.35, y: player.height, z: .5 };
 		const cameraInCarLook = { x: 36.4, y: player.height, z: .5 };
@@ -18,7 +19,6 @@
 		const theCarPosOne = {	x: -0.2, y: 0, z: 27.825 };			
 
 		let highway, heyLady, theCar, theCarTwo;
-
 
 		function init() {
 
@@ -205,6 +205,20 @@
 
 			requestAnimationFrame(animate);
 			renderer.render(scene, camera);
+
+
+			// document.getElementById('arrowUp').addEventListener('touchstart', function() {
+
+			// 	camera.position.x -= Math.sin(camera.rotation.y) * (playerSpeedTwo + 0.0002);
+			// 	theCar.position.x -= Math.sin(camera.rotation.y) * ((playerSpeedTwo + 0.0002) / 2);
+			// 	heyLady.position.z -= Math.sin(camera.rotation.y) * ((playerSpeedTwo + 0.0002) / 4);
+
+
+			// });
+
+
+			// console.log(camera.position.x, camera.position.y, camera.position.z);
+			// console.log(controls.target.x, controls.target.y, controls.target.z);
 
 
 			if ( controls.enabled ) {

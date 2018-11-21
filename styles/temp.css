@@ -1,0 +1,100 @@
+  /* ////////////////   Navigation   ////////////// */
+
+  #nav {
+
+    grid-column: 2 / 12;
+    grid-row: 9 / 10; 
+    z-index: 50; 
+    font-size: 1rem;
+
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 0.5rem 2rem;
+
+    a {
+        margin: 0.4rem 0.2rem;
+    }
+
+
+
+  }
+
+
+  .navButton {
+
+    position: relative;
+    color: $brandDarkBlue;
+    border-radius: 5px;
+    background-color: $brandYellow;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0 .25rem;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-out;
+    height: 100%;
+    padding: 0.75rem;
+    line-height: 0.75rem
+
+  }
+
+  .navButton:hover {
+
+    color: $brandBlue;
+    background-color: white;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .navButtonHere {
+
+    color: $brandBlue;
+    background-color: white;
+    border-radius: 5px;
+
+  }
+
+
+
+  @keyframes navAni {
+
+      from {opacity: 1;}
+      to {opacity: 0;}
+
+  }
+
+
+  .hideAni {
+      animation-name: navAni;
+      animation-duration: 1.5s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+  }
+
+  @keyframes navAniRev {
+
+      from {opacity: 1;}
+      to {opacity: 0;}
+
+  }
+
+
+  .hideAniRev {
+
+    animation-name: navAniRev;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+
+  }
+
+
