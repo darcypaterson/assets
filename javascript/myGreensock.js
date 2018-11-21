@@ -459,6 +459,8 @@ helpUs[0].addEventListener('click', function(e) {
 // Nav
 
 	TweenMax.to("#nav", 1, {autoAlpha:1});
+	current[0].className = current[0].className.replace(" navButtonHere", "");
+	btns[4].className += " navButtonHere";
 
 // Pages
 
@@ -471,20 +473,22 @@ helpUs[0].addEventListener('click', function(e) {
 	} 
 
 	TweenMax.to("#mainThree", 1, {autoAlpha:0});
-	TweenMax.to("#mainFour", 1, {autoAlpha:1});
-	TweenMax.to("#share", 1, {autoAlpha:0});
-	TweenMax.to("#subscribe", 1, {autoAlpha:0});
-	TweenMax.to("#learn", 1, {autoAlpha:0});
+	TweenMax.to("#mainFour", 1, {autoAlpha:0});
+	TweenMax.to("#share", 1, {autoAlpha:1});
+	TweenMax.to("#subscribe", 1, {autoAlpha:1});
+	TweenMax.to("#learn", 1, {autoAlpha:1});
 
 
 // Scenes
 
-	controls.enabled = true;
 	controls.target.set( 0, 0, 0 );
 	TweenMax.to(camera.position, 3, {x: -50, y: 32, z: 0, ease: Power2.easeOut});
-	
+	controls.enabled = true;
+
 	removeBlur();
 	infoRecede();
+
+	console.log('work mother fucker - worrrrkkkk');
 
 
 });
