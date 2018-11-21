@@ -207,15 +207,36 @@
 			renderer.render(scene, camera);
 
 
-			// document.getElementById('arrowUp').addEventListener('touchstart', function() {
+			document.getElementById('up').addEventListener('touchstart', function() {
 
-			// 	camera.position.x -= Math.sin(camera.rotation.y) * (playerSpeedTwo + 0.0002);
-			// 	theCar.position.x -= Math.sin(camera.rotation.y) * ((playerSpeedTwo + 0.0002) / 2);
-			// 	heyLady.position.z -= Math.sin(camera.rotation.y) * ((playerSpeedTwo + 0.0002) / 4);
+				camera.position.x -= Math.sin(camera.rotation.y) * (playerSpeedTwo + 0.0002);
+				theCar.position.x -= Math.sin(camera.rotation.y) * ((playerSpeedTwo + 0.0002) / 2);
+				heyLady.position.z -= Math.sin(camera.rotation.y) * ((playerSpeedTwo + 0.0002) / 4);
 
 
-			// });
+			});
 
+			document.getElementById('down').addEventListener('touchstart', function() {
+
+				camera.position.x += Math.sin(camera.rotation.y) * (playerSpeedTwo + 0.0002);
+				theCar.position.x += Math.sin(camera.rotation.y) * ((playerSpeedTwo + 0.0002) / 2);
+				heyLady.position.z += Math.sin(camera.rotation.y) * ((playerSpeedTwo + 0.0002) / 4);
+
+			});
+
+
+			document.getElementById('left').addEventListener('touchstart', function() {
+
+				camera.rotation.y -= playerSpeedTwo;
+
+			});
+
+
+			document.getElementById('right').addEventListener('touchstart', function() {
+
+				camera.rotation.y += playerSpeedTwo;
+
+			});
 
 			// console.log(camera.position.x, camera.position.y, camera.position.z);
 			// console.log(controls.target.x, controls.target.y, controls.target.z);
@@ -229,53 +250,53 @@
 
 
 
-			if (keyboard[38])   { // Up arrow key
+			// if (keyboard[38])   { // Up arrow key
 
-				camera.position.x -= Math.sin(camera.rotation.y) * (player.speed + 0.02);
-				theCar.position.x -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
-				heyLady.position.z -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
+			// 	camera.position.x -= Math.sin(camera.rotation.y) * (player.speed + 0.02);
+			// 	theCar.position.x -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
+			// 	heyLady.position.z -= Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
 
-			} 
+			// } 
 
 			
 
-			if (keyboard[40]) { // Down arrow key
+			// if (keyboard[40]) { // Down arrow key
 
-				camera.position.x += Math.sin(camera.rotation.y) * (player.speed + 0.02);
-				theCar.position.x += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
-				heyLady.position.z += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
+			// 	camera.position.x += Math.sin(camera.rotation.y) * (player.speed + 0.02);
+			// 	theCar.position.x += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 2);
+			// 	heyLady.position.z += Math.sin(camera.rotation.y) * ((player.speed + 0.02) / 4);
 
-			}
+			// }
 
-			if (keyboard[37]) { // left arrow key
+			// if (keyboard[37]) { // left arrow key
 
-				camera.rotation.y -= player.turnSpeed;
+			// 	camera.rotation.y -= player.turnSpeed;
 
-			}
+			// }
 
-			if (keyboard[39]) { // right arrow key
+			// if (keyboard[39]) { // right arrow key
 
-				camera.rotation.y += player.turnSpeed;
+			// 	camera.rotation.y += player.turnSpeed;
 
-			}
-
-		}
-
-		function keyDown(e) {
-
-			keyboard[e.keyCode] = true;
+			// }
 
 		}
 
-		function keyUp(e) {
+		// function keyDown(e) {
 
-			keyboard[e.keyCode] = false;
+		// 	keyboard[e.keyCode] = true;
 
-		}
+		// }
+
+		// function keyUp(e) {
+
+		// 	keyboard[e.keyCode] = false;
+
+		// }
 
 
-		window.addEventListener('keydown', keyDown);
-		window.addEventListener('keyup', keyUp);
+		// window.addEventListener('keydown', keyDown);
+		// window.addEventListener('keyup', keyUp);
 
 		
 
