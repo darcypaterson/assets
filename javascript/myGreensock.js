@@ -7,7 +7,8 @@ const share = document.getElementById('share');
 const learn = document.getElementById('learn');
 const subscribe = document.getElementById('subscribe');
 const youStopped = 	document.getElementById('youStopped');
-const mobileNav = document.getElementById('mobileNav');
+const hamburger = document.getElementById('hamburger');
+
 
 // Canvas Element
 const mainCanvas = document.getElementsByTagName('canvas');
@@ -33,10 +34,27 @@ navigation();
 closeInstructions();
 
 
+function clearFadeIn() {
 
-document.getElementById('hamburger').addEventListener('touchstart', function() {
+	nav1.classList.remove('fadeIn');
+	nav2.classList.remove('fadeInTwo');
+	nav3.classList.remove('fadeInThree');
+	nav4.classList.remove('fadeInFour');
+	nav5.classList.remove('fadeInFive');
 
-	mobileNav.classList.toggle('dFlex');
+}
+
+
+hamburger.addEventListener('touchstart', function() {
+
+	nav.classList.toggle('dFlex');
+	nav1.classList.add('fadeIn');
+	nav2.classList.add('fadeInTwo');
+	nav3.classList.add('fadeInThree');
+	nav4.classList.add('fadeInFour');
+	nav5.classList.add('fadeInFive');
+    hamburger.classList.toggle('change');
+
 
 })
 
@@ -49,6 +67,9 @@ function navigation() {
 		    current[0].className = current[0].className.replace(" navButtonHere", "");
 
 		    this.className += " navButtonHere";
+
+		    clearFadeIn();
+
 
 		});
 	}
@@ -116,6 +137,7 @@ function closeInstructions() {
 
 			TweenMax.to("#mainThree", 1, {autoAlpha:0});
 			document.getElementById('controls').classList.add('dGrid');
+
 		}
 
 
@@ -142,6 +164,7 @@ function infoIcon() {
 		document.getElementById('info').classList.add('dFlex');
 		document.getElementById('info').classList.remove('dNone');
 		document.getElementById('info').classList.add('fadeIn');
+
 	}
 }
 
@@ -153,7 +176,15 @@ function infoRecede() {
 		document.getElementById('info').classList.add('dNone');
 		document.getElementById('info').classList.remove('fadeIn');
 
+		if ( document.getElementById('controls').classList.contains('dGrid') ) {
+
+			document.getElementById('controls').classList.remove('dGrid');
+			
+		}
+
 	}
+
+
 
 }
 
@@ -206,6 +237,7 @@ function success() {
 		if ( event.keyCode == 38 && theCar.position.x >= 1.5 ) {
 
 			youStopped.classList.add('dFlex');
+			youStopped.classList.add('fadeIn');
 			youStopped.classList.remove('dNone');
 
 		} 
@@ -215,8 +247,9 @@ function success() {
 	document.getElementById('up').addEventListener('touchstart', function() {
 
 		if ( theCar.position.x >= 1.5 ) {
-			
+
 			youStopped.classList.add('dFlex');
+			youStopped.classList.add('fadeIn');
 			youStopped.classList.remove('dNone');
 
 		}
@@ -264,7 +297,10 @@ nav1.addEventListener('click', function(e) {
 	TweenMax.to(scene.position, 3, {y: sceneStart, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInit.x, y: cameraInit.y, z: cameraInit.z, ease: Power2.easeOut});
 
-	infoRecede();	
+	nav.classList.toggle('dFlex');
+	hamburger.classList.toggle('change');
+	infoRecede();
+
 
 });
 
@@ -304,6 +340,8 @@ nav2.addEventListener('click', function(e) {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCarOne.x, y: cameraInCarOne.y, z: cameraInCarOne.z, ease: Power2.easeOut});
 	
+	nav.classList.toggle('dFlex');
+	hamburger.classList.toggle('change');
 	makeBlur();
 	infoRecede();
 	closeIns();	
@@ -347,6 +385,8 @@ nav3.addEventListener('click', function(e) {
 	controls.enabled = true;
 	TweenMax.to(controls.target, 3, { x: 36.4, y: player.height, z: 0.5, ease: Power2.easeOut });
 
+	nav.classList.toggle('dFlex');
+	hamburger.classList.toggle('change');
 	makeBlur();
 	success();
 	infoRecede();	
@@ -387,6 +427,8 @@ nav4.addEventListener('click', function(e) {
 	TweenMax.to(controls.target, 3, { x:0, y:0, z:0, ease:Power2.easeOut });
 	TweenMax.to(camera.position, 3, {x: -67.5, y: 3.05, z: 26.5, ease: Power2.easeOut});
 	
+	nav.classList.toggle('dFlex');
+	hamburger.classList.toggle('change');
 	removeBlur();
 	infoRecede();	
 
@@ -424,6 +466,8 @@ nav5.addEventListener('click', function(e) {
 	TweenMax.to(camera.position, 3, {x: -62.5, y: 11.25, z: 10.9, ease: Power2.easeOut});
 	controls.enabled = true;
 
+	nav.classList.toggle('dFlex');
+	hamburger.classList.toggle('change');
 	removeBlur();
 	infoRecede();	
 
@@ -471,8 +515,9 @@ document.getElementById('nextPage').addEventListener('click', function(e) {
 	controls.enabled = true;
 
 	youStopped.classList.add('fadeOut');
-
+	document.getElementById('controls').classList.remove('dGrid');
 	removeBlur();
+	infoRecede();
 
 
 });
