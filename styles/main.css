@@ -418,14 +418,14 @@ canvas {
   grid-template-rows: repeat(3, auto); }
 
 #youStopped {
-  grid-column: 2 / 12;
-  grid-row: 2 / 10;
+  grid-column: 4 / 10;
+  grid-row: 3 / 9;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  z-index: 30;
+  z-index: 130;
   background-color: #3d3d3d;
   border-radius: 25px; }
 
@@ -1215,7 +1215,8 @@ footer {
     font-size: 1.5rem; }
   #youStopped {
     grid-column: 4 / 10;
-    grid-row: 4 / 8; }
+    grid-row: 4 / 8;
+    z-index: 30; }
   #subscribe, #share, #learn {
     grid-row: 2 / 8;
     padding: 2rem; }
