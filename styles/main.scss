@@ -2098,13 +2098,13 @@ footer {
 
 
         grid-column: 1 / 13;
-        grid-row: 1 / 10;
+        grid-row: 1 / 11;
         background-color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        z-index: 60;
+        z-index: 110;
 
 
           h1 {
@@ -2158,21 +2158,70 @@ footer {
 
   }
 
-  @media only screen and (min-width: 800px) and (orientation: landscape) {
+
+
+@media only screen and (min-width: 1000px) and (orientation: landscape) {
+
+    #introTextSm {
+
+        font-size: 3rem;
+
+    }
+
+    #introTextLg {
+
+        font-size: 7rem;
+        margin: -3rem 0;
+
+    }
+
+    #info, #closeInstruct {
+
+        width: 88%;
+        height: 41%;
+
+    }
+
+    .h1Instructions {
+
+        font-size: 4rem;
+
+    }
+
+    #youStopped {
+
+        grid-column: 7 / 12;
+        grid-row: 6 / 10;
+
+    }
+
+    #controls {
+
+        grid-row: 7 / 10;
+
+    }
+
+    #wantToTry4 {
+
+        padding: 0 1rem;
+
+        h1 {
+
+            font-size: 3rem;
+            line-height: 3rem;
+            
+        }
+
+    }
+
+
+}
 
 
 
 
 
-
-
-
-  }
-
-
-
-
-  @media only screen and (min-width: 1000px) and (orientation: landscape) {
+/*  @media only screen and (min-width: 1000px) and (orientation: landscape) {
 
 
 
@@ -2182,7 +2231,7 @@ footer {
 
       }
 
-  /* ////////////////   Navigation   ////////////// */
+
 
 
 
@@ -2270,15 +2319,7 @@ footer {
     }
 
 
-      /* Photo of intersection */
 
-      #intersection {
-
-          width: 100%;
-          object-fit: cover;
-          height: 100vh;
-
-      }
 
 
       #logo {
@@ -2388,7 +2429,7 @@ footer {
 
 
 
-  }
+  }*/
 
 
 
@@ -2420,12 +2461,7 @@ footer {
 
       #sorry {
 
-
-          -ms-grid-column: 4;
-          -ms-grid-column-span: 6;
           grid-column: 4 / 10;
-          -ms-grid-row: 2;
-          -ms-grid-row-span: 7;
           grid-row: 2 / 9;
 
 
@@ -2461,7 +2497,6 @@ footer {
     #introTextSm {
 
         font-size: 4rem;
-
     }
 
     #introTextLg {

@@ -56,7 +56,7 @@ hamburger.addEventListener('touchstart', function() {
     hamburger.classList.toggle('change');
 
 
-})
+});
 
 function navigation() {
 	
@@ -102,8 +102,6 @@ function makeBlur() {
 	}
 
 }
-
-
 
 
 
