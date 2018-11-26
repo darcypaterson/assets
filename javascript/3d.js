@@ -20,18 +20,56 @@
 
 		let highway, heyLady, theCar, theCarTwo;
 
+
+		// var loadingScreen = {
+
+		// 	scene: new THREE.Scene(),
+		// 	camera: new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ),
+		// 	box: new THREE.Mesh(
+		// 		new THREE.BoxGeometry( 0.5, 0.5, 0.5 ),
+		// 		new THREE.MeshBasicMaterial( { color: 0x4444ff, wireframe: true } )
+		// 		)
+		// };
+
+
+		var LOADING_MANAGER = null;
+		var RESOURCES_LOADED = false;
+
+
+
 		function init() {
 
 			scene = new THREE.Scene();
 			camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-			
+		
+
+			// loadingScreen.box.position.set( 0, 0, 5 );
+			// loadingScreen.camera.lookAt(loadingScreen.box.position);
+			// loadingScreen.scene.add(loadingScreen.box);
+
+
+			loadingManager = new THREE.LoadingManager();
+
+			loadingManager.onProgress = function(item, loaded, total) {
+
+				console.log(item, loaded, total);
+
+			}
+
+			loadingManager.onLoad = function() {
+
+				console.log("loaded all resources");
+				RESOURCES_LOADED = true;
+
+			}
+
+
 			scene.background = new THREE.Color( 0x4893AA );
 
 			scene.scale.x = 2;
 			scene.scale.y = 2;
 			scene.scale.z = 2;
 			scene.position.y = sceneStart;
-
 
 
 			// const loadingManager = new THREE.LoadingManager( () => {
@@ -91,7 +129,7 @@
 
 
 			
-			var loader = new THREE.GLTFLoader();
+			var loader = new THREE.GLTFLoader(loadingManager);
 			loader.load("scenes/bp_scene_full.gltf", function ( hwy ) {
 
 				highway = hwy.scene;
@@ -105,7 +143,7 @@
 
 
 
-			var womanLoader = new THREE.GLTFLoader();
+			var womanLoader = new THREE.GLTFLoader(loadingManager);
 			womanLoader.load("scenes/bp_scene_6_woman.gltf", function( girl ) {
 
 				heyLady = girl.scene;
@@ -121,7 +159,7 @@
 
 
 
-			var carLoader = new THREE.GLTFLoader();
+			var carLoader = new THREE.GLTFLoader(loadingManager);
 			carLoader.load("scenes/bp_scene_6_car.gltf", function ( car ) {
 
 				theCar = car.scene;
@@ -136,7 +174,7 @@
 
 
 
-			var carLoaderTwo = new THREE.GLTFLoader();
+			var carLoaderTwo = new THREE.GLTFLoader(loadingManager);
 			carLoaderTwo.load("scenes/bp_scene_6_car.gltf", function ( carTwo ) {
 
 				theCarTwo = carTwo.scene;
@@ -196,11 +234,27 @@
 
 			animate();
 
+			// function onLoad() { 
+			//   var now = new Date().getTime();
+			//   var page_load_time = now - performance.timing.navigationStart;
+			//   console.log("User-perceived page loading time: " + page_load_time);
+			// }
+
+			// onLoad();
+
+
 
 		}
 
 
 		function animate() {
+
+
+			// if (RESOURCES_LOADED == true) {
+
+			// 	document.getElementById('loadContainer').classList.add('gone');
+
+			// }
 
 
 			requestAnimationFrame(animate);

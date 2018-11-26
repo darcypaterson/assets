@@ -8,7 +8,7 @@ const learn = document.getElementById('learn');
 const subscribe = document.getElementById('subscribe');
 const youStopped = 	document.getElementById('youStopped');
 const hamburger = document.getElementById('hamburger');
-
+const hamburgerCheck = window.matchMedia("(min-width: 1280px) and (hover:hover)");
 
 // Canvas Element
 const mainCanvas = document.getElementsByTagName('canvas');
@@ -32,6 +32,22 @@ const nav5 = document.getElementById('contactUs');
 
 navigation();
 closeInstructions();
+hideHamburger();
+
+
+
+
+
+function hideHamburger() {
+
+	if (hamburgerCheck.matches) {
+
+		hamburger.classList.add('dNone');
+		hamburger.classList.remove('dBlock');
+
+	} 
+
+}
 
 
 function clearFadeIn() {
@@ -57,6 +73,7 @@ hamburger.addEventListener('touchstart', function() {
 
 
 });
+
 
 function navigation() {
 	
@@ -126,18 +143,20 @@ function closeInstructions() {
 		closeInstruct.classList.remove('fadeInDelay');
 
 
-
 		if (document.getElementById('mainTwo').style.opacity == 1) {
 
 			TweenMax.to("#mainTwo", 1, {autoAlpha:0});
 
-		} else if (document.getElementById('mainThree').style.opacity == 1) {
+		} else if ( (document.getElementById('mainThree').style.opacity == 1) && (hamburger.classList.contains('dNone')) ) {
+
+			TweenMax.to("#mainThree", 1, {autoAlpha:0});
+
+		} else if ( (document.getElementById('mainThree').style.opacity == 1) && !(hamburger.classList.contains('dNone')) ) {
 
 			TweenMax.to("#mainThree", 1, {autoAlpha:0});
 			document.getElementById('controls').classList.add('dGrid');
 
 		}
-
 
 
 	});
@@ -421,9 +440,10 @@ nav4.addEventListener('click', function(e) {
 
 // Scenes
 
-	controls.enabled = true;
 	TweenMax.to(controls.target, 3, { x:0, y:0, z:0, ease:Power2.easeOut });
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -67.5, y: 3.05, z: 26.5, ease: Power2.easeOut});
+	controls.enabled = true;
 	
 	nav.classList.toggle('dFlex');
 	hamburger.classList.toggle('change');
@@ -460,8 +480,9 @@ nav5.addEventListener('click', function(e) {
 
 // Scenes
 
-	TweenMax.to(controls.target, 3, {x: 45, y: 20, z: 70, ease: Power2.easeOut} );
-	TweenMax.to(camera.position, 3, {x: -62.5, y: 11.25, z: 10.9, ease: Power2.easeOut});
+	TweenMax.to(controls.target, 3, {x: -7.4, y: 2.7, z: 31.4, ease: Power2.easeOut} );
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: -78.28, y: 15.55, z: 31.81, ease: Power2.easeOut});
 	controls.enabled = true;
 
 	nav.classList.toggle('dFlex');
@@ -509,10 +530,13 @@ document.getElementById('nextPage').addEventListener('click', function(e) {
 // Scenes
 
 	TweenMax.to(controls.target, 3, { x:0, y:0, z:0, ease:Power2.easeOut });
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: -67.5, y: 3.05, z: 26.5, ease: Power2.easeOut});
 	controls.enabled = true;
 
 	youStopped.classList.add('fadeOut');
+	youStopped.classList.remove('dFlex');
+	youStopped.classList.add('dNone');
 	document.getElementById('controls').classList.remove('dGrid');
 	removeBlur();
 	infoRecede();
@@ -551,8 +575,9 @@ helpUs[0].addEventListener('click', function(e) {
 
 // Scenes
 
-	TweenMax.to(controls.target, 3, {x: 45, y: 20, z: 70, ease: Power2.easeOut} );
-	TweenMax.to(camera.position, 3, {x: -62.5, y: 11.25, z: 10.9, ease: Power2.easeOut});
+	TweenMax.to(controls.target, 3, {x: -7.4, y: 2.7, z: 31.4, ease: Power2.easeOut} );
+	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
+	TweenMax.to(camera.position, 3, {x: -78.28, y: 15.55, z: 31.81, ease: Power2.easeOut});
 	controls.enabled = true;
 
 	removeBlur();

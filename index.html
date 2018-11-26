@@ -22,6 +22,33 @@
 
 	<div id="grid" class="gridContainer">
 
+		<div id="loadContainer" class="dFlex">
+
+			<h1>Loading...</h1>
+
+			<div id="aroundLoad">
+
+				<div id="loading">
+
+					<div class="loadbar">
+						
+					</div>
+				
+				</div>
+				
+				
+			</div>
+
+
+
+
+
+			
+		</div>
+
+
+
+
 
 		<!-- Suggest Landscape on Mobile -->
 		<div id="goLandscape">
@@ -343,7 +370,9 @@
 			<div id="wantToTry4">
 				<h1 class="fadeIn">Last year, nearly 1.3 million people died in road crashes.</h1>
 				<a href="#" class="helpUs fadeInTwo">
+					<button>
 					Help us improve road safety <i class="fas fa-arrow-circle-right arrow"></i>
+				</button>
 				</a>
 			</div>	
 
@@ -396,26 +425,32 @@
 						<hr>
 						<p style="text-align: center;">Subscribe to our email for updates on traffic safety</p>
 
-						<div class="mc-field-group inputGroup">
-							<label for="mce-FNAME">Your Name</label>
-							<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-						</div>
+						<div id="formFieldContainer">
+							
 
-						<div class="mc-field-group inputGroup">
-							<label for="mce-EMAIL">Email Address  <span class="asterisk">(required)</span>
-							</label>
-							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-						</div>
 
-						<div id="mce-responses" class="clear">
-							<div class="response" id="mce-error-response" style="display:none"></div>
-							<div class="response" id="mce-success-response" style="display:none"></div>
-						</div> 
+							<div class="mc-field-group inputGroup">
+								<label for="mce-FNAME">Your Name</label>
+								<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+							</div>
 
-						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_63c15bdb1ab81a9377cacf711_e1db184ae2" tabindex="-1" value=""></div>
+							<div class="mc-field-group inputGroup">
+								<label for="mce-EMAIL">Email Address  <span class="asterisk">(required)</span>
+								</label>
+								<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+							</div>
 
-						<div class="clear">
-							<button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">Subscribe</button>
+							<div id="mce-responses" class="clear">
+								<div class="response" id="mce-error-response" style="display:none"></div>
+								<div class="response" id="mce-success-response" style="display:none"></div>
+							</div> 
+
+							<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_63c15bdb1ab81a9377cacf711_e1db184ae2" tabindex="-1" value=""></div>
+
+							<div class="clear">
+								<button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">Subscribe</button>
+							</div>
+
 						</div>
 					</div>
 				</form>
@@ -447,8 +482,10 @@
 
 		<footer>
 
-			<img src="images/global-logo-white.svg" alt="Global Traffic Group logo">
-			
+			<a href="https://www.globaltrafficgroup.com/" target="_blank">
+				<img src="images/global-logo-white.svg" alt="Global Traffic Group logo">
+			</a>
+
 		</footer>
 
 
@@ -468,6 +505,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 	<script src="javascript/gsock.js"></script>
 
+
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<!-- Loader -->
+	<script src="javascript/loader.js"></script>
 
 	<!-- My Scripts -->
 	<script src="javascript/myGreensock.js"></script>
