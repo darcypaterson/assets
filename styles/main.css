@@ -244,20 +244,36 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(61, 61, 61, 0.7);
   z-index: 200;
   opacity: 1; }
 
+#aroundLoad {
+  width: 30vw;
+  height: 5vh;
+  background-color: #293142;
+  z-index: 199;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px; }
+
 #loading {
-  width: 70%;
-  height: 5%;
+  width: 28vw;
+  height: 2vh;
   z-index: 201;
   background-color: #d0c700;
-  position: relative; }
+  position: relative;
+  border-radius: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white; }
 
 .loadbar {
   width: 0%;
   height: 100%;
   background-color: #226d8d;
+  border-radius: 15px;
   position: absolute;
   top: 0;
   left: 0;
@@ -1237,7 +1253,7 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    z-index: 110; }
+    z-index: 500; }
     #goLandscape h1 {
       color: black;
       text-align: center;
