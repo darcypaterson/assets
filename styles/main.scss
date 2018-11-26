@@ -2162,6 +2162,13 @@ footer {
 
 @media only screen and (min-width: 1000px) and (orientation: landscape) {
 
+    #nav {
+
+        align-items: flex-end;
+        justify-content: center;
+
+    }
+
     #introTextSm {
 
         font-size: 3rem;
@@ -2209,9 +2216,30 @@ footer {
 
             font-size: 3rem;
             line-height: 3rem;
-            
+
         }
 
+    }
+
+    #stepsContent {
+
+        flex-direction: row;
+        margin: 1rem 0;
+
+    }
+
+    .stepsStyle {
+
+        flex-direction: column;
+        width: 40vh;
+        margin:0.125rem 0.25rem;
+
+        img {
+
+            width: 110%;
+            margin-left: 12px;
+
+        }
     }
 
 
