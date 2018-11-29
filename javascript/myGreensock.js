@@ -8,7 +8,7 @@ const learn = document.getElementById('learn');
 const subscribe = document.getElementById('subscribe');
 const youStopped = 	document.getElementById('youStopped');
 const hamburger = document.getElementById('hamburger');
-const hamburgerCheck = window.matchMedia("(min-width: 1280px) and (hover:hover)");
+const hamburgerCheck = window.matchMedia("(hover:hover)");
 
 // Canvas Element
 const mainCanvas = document.getElementsByTagName('canvas');
@@ -40,12 +40,25 @@ hideHamburger();
 
 function hideHamburger() {
 
-	if (hamburgerCheck.matches) {
+	if ( hamburgerCheck.matches ) {
 
 		hamburger.classList.add('dNone');
 		hamburger.classList.remove('dBlock');
+		nav.classList.remove('dNone');
+		nav.classList.add('dFlex');
+		nav.classList.remove('regNav');
+		nav.classList.add('ffNav');
 
-	} 
+	} else if ( !(window.matchMedia("(hover:none)").matches) ) {
+
+		hamburger.classList.add('dNone');
+		hamburger.classList.remove('dBlock');
+		nav.classList.remove('dNone');
+		nav.classList.add('dFlex');
+		nav.classList.remove('regNav');
+		nav.classList.add('ffNav');
+
+	}
 
 }
 
@@ -314,7 +327,13 @@ nav1.addEventListener('click', function(e) {
 	TweenMax.to(scene.position, 3, {y: sceneStart, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInit.x, y: cameraInit.y, z: cameraInit.z, ease: Power2.easeOut});
 
-	nav.classList.toggle('dFlex');
+	
+	if ( nav.classList.contains('regNav') == true ) {
+
+		nav.classList.toggle('dFlex');	
+			
+	}
+	
 	hamburger.classList.toggle('change');
 	infoRecede();
 
@@ -357,7 +376,12 @@ nav2.addEventListener('click', function(e) {
 	TweenMax.to(scene.position, 3, {y: 0, ease: Power2.easeOut});
 	TweenMax.to(camera.position, 3, {x: cameraInCarOne.x, y: cameraInCarOne.y, z: cameraInCarOne.z, ease: Power2.easeOut});
 	
-	nav.classList.toggle('dFlex');
+	if ( nav.classList.contains('regNav') == true ) {
+
+		nav.classList.toggle('dFlex');	
+			
+	}
+
 	hamburger.classList.toggle('change');
 	makeBlur();
 	infoRecede();
@@ -402,7 +426,12 @@ nav3.addEventListener('click', function(e) {
 	controls.enabled = true;
 	TweenMax.to(controls.target, 3, { x: 36.4, y: player.height, z: 0.5, ease: Power2.easeOut });
 
-	nav.classList.toggle('dFlex');
+	if ( nav.classList.contains('regNav') == true ) {
+
+		nav.classList.toggle('dFlex');	
+			
+	}
+
 	hamburger.classList.toggle('change');
 	makeBlur();
 	success();
@@ -445,7 +474,12 @@ nav4.addEventListener('click', function(e) {
 	TweenMax.to(camera.position, 3, {x: -67.5, y: 3.05, z: 26.5, ease: Power2.easeOut});
 	controls.enabled = true;
 	
-	nav.classList.toggle('dFlex');
+	if ( nav.classList.contains('regNav') == true ) {
+
+		nav.classList.toggle('dFlex');	
+			
+	}
+
 	hamburger.classList.toggle('change');
 	removeBlur();
 	infoRecede();	
@@ -485,7 +519,12 @@ nav5.addEventListener('click', function(e) {
 	TweenMax.to(camera.position, 3, {x: -78.28, y: 15.55, z: 31.81, ease: Power2.easeOut});
 	controls.enabled = true;
 
-	nav.classList.toggle('dFlex');
+	if ( nav.classList.contains('regNav') == true ) {
+
+		nav.classList.toggle('dFlex');	
+			
+	}
+
 	hamburger.classList.toggle('change');
 	removeBlur();
 	infoRecede();	
