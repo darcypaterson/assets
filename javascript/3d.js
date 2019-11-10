@@ -130,7 +130,7 @@
 
 			
 			var loader = new THREE.GLTFLoader(loadingManager);
-			loader.load("scenes/bp_scene_full.gltf", function ( hwy ) {
+			loader.load("scenes/eastridge-4.gltf", function ( hwy ) {
 
 				highway = hwy.scene;
 			    scene.add( hwy.scene );
