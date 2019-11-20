@@ -3,7 +3,7 @@
 
 		const sceneDown = -50;
 		const sceneUp = 0;
-		const sceneStart = -10;
+		const sceneStart = 0;
 
 		const keyboard = {};
 		const player = { height: 0.8125, speed: 0.01, turnSpeed: Math.PI * 0.002 };
