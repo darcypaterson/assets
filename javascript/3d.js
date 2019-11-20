@@ -153,7 +153,7 @@
 
 				highway3 = u.scene;
 			    scene.add( u.scene );
-				highway3.scale(3,3,3);
+				highway3.scale(2,3,3);
 
 			});
 			
