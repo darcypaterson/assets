@@ -134,8 +134,8 @@
 
 				highway = f.scene;
 			    scene.add( f.scene );
-				highway.scale.set(5,5,5);
-				highway.position.x = 2;
+				highway.scale.set(3,3,3);
+				
 
 
 			});
@@ -144,7 +144,7 @@
 
 				highway2 = o.scene;
 			    scene.add( o.scene );
-				highway2.scale(3,3,3);
+				highway2.scale.set(3,3,3);
 
 			});
 
@@ -154,7 +154,7 @@
 
 				highway3 = u.scene;
 			    scene.add( u.scene );
-				highway3.scale.set(2,3,3);
+				highway3.scale.set(3,3,3);
 
 			});
 			
@@ -164,7 +164,7 @@
 
 				highway4 = n.scene;
 			    scene.add( n.scene );
-				highway4.scale(3,3,3);
+				highway4.scale.set(3,3,3);
 
 			});
 	
@@ -175,7 +175,7 @@
 
 				highway5 = d.scene;
 			    scene.add( d.scene );
-				highway5.scale.set(3,1,3);
+				highway5.scale.set(3,3,3);
 
 			});
 			
@@ -185,7 +185,7 @@
 
 				highway6 = a.scene;
 			    scene.add( a.scene );
-				highway6.scale(3,3,1);
+				highway6.scale.set(3,3,1);
 
 			});
 			
@@ -345,7 +345,7 @@
 			requestAnimationFrame(animate);
 			renderer.render(scene, camera);
 			
-			highway.rotation.y += 0.2;
+			highway.rotation.y += 0.02;
 
 
 			document.getElementById('up').addEventListener('touchstart', function() {
