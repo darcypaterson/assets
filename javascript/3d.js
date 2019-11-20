@@ -344,6 +344,8 @@
 
 			requestAnimationFrame(animate);
 			renderer.render(scene, camera);
+			
+			highway.rotation.y += 0.2;
 
 
 			document.getElementById('up').addEventListener('touchstart', function() {
