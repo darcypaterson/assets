@@ -15,7 +15,7 @@
 		const cameraInCarOne = { x: -0.9, y: player.height, z: 49.25 };
 		const cameraInCarLookOne = { x: -0.5, y: player.height, z: 69.25 };
 
-		const cameraInit = { x: -70, y: -8.5, z: 71 };
+		const cameraInit = { x: -7, y: -8.5, z: 7 };
 		const theCarPosOne = {	x: -0.2, y: 0, z: 27.825 };			
 
 		let highway, heyLady, theCar, theCarTwo;
@@ -134,6 +134,7 @@
 
 				highway = hwy.scene;
 			    scene.add( hwy.scene );
+				highway.scale(3,3,3);
 
 
 			});
