@@ -174,7 +174,7 @@
 
 				highway5 = d.scene;
 			    scene.add( d.scene );
-				highway5.scale(3,3,3);
+				highway5.scale(3,1,3);
 
 			});
 			
@@ -184,7 +184,7 @@
 
 				highway6 = a.scene;
 			    scene.add( a.scene );
-				highway6.scale(3,3,3);
+				highway6.scale(3,3,1);
 
 			});
 			
