@@ -129,21 +129,104 @@
 
 
 			
-			var loader = new THREE.GLTFLoader(loadingManager);
-			loader.load("scenes/foundation-2.gltf", function ( hwy ) {
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/f.gltf", function ( f ) {
 
-				highway = hwy.scene;
-			    scene.add( hwy.scene );
+				highway = f.scene;
+			    scene.add( f.scene );
 				highway.scale(3,3,3);
 
 
 			});
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/o.gltf", function ( o ) {
+
+				highway2 = o.scene;
+			    scene.add( o.scene );
+				highway2.scale(3,3,3);
+
+			});
 
 
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/u.gltf", function ( u ) {
 
+				highway3 = u.scene;
+			    scene.add( u.scene );
+				highway3.scale(3,3,3);
 
+			});
+			
+			
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/n.gltf", function ( n ) {
 
+				highway4 = n.scene;
+			    scene.add( n.scene );
+				highway4.scale(3,3,3);
 
+			});
+	
+			
+			
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/d.gltf", function ( d ) {
+
+				highway5 = d.scene;
+			    scene.add( d.scene );
+				highway5.scale(3,3,3);
+
+			});
+			
+			
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/a.gltf", function ( a ) {
+
+				highway6 = a.scene;
+			    scene.add( a.scene );
+				highway6.scale(3,3,3);
+
+			});
+			
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/t.gltf", function ( t ) {
+
+				highway7 = t.scene;
+			    scene.add( t.scene );
+				highway7.scale(3,3,3);
+
+			});
+			
+			
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/i.gltf", function ( i ) {
+
+				highway8 = i.scene;
+			    scene.add( i.scene );
+				highway8.scale(3,3,3);
+
+			});
+			
+			
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/0-2.gltf", function ( o2 ) {
+
+				highway9 = o2.scene;
+			    scene.add( o2.scene );
+				highway9.scale(3,3,3);
+
+			});
+			
+			
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/n-2.gltf", function ( n2 ) {
+
+				highway10 = n2.scene;
+			    scene.add( n2.scene );
+				highway10.scale(3,3,3);
+
+			});
+			
 			var womanLoader = new THREE.GLTFLoader(loadingManager);
 			womanLoader.load("scenes/bp_scene_6_woman.gltf", function( girl ) {
 
