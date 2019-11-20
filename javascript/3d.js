@@ -134,8 +134,8 @@
 
 				highway = f.scene;
 			    scene.add( f.scene );
-				highway.scale(3,3,3);
-				highway.position.x = 0.3;
+				highway.scale(5,5,5);
+				highway.position.x = 2;
 
 
 			});
