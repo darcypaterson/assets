@@ -126,8 +126,18 @@
 			//     city.position.y = sceneDown;
 			    
 			// });
+			
+			
 
+			var loader = new THREE.GLTFLoader();
+			loader.load("scenes/eastridge-5.gltf", function ( house ) {
 
+				house = gltf.scene;
+			    scene.add( house );
+
+			    
+			    
+			});
 			
 			var loader = new THREE.GLTFLoader();
 			loader.load("scenes/f.gltf", function ( f ) {
